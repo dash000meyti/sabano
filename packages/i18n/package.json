@@ -1,0 +1,21 @@
+{
+  "name": "@sabano/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./messages": "./src/messages.ts"
+  },
+  "scripts": {
+    "check": "tsx scripts/check.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx scripts/check.ts"
+  },
+  "devDependencies": {
+    "@sabano/config": "workspace:*",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3",
+    "@types/node": "^22.10.0"
+  }
+}

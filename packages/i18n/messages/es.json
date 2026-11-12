@@ -1,0 +1,742 @@
+{
+  "common": {
+    "siteName": "Sabano",
+    "orgName": "Fondo No Gubernamental de Investigación y Tecnología Sabano",
+    "orgShort": "Fondo de Investigación y Tecnología Sabano",
+    "brandSub": "Fondo de Investigación y Tecnología",
+    "tagline": "Inversión inteligente para un futuro digital",
+    "skipToContent": "Saltar al contenido principal",
+    "readMore": "Leer más",
+    "learnMore": "Más información",
+    "viewAll": "Ver todo",
+    "submitProposal": "Presentar una propuesta",
+    "contactUs": "Contáctanos",
+    "home": "Inicio",
+    "breadcrumb": "Ruta de navegación",
+    "lastUpdated": "Última actualización: {date}",
+    "minutesRead": "{count} min de lectura",
+    "language": "Idioma del sitio",
+    "menu": "Menú",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "search": "Buscar",
+    "newTab": "(se abre en una pestaña nueva)",
+    "onThisPage": "En esta página",
+    "atAGlance": "Sabano de un vistazo",
+    "faqTitle": "Preguntas frecuentes",
+    "needHelp": "¿Tienes alguna pregunta?",
+    "or": "o",
+    "close": "Cerrar"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de Sabano",
+    "aboutOverview": "Sobre el fondo",
+    "aboutOverviewDesc": "Misión, horizonte y accionistas",
+    "leadership": "Equipo directivo",
+    "leadershipDesc": "Director ejecutivo y consejo de administración",
+    "services": "Servicios",
+    "investment": "Inversión",
+    "investmentAreas": "Áreas de inversión",
+    "investmentAreasDesc": "Cuatro áreas clave de la economía digital",
+    "portfolio": "Cartera",
+    "portfolioDesc": "Empresas con las que trabajamos",
+    "process": "Cómo solicitar",
+    "processDesc": "De la propuesta a la decisión",
+    "resources": "Recursos",
+    "news": "Noticias y análisis",
+    "newsDesc": "Noticias, análisis y guías",
+    "faq": "Preguntas frecuentes",
+    "faqDesc": "Respuestas breves a las preguntas más habituales",
+    "cooperation": "Colabora con nosotros",
+    "contact": "Contacto",
+    "privacy": "Privacidad",
+    "allServices": "Todos los servicios",
+    "fund": "El fondo"
+  },
+  "footer": {
+    "about": "El Fondo No Gubernamental de Investigación y Tecnología Sabano se centra en la economía digital y apoya a las empresas tecnológicas con garantías, crédito, inversión y asesoría.",
+    "contactTitle": "Contacto con Sabano",
+    "social": "Sabano en redes sociales",
+    "rights": "© {year} Fondo de Investigación y Tecnología Sabano. Todos los derechos reservados.",
+    "rss": "Canal RSS"
+  },
+  "sectors": {
+    "ai": "IA y datos",
+    "fintech": "Fintech y servicios financieros modernos",
+    "digital": "Infraestructura y servicios digitales",
+    "future": "Tecnologías que darán forma al futuro"
+  },
+  "facts": {
+    "type": { "label": "Tipo", "value": "Fondo no gubernamental de investigación y tecnología" },
+    "focus": { "label": "Enfoque", "value": "Economía digital" },
+    "services": { "label": "Servicios", "value": "Garantías, crédito, inversión, agencia financiera y asesoría" },
+    "horizon": { "label": "Horizonte de capital", "value": "1 billón de tomanes para marzo de 2027" },
+    "shareholder": { "label": "Accionista principal", "value": "Holding Saba Mihan" },
+    "location": { "label": "Sede", "value": "Abbasabad, Teherán" }
+  },
+  "home": {
+    "meta": {
+      "title": "Sabano | Inversión inteligente para un futuro digital",
+      "description": "Sabano, fondo no gubernamental de investigación y tecnología, apoya a empresas de la economía digital con garantías, crédito, inversión y asesoría."
+    },
+    "hero": {
+      "eyebrow": "Fondo No Gubernamental de Investigación y Tecnología Sabano",
+      "title1": "Inversión inteligente",
+      "title2": "para un futuro digital",
+      "intro": "Acompañamos a empresas e ideas innovadoras en su camino hacia un crecimiento sostenible y una economía digital más sólida, con garantías, crédito, inversión y asesoría especializada.",
+      "ctaPrimary": "Presentar una propuesta",
+      "ctaSecondary": "Acerca de Sabano",
+      "scroll": "Desplázate"
+    },
+    "pillars": [
+      { "title": "Inversión de riesgo", "text": "Apoyamos empresas tecnológicas" },
+      { "title": "Financiación de la innovación", "text": "Herramientas financieras flexibles" },
+      { "title": "Economía digital", "text": "El enfoque de Sabano" },
+      { "title": "Valor sostenible", "text": "Una visión a largo plazo" }
+    ],
+    "about": {
+      "kicker": "Acerca de Sabano",
+      "title": "Impulsamos la innovación en la economía digital",
+      "text": "Sabano apoya a las empresas tecnológicas en su crecimiento, en su expansión a nuevos mercados y en su conexión con los mercados globales mediante servicios financieros e inversión. Con una visión de futuro, también sigue de cerca las oportunidades en inteligencia artificial y tecnología financiera.",
+      "horizonValue": "1",
+      "horizonUnit": "billón de tomanes",
+      "horizonLabel": "Horizonte de capital para marzo de 2027",
+      "values": ["Foco en la economía digital", "Apoyo a las empresas tecnológicas", "Creación de valor a largo plazo"],
+      "cta": "Más sobre Sabano"
+    },
+    "services": {
+      "kicker": "Servicios de Sabano",
+      "title": "Herramientas financieras para empresas tecnológicas",
+      "text": "De las garantías a la inversión, cada servicio se define tras analizar tus necesidades conforme a la normativa del fondo.",
+      "cta": "Todos los servicios",
+      "cooperationTitle": "Propuestas y colaboración",
+      "cooperationText": "Envía una propuesta, una idea de alianza o una solicitud de empleo."
+    },
+    "investment": {
+      "kicker": "Áreas de inversión",
+      "title": "Oportunidades en la economía digital",
+      "text": "Sabano apoya soluciones innovadoras en áreas clave de la economía digital, donde la tecnología resuelve un problema real con un modelo de negocio claro.",
+      "cta": "Explora nuestras áreas"
+    },
+    "process": {
+      "kicker": "Cómo funciona",
+      "title": "De la propuesta a la decisión",
+      "text": "Colaborar con Sabano empieza con un sencillo formulario en línea. Descubre cómo es la evaluación y qué necesitas en cada paso.",
+      "cta": "Lee la guía completa"
+    },
+    "portfolio": {
+      "kicker": "Cartera",
+      "title": "Empresas con las que trabajamos",
+      "cta": "Ver la cartera"
+    },
+    "news": {
+      "kicker": "Noticias y análisis",
+      "title": "Últimos artículos",
+      "cta": "Todos los artículos"
+    },
+    "faq": {
+      "kicker": "Preguntas frecuentes",
+      "title": "Respuestas breves a las preguntas más habituales",
+      "cta": "Todas las preguntas"
+    },
+    "related": {
+      "kicker": "Ecosistema de innovación",
+      "title": "Instituciones relacionadas"
+    },
+    "cta": {
+      "title": "¿Tienes en mente un proyecto tecnológico?",
+      "text": "Envía un breve resumen de tu propuesta y llegará directamente al fondo para su evaluación. Los adjuntos son opcionales y solo te llevará unos minutos.",
+      "primary": "Presentar una propuesta",
+      "secondary": "Contáctanos"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Acerca de Sabano | Fondo de investigación y tecnología",
+      "description": "Sabano, fondo no gubernamental de investigación y tecnología centrado en la economía digital: conoce su misión, horizonte de capital, valores y accionistas."
+    },
+    "hero": {
+      "kicker": "Acerca de Sabano",
+      "title": "Capital para la innovación y el crecimiento",
+      "lead": "El Fondo No Gubernamental de Investigación y Tecnología Sabano es una institución financiera centrada en la economía digital. Trabaja junto a empresas tecnológicas y negocios innovadores para facilitar el acceso a herramientas financieras y a la inversión. Su accionista principal es el Holding Saba Mihan y tiene su sede en Teherán."
+    },
+    "what": {
+      "title": "¿Qué hace Sabano?",
+      "text": "Mediante garantías, servicios de crédito, inversión en empresas tecnológicas, agencia financiera y asesoría financiera, Sabano allana el camino de crecimiento de las empresas tecnológicas y las ayuda a conectar con mercados más amplios. Con una visión de futuro, también sigue de cerca las oportunidades en inteligencia artificial y tecnología financiera."
+    },
+    "mission": {
+      "title": "Misión y enfoque",
+      "text": "Con foco en la economía digital, Sabano ayuda a crecer a las empresas tecnológicas y contribuye a crear oportunidades de crecimiento sostenible. Cada servicio se presta según la evaluación del proyecto y la normativa aplicable."
+    },
+    "horizon": {
+      "title": "Horizonte de desarrollo",
+      "value": "1",
+      "unit": "billón de tomanes",
+      "label": "Capital objetivo para marzo de 2027",
+      "text": "El horizonte de desarrollo de Sabano es aumentar su capital hasta 1 billón de tomanes para finales del año iraní 1405 (marzo de 2027) y desempeñar un papel destacado en el sector basado en el conocimiento del país. La meta se irá precisando a medida que se completen los documentos estratégicos del fondo."
+    },
+    "values": {
+      "title": "Lo que nos define",
+      "items": [
+        { "title": "Foco en la economía digital", "text": "La inteligencia artificial, la fintech, la infraestructura digital y las tecnologías que darán forma al futuro están en el centro del trabajo de Sabano." },
+        { "title": "Apoyo a las empresas tecnológicas", "text": "Las herramientas financieras del fondo están diseñadas en torno a las necesidades reales de los negocios tecnológicos." },
+        { "title": "Creación de valor a largo plazo", "text": "Sabano piensa en el crecimiento sostenible y no en la rentabilidad a corto plazo, tanto para las empresas como para la economía en su conjunto." }
+      ]
+    },
+    "shareholders": {
+      "kicker": "Estructura accionarial",
+      "title": "¿Quiénes son los accionistas de Sabano?",
+      "text": "El accionista principal de Sabano es el Holding Saba Mihan. La Compañía de Desarrollo Tecnológico Jabiz, el Centro de Innovación Yas y Ala Tejarat Fanavari también son accionistas del fondo.",
+      "main": "Accionista principal",
+      "other": "Accionista"
+    },
+    "leadership": {
+      "title": "Equipo directivo",
+      "text": "Conoce al director ejecutivo y a los miembros del consejo que orientan la estrategia de Sabano.",
+      "cta": "Conoce al equipo directivo"
+    },
+    "ecosystem": {
+      "title": "Junto a instituciones que apoyan la innovación"
+    },
+    "cta": {
+      "title": "Colabora con Sabano",
+      "text": "Para explorar una alianza o presentar un proyecto, usa el formulario de colaboración.",
+      "button": "Presentar una propuesta"
+    }
+  },
+  "leadership": {
+    "meta": {
+      "title": "Equipo directivo de Sabano | Director ejecutivo y consejo",
+      "description": "Conoce al director ejecutivo y a los miembros del consejo de administración del Fondo No Gubernamental de Investigación y Tecnología Sabano."
+    },
+    "hero": {
+      "kicker": "Organización",
+      "title": "Equipo directivo de Sabano",
+      "lead": "El Fondo de Investigación y Tecnología Sabano está dirigido por su director ejecutivo y por un consejo de administración que orienta la estrategia del fondo en la economía digital."
+    },
+    "management": "Dirección",
+    "board": "Consejo de administración",
+    "linkedin": "{name} en LinkedIn"
+  },
+  "services": {
+    "meta": {
+      "title": "Servicios de Sabano | Garantías, crédito, inversión y asesoría",
+      "description": "Servicios de Sabano para empresas tecnológicas: garantías, crédito y financiación, inversión en empresas tecnológicas, agencia financiera y asesoría financiera."
+    },
+    "hero": {
+      "kicker": "Servicios de Sabano",
+      "title": "Herramientas financieras para empresas tecnológicas",
+      "lead": "Sabano ofrece cinco servicios principales a las empresas tecnológicas y basadas en el conocimiento: garantías, servicios de crédito y financiación, inversión en empresas tecnológicas, agencia financiera y asesoría financiera y de inversión. Las condiciones de cada servicio se definen tras analizar las necesidades del solicitante conforme a la normativa del fondo."
+    },
+    "chooser": {
+      "title": "¿Qué servicio te conviene?",
+      "need": "Si…",
+      "service": "Servicio recomendado",
+      "rows": [
+        { "need": "necesitas una garantía para participar en una licitación o ejecutar un contrato", "slug": "guarantee" },
+        { "need": "necesitas fondos para ejecutar un contrato, desarrollar un producto o cubrir tu capital de trabajo", "slug": "credit" },
+        { "need": "buscas un socio inversor para hacer crecer tu negocio", "slug": "investment" },
+        { "need": "tienes fondos que deben llegar a proyectos tecnológicos en el marco de un programa aprobado", "slug": "fund-agency" },
+        { "need": "no tienes claro qué vía de financiación te conviene más", "slug": "consulting" }
+      ]
+    },
+    "labels": {
+      "whoFor": "¿A quién va dirigido este servicio?",
+      "benefits": "¿Cómo te ayuda?",
+      "steps": "Cómo funciona el servicio",
+      "documents": "¿Qué debo preparar?",
+      "other": "Otros servicios",
+      "request": "Solicitar este servicio",
+      "note": "Las condiciones exactas de cada servicio se definen tras analizar la solicitud y conforme a la normativa del fondo."
+    },
+    "steps": [
+      { "title": "Envía tu solicitud", "text": "Completa el formulario de colaboración y adjunta tu documentación de apoyo." },
+      { "title": "Revisión inicial", "text": "Se comprueba que la solicitud encaje con los servicios del fondo y, si hace falta, se pide más información." },
+      { "title": "Evaluación experta", "text": "El proyecto se evalúa conforme a la normativa del fondo, teniendo en cuenta los aspectos técnicos, financieros y del equipo." },
+      { "title": "Decisión", "text": "Se te comunica el resultado y, en caso de aprobación, las condiciones y los siguientes pasos." }
+    ],
+    "cta": {
+      "title": "Solicita una evaluación",
+      "text": "Usa el formulario de colaboración para presentar tu necesidad o tu proyecto.",
+      "button": "Enviar solicitud"
+    },
+    "items": {
+      "guarantee": {
+        "title": "Garantías",
+        "short": "Garantías para respaldar las actividades elegibles de empresas y proyectos tecnológicos.",
+        "metaTitle": "Garantías para empresas tecnológicas | Sabano",
+        "metaDescription": "Sabano emite garantías para actividades elegibles de empresas y proyectos tecnológicos. Descubre cómo te ayudan, qué preparar y cómo solicitarlas.",
+        "lead": "Sabano emite garantías para respaldar las actividades elegibles de empresas y proyectos tecnológicos. Una garantía permite a una empresa tecnológica participar en licitaciones y contratos sin inmovilizar su propia liquidez. El tipo y las condiciones de cada garantía se definen tras analizar la solicitud y conforme a la normativa del fondo.",
+        "whoFor": [
+          "Empresas tecnológicas y basadas en el conocimiento que se presentan a licitaciones o contratos",
+          "Proyectos tecnológicos que necesitan respaldo para sus compromisos",
+          "Negocios que operan en la economía digital"
+        ],
+        "benefits": [
+          "Conserva tu liquidez para desarrollar el producto y el equipo",
+          "Participa en proyectos y contratos de mayor envergadura",
+          "Una evaluación que entiende los negocios tecnológicos"
+        ],
+        "documents": [
+          "Una presentación de la empresa y su tecnología",
+          "El contrato o los pliegos de la licitación correspondientes",
+          "Información financiera y trayectoria en la ejecución de proyectos",
+          "El importe y el plazo de la garantía que necesitas"
+        ],
+        "faqs": [
+          { "q": "¿Qué tipos de garantías emite Sabano?", "a": "El tipo de garantía depende de las necesidades del solicitante y de la normativa del fondo. Los fondos de investigación y tecnología suelen emitir garantías como las de licitación, de fiel cumplimiento y de anticipo. Envía una solicitud para saber si es posible emitir la garantía que necesitas." },
+          { "q": "¿Cualquier empresa puede obtener una garantía?", "a": "Las garantías se emiten para actividades elegibles una vez analizada la solicitud. Los criterios exactos se evalúan conforme a la normativa del fondo." },
+          { "q": "¿Por dónde empiezo?", "a": "Envía tu solicitud a través del formulario de colaboración, elige “Financiación” como tipo de solicitud y adjunta documentos como el contrato o los pliegos de la licitación." }
+        ]
+      },
+      "credit": {
+        "title": "Crédito y financiación",
+        "short": "Análisis de opciones de financiación y servicios crediticios adaptados a las necesidades del solicitante.",
+        "metaTitle": "Crédito y financiación para empresas tecnológicas | Sabano",
+        "metaDescription": "Sabano analiza opciones de financiación y crédito adaptadas a las necesidades de las empresas tecnológicas. Descubre qué preparar y cómo solicitarlas.",
+        "lead": "Sabano analiza servicios de financiación y crédito adaptados a las necesidades y la situación de cada solicitante. El servicio está dirigido a empresas tecnológicas que necesitan fondos para ejecutar un contrato, desarrollar un producto o cubrir su capital de trabajo. Las condiciones de cualquier financiación se definen tras evaluar el proyecto.",
+        "whoFor": [
+          "Empresas tecnológicas que necesitan fondos para ejecutar un contrato",
+          "Negocios que necesitan capital para desarrollar su producto o su mercado",
+          "Proyectos con ingresos claros y previsibles"
+        ],
+        "benefits": [
+          "Un análisis de tu necesidad de financiación a cargo de personas que entienden los negocios tecnológicos",
+          "Un servicio adaptado a tu situación",
+          "Acceso a otros servicios del fondo cuando sea necesario"
+        ],
+        "documents": [
+          "Una presentación de la empresa y del equipo",
+          "Tu necesidad de financiación y el destino previsto de los fondos",
+          "Estados financieros o un informe de resultados",
+          "Contratos o presupuestos relacionados"
+        ],
+        "faqs": [
+          { "q": "¿Cómo se fijan las condiciones de financiación de Sabano?", "a": "Las condiciones de cada financiación se fijan tras analizar el proyecto y conforme a la normativa del fondo. Envía una solicitud para saber qué condiciones se ajustan a tus necesidades." },
+          { "q": "¿Para qué se puede usar la financiación?", "a": "Para necesidades de financiación vinculadas a actividades tecnológicas, como ejecutar un contrato, desarrollar un producto o cubrir el capital de trabajo. La viabilidad de la financiación se decide tras la evaluación." },
+          { "q": "¿Qué documentos necesito?", "a": "Una presentación de la empresa, una descripción de tu necesidad de financiación, información financiera y los contratos relacionados ayudan a agilizar la evaluación. Si hace falta, se solicitará documentación adicional." }
+        ]
+      },
+      "investment": {
+        "title": "Inversión en empresas tecnológicas",
+        "short": "Evaluación de oportunidades innovadoras y de una posible participación en el crecimiento empresarial.",
+        "metaTitle": "Inversión en empresas tecnológicas y startups | Sabano",
+        "metaDescription": "Sabano evalúa oportunidades innovadoras en la economía digital y participa en el crecimiento de negocios prometedores. Conoce los criterios y qué preparar.",
+        "lead": "Sabano evalúa oportunidades innovadoras y, cuando encajan con la estrategia del fondo, participa en el crecimiento del negocio. Sabano invierte con foco en la economía digital: desde la inteligencia artificial y la fintech hasta la infraestructura digital y las tecnologías que darán forma al futuro.",
+        "whoFor": [
+          "Startups y empresas tecnológicas de la economía digital",
+          "Equipos con un producto o una solución clara para un problema real",
+          "Negocios con potencial para crecer hacia mercados más amplios"
+        ],
+        "benefits": [
+          "Un socio financiero con visión a largo plazo",
+          "Un profundo conocimiento de la economía digital y la fintech",
+          "Acompañamiento en el camino hacia el crecimiento y mercados más amplios"
+        ],
+        "documents": [
+          "Un resumen de uno o dos párrafos",
+          "Una presentación para inversores (pitch deck)",
+          "Una presentación del equipo y su experiencia relevante",
+          "Situación actual, tracción y plan financiero"
+        ],
+        "faqs": [
+          { "q": "¿En qué sectores invierte Sabano?", "a": "Sabano se centra en la economía digital: inteligencia artificial y soluciones basadas en datos, fintech y servicios financieros modernos, infraestructura y servicios digitales, y tecnologías que darán forma al futuro." },
+          { "q": "¿Cómo se evalúan las propuestas?", "a": "El problema y la solución, el mercado objetivo, el modelo de negocio, la capacidad del equipo y el encaje con las áreas de inversión de Sabano están entre los factores más importantes." },
+          { "q": "¿Enviar una propuesta significa que Sabano invertirá?", "a": "No. La recepción de una propuesta no implica su aprobación ni un compromiso de inversión, y cada propuesta se evalúa conforme a la normativa del fondo." }
+        ]
+      },
+      "fund-agency": {
+        "title": "Agencia financiera",
+        "short": "Gestión y asignación de fondos conforme a programas y acuerdos aprobados.",
+        "metaTitle": "Agencia financiera para financiar la innovación | Sabano",
+        "metaDescription": "Sabano gestiona y asigna fondos conforme a acuerdos y programas aprobados, y canaliza el apoyo hacia proyectos tecnológicos.",
+        "lead": "Como agente financiero, Sabano gestiona y asigna fondos conforme a acuerdos y programas aprobados. El servicio ayuda a las instituciones y organizaciones que desean canalizar sus fondos hacia proyectos y empresas tecnológicas a través de una institución financiera especializada.",
+        "whoFor": [
+          "Instituciones y organizaciones con fondos para apoyar la innovación",
+          "Programas de apoyo que requieren una gestión especializada de fondos",
+          "Organizaciones que quieren respaldar financieramente a empresas tecnológicas"
+        ],
+        "benefits": [
+          "Fondos gestionados conforme a un acuerdo y un programa aprobados",
+          "Evaluación experta de proyectos tecnológicos",
+          "Asignación de fondos a proyectos elegibles"
+        ],
+        "documents": [
+          "Una presentación de tu institución y de tu programa",
+          "El volumen y la finalidad de los fondos",
+          "Los criterios que deben cumplir los proyectos"
+        ],
+        "faqs": [
+          { "q": "¿Qué es la agencia financiera?", "a": "En la agencia financiera, una institución especializada como Sabano gestiona los fondos de una organización o de un programa conforme a un acuerdo aprobado y los asigna a proyectos y empresas elegibles." },
+          { "q": "¿Qué instituciones pueden usar este servicio?", "a": "Instituciones y organizaciones que disponen de fondos para actividades tecnológicas y quieren que se asignen conforme a un acuerdo aprobado. La viabilidad de la colaboración se decide tras la evaluación." },
+          { "q": "¿Cómo empiezo?", "a": "En el formulario de colaboración, elige “Alianza estratégica” y describe brevemente el programa y los fondos que tienes en mente." }
+        ]
+      },
+      "consulting": {
+        "title": "Asesoría financiera y de inversión",
+        "short": "Orientación sobre vías de financiación y preparación para recibir inversión.",
+        "metaTitle": "Asesoría financiera y preparación para la inversión | Sabano",
+        "metaDescription": "Sabano ayuda a las empresas tecnológicas a analizar sus opciones de financiación y a prepararse para captar inversión. Descubre a quién va dirigido el servicio.",
+        "lead": "Sabano ayuda a las empresas tecnológicas a analizar distintas vías de financiación y a prepararse para captar inversión. El servicio es adecuado para negocios que quieren tener una visión clara de sus opciones, fortalezas y carencias antes de solicitar crédito o inversión.",
+        "whoFor": [
+          "Equipos que buscan inversión por primera vez",
+          "Empresas que comparan distintas opciones de financiación",
+          "Negocios que se preparan para presentarse ante inversores"
+        ],
+        "benefits": [
+          "Descubre qué opciones de financiación se ajustan a tu etapa",
+          "Prepárate mejor para presentarte ante inversores",
+          "Una visión más clara de los requisitos y la documentación"
+        ],
+        "documents": [
+          "Una presentación del negocio y del equipo",
+          "Situación financiera y plan de crecimiento",
+          "Tus principales preguntas o desafíos"
+        ],
+        "faqs": [
+          { "q": "¿Qué abarca la asesoría de Sabano?", "a": "El análisis de las vías de financiación, la elección de la herramienta financiera adecuada y la preparación para captar inversión. El alcance exacto se define tras analizar tus necesidades." },
+          { "q": "¿A quién va dirigida la asesoría?", "a": "A equipos que buscan inversión por primera vez, empresas que comparan opciones de financiación y negocios que se preparan para presentarse ante inversores." },
+          { "q": "¿Cómo solicito asesoría?", "a": "En el formulario de colaboración, elige “Financiación” e indica en tu descripción que necesitas asesoría." }
+        ]
+      }
+    }
+  },
+  "investment": {
+    "meta": {
+      "title": "Inversión y alianzas | Foco de Sabano en la economía digital",
+      "description": "Áreas de inversión de Sabano en la economía digital: IA, fintech, infraestructura digital y tecnologías de futuro. Descubre cómo evaluamos las propuestas."
+    },
+    "hero": {
+      "kicker": "Inversión y alianzas",
+      "title": "Enfoque en la economía digital",
+      "lead": "Sabano analiza oportunidades innovadoras en cuatro áreas clave de la economía digital: inteligencia artificial y soluciones basadas en datos, fintech y servicios financieros modernos, infraestructura y servicios digitales, y tecnologías que darán forma al futuro. La prueba decisiva es resolver un problema real con un modelo de negocio claro y margen para crecer."
+    },
+    "areasTitle": "¿En qué sectores invierte Sabano?",
+    "examplesLabel": "Ámbitos de ejemplo",
+    "areas": {
+      "ai": {
+        "title": "Inteligencia artificial y datos",
+        "text": "Soluciones basadas en datos e IA que responden a una necesidad clara y cuentan con un modelo de negocio sólido.",
+        "examples": ["Procesamiento del lenguaje y análisis de textos", "Análisis de datos e inteligencia de negocio", "Visión artificial y automatización"]
+      },
+      "fintech": {
+        "title": "Fintech y servicios financieros modernos",
+        "text": "Servicios e infraestructura innovadores que mejoran el acceso, la experiencia y la eficiencia de los mercados financieros.",
+        "examples": ["Pagos e infraestructura financiera", "Calificación crediticia y gestión de riesgos", "Nuevos servicios de inversión"]
+      },
+      "digital": {
+        "title": "Infraestructura y servicios digitales",
+        "text": "Tecnologías y servicios que contribuyen al crecimiento de la economía digital y de los negocios tecnológicos.",
+        "examples": ["Infraestructura en la nube y de datos", "Plataformas y servicios digitales", "Ciberseguridad"]
+      },
+      "future": {
+        "title": "Tecnologías que darán forma al futuro",
+        "text": "Tendencias y oportunidades emergentes que podrían transformar los mercados y la economía digital en los próximos años.",
+        "examples": ["Tecnologías emergentes", "Ciudades y energía inteligentes", "Innovación transformadora"]
+      }
+    },
+    "criteria": {
+      "title": "¿Qué busca Sabano en una propuesta?",
+      "items": [
+        { "title": "Un problema real", "text": "El proyecto resuelve un problema claro y medible para un grupo definido de clientes." },
+        { "title": "Un modelo de negocio claro", "text": "Los ingresos, los costos principales y el camino para escalar están bien definidos." },
+        { "title": "Un equipo capaz", "text": "Los miembros clave tienen los conocimientos y la experiencia necesarios para ejecutar el proyecto." },
+        { "title": "Margen de crecimiento", "text": "El mercado objetivo es lo bastante grande y el proyecto puede llegar a mercados más amplios." },
+        { "title": "Encaje con la economía digital", "text": "El proyecto se sitúa en una de las áreas de inversión de Sabano." }
+      ]
+    },
+    "disclaimer": "La recepción de una propuesta o de un formulario no implica su aprobación ni un compromiso de inversión.",
+    "cta": {
+      "title": "Propón una oportunidad de inversión",
+      "text": "Envía a través del formulario un breve resumen del proyecto y la documentación de apoyo. El envío no implica aprobación ni compromiso de inversión.",
+      "button": "Presentar una oportunidad",
+      "secondary": "Cómo solicitar"
+    }
+  },
+  "process": {
+    "meta": {
+      "title": "Cómo solicitar inversión y servicios a Sabano",
+      "description": "Guía paso a paso para colaborar con Sabano: preparar tu resumen y documentos, enviar la solicitud, revisión inicial, evaluación experta y decisión."
+    },
+    "hero": {
+      "kicker": "Guía del proceso",
+      "title": "Colaborar con Sabano, paso a paso",
+      "lead": "Colaborar con Sabano empieza con una solicitud a través del formulario en línea. Tu solicitud pasa por una revisión inicial, se recaba más información si hace falta y, después, el proyecto se evalúa conforme a la normativa del fondo antes de comunicarte la decisión. Esta guía explica cada paso y qué debes preparar."
+    },
+    "stepsTitle": "¿Cuáles son los pasos para colaborar con Sabano?",
+    "stepLabel": "Paso {n}",
+    "steps": [
+      { "title": "Prepara", "text": "Ten listos el resumen del proyecto, la presentación del equipo y la documentación de apoyo. Cuanto más precisa sea la información, más rápida será la evaluación." },
+      { "title": "Envía", "text": "Completa el formulario de colaboración, elige un tipo de solicitud y adjunta un archivo de apoyo. Al enviarlo, recibirás un código de seguimiento." },
+      { "title": "Revisión inicial", "text": "Se comprueba que la solicitud encaje con los servicios y las áreas de enfoque de Sabano y, si hace falta, se pide más información." },
+      { "title": "Evaluación experta", "text": "Los proyectos que encajan con la estrategia del fondo se evalúan conforme a su normativa, teniendo en cuenta los aspectos técnicos, de mercado, financieros y del equipo." },
+      { "title": "Decisión", "text": "Se te comunica el resultado y, en caso de aprobación, las condiciones y los siguientes pasos." }
+    ],
+    "note": "Los pasos y plazos exactos varían según el tipo de solicitud y de servicio.",
+    "prepare": {
+      "title": "¿Qué debo preparar antes de enviar mi solicitud?",
+      "items": [
+        "Un resumen del proyecto de uno o dos párrafos",
+        "Una presentación del equipo y su experiencia relevante",
+        "Situación actual del producto o servicio y tracción",
+        "Necesidad de financiación y destino previsto de los fondos",
+        "Un archivo de apoyo (preferiblemente PDF, máximo 8 MB)"
+      ]
+    },
+    "timing": {
+      "title": "¿Cuánto tarda la evaluación?",
+      "text": "El plazo de evaluación depende del tipo de solicitud, de lo completa que sea la información y de la complejidad del proyecto. Enviar información precisa y completa desde el principio es el factor que más ayuda a acortarlo."
+    },
+    "mistakes": {
+      "title": "Errores frecuentes al enviar una propuesta",
+      "items": [
+        "Descripciones largas y generales que nunca llegan a plantear el problema central",
+        "Falta de información sobre el equipo y el papel de cada miembro",
+        "Una necesidad de financiación o un destino de los fondos poco claros",
+        "Datos de contacto que no se revisan con regularidad"
+      ]
+    },
+    "guide": "Lee la guía completa para preparar tu propuesta",
+    "cta": {
+      "title": "¿Todo listo? Envía tu propuesta",
+      "text": "Enviar una solicitud solo lleva unos minutos y recibirás un código de seguimiento al instante.",
+      "button": "Presentar una propuesta"
+    }
+  },
+  "portfolio": {
+    "meta": {
+      "title": "Cartera de Sabano | Empresas con las que trabajamos",
+      "description": "Empresas y proyectos tecnológicos de IA, fintech e infraestructura digital a los que el Fondo de Investigación y Tecnología Sabano ha apoyado en su crecimiento."
+    },
+    "hero": {
+      "kicker": "Cartera",
+      "title": "Empresas con las que trabajamos",
+      "lead": "Sabano trabaja junto a empresas y proyectos tecnológicos de toda la economía digital. En esta sección presentamos las empresas a las que Sabano ha apoyado en su camino de crecimiento."
+    },
+    "all": "Todas",
+    "website": "Sitio web",
+    "year": "Desde",
+    "sector": "Sector",
+    "back": "Volver a la cartera",
+    "count": "{count} empresas",
+    "empty": {
+      "title": "Próximamente",
+      "text": "Pronto publicaremos aquí la lista de empresas con las que trabaja Sabano. Si diriges una empresa o un proyecto tecnológico, puedes dar el primer paso hoy mismo.",
+      "cta": "Presentar una propuesta"
+    }
+  },
+  "news": {
+    "meta": {
+      "title": "Noticias y análisis de Sabano",
+      "description": "Noticias del Fondo de Investigación y Tecnología Sabano, análisis de la economía digital y guías de financiación e inversión para empresas tecnológicas."
+    },
+    "hero": {
+      "kicker": "Noticias y análisis",
+      "title": "Noticias, análisis y guías",
+      "lead": "Las últimas noticias del Fondo de Investigación y Tecnología Sabano, análisis de la economía digital y guías prácticas para empresas tecnológicas que buscan financiación e inversión."
+    },
+    "categories": {
+      "all": "Todos",
+      "news": "Noticias",
+      "insight": "Análisis",
+      "guide": "Guía"
+    },
+    "featured": "Destacado",
+    "empty": "Todavía no se ha publicado nada aquí.",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "page": "Página {page} de {total}",
+    "published": "Publicado el {date}",
+    "updated": "Actualizado el {date}",
+    "toc": "Contenido",
+    "related": "Artículos relacionados",
+    "back": "Volver a noticias y análisis",
+    "rss": "Canal RSS",
+    "endCta": {
+      "title": "Envía tu propuesta a Sabano",
+      "text": "Si diriges una empresa o un proyecto tecnológico, envía un breve resumen a través del formulario de colaboración.",
+      "button": "Presentar una propuesta"
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Preguntas frecuentes sobre Sabano",
+      "description": "Respuestas a preguntas frecuentes sobre el Fondo de Investigación y Tecnología Sabano, sus servicios, sus áreas de inversión y cómo enviar una propuesta."
+    },
+    "hero": {
+      "kicker": "Preguntas frecuentes",
+      "title": "Respuestas a las preguntas más habituales",
+      "lead": "Respuestas breves y claras a las preguntas más habituales sobre Sabano, los servicios del fondo, la inversión y cómo enviar una propuesta. Si no encuentras tu respuesta, ponte en contacto con nosotros desde la página de contacto."
+    },
+    "categories": {
+      "all": "Todas",
+      "general": "General",
+      "investment": "Inversión",
+      "services": "Servicios",
+      "cooperation": "Propuestas y colaboración"
+    },
+    "searchPlaceholder": "Buscar preguntas…",
+    "noResults": "Ninguna pregunta coincide con tu búsqueda.",
+    "still": {
+      "title": "¿No encuentras tu respuesta?",
+      "text": "Consulta directamente a Sabano por teléfono o correo electrónico.",
+      "cta": "Contáctanos"
+    }
+  },
+  "cooperation": {
+    "meta": {
+      "title": "Colabora con Sabano | Propuestas, alianzas y empleo",
+      "description": "Formulario en línea para enviar a Sabano una propuesta de inversión, una solicitud de financiación, una idea de alianza o tu candidatura, con adjunto opcional."
+    },
+    "hero": {
+      "kicker": "Colabora con nosotros",
+      "title": "Propuestas, alianzas y empleo",
+      "lead": "Envía tu solicitud mediante el siguiente formulario y llegará directamente al fondo para su evaluación. Puedes enviar una propuesta de inversión, una solicitud de financiación, una idea de alianza estratégica o una solicitud de empleo, y adjuntar un archivo de apoyo."
+    },
+    "whatToSend": {
+      "title": "¿Qué puedes enviar?",
+      "items": [
+        "Propuestas de inversión o financiación",
+        "Ideas de alianzas estratégicas y otras propuestas",
+        "Solicitudes de empleo y consultas profesionales"
+      ]
+    },
+    "disclaimer": "El envío no garantiza la aceptación, la inversión ni el empleo. Los archivos adjuntos son opcionales y no pueden superar los 8 MB.",
+    "responseEmail": "Contacto:",
+    "tipsTitle": "Para agilizar la evaluación",
+    "tips": [
+      "Explica el problema y la solución en pocas frases.",
+      "Indica en qué punto te encuentras y qué necesitas.",
+      "Facilita datos de contacto que revises con regularidad."
+    ],
+    "form": {
+      "title": "Formulario de solicitud",
+      "steps": ["Tema", "Datos de contacto", "Detalles y archivo"],
+      "stepOf": "Paso {current} de {total}",
+      "type": "Tipo de solicitud",
+      "types": {
+        "investment": "Oportunidad de inversión",
+        "partnership": "Alianza estratégica",
+        "financing": "Financiación",
+        "employment": "Empleo y carrera profesional",
+        "other": "Otro"
+      },
+      "typeHints": {
+        "investment": "Presenta una startup o un proyecto para inversión",
+        "partnership": "Alianza institucional, agencia financiera o idea estratégica",
+        "financing": "Garantías, crédito o asesoría financiera",
+        "employment": "Envía tu CV y solicita un puesto",
+        "other": "Cualquier otra propuesta o solicitud"
+      },
+      "name": "Tu nombre o entidad",
+      "contact": "Correo electrónico o teléfono móvil",
+      "contactHint": "Lo usaremos para dar seguimiento a tu solicitud.",
+      "company": "Nombre de la empresa",
+      "website": "Sitio web",
+      "optional": "opcional",
+      "message": "Breve descripción",
+      "messageHint": "Describe brevemente el problema, tu solución, en qué punto te encuentras y qué necesitas.",
+      "attachment": "Archivo adjunto",
+      "attachmentHint": "PDF, Word, Excel, PowerPoint, JPG o PNG; máximo 8 MB",
+      "chooseFile": "elige un archivo",
+      "dropFile": "Arrastra un archivo aquí o",
+      "removeFile": "Quitar archivo",
+      "consent": "Al enviar este formulario, acepto la política de privacidad de Sabano.",
+      "privacyLink": "Lee la política de privacidad",
+      "next": "Siguiente",
+      "back": "Atrás",
+      "submit": "Enviar solicitud",
+      "sending": "Enviando…",
+      "characters": "{count} caracteres"
+    },
+    "errors": {
+      "required": "Este campo es obligatorio.",
+      "type": "Elige un tipo de solicitud.",
+      "contact": "Escribe un correo electrónico o un número de móvil válido.",
+      "tooShort": "Cuéntanos un poco más (al menos 20 caracteres).",
+      "tooLong": "El texto es demasiado largo.",
+      "url": "La dirección del sitio web no es válida.",
+      "fileSize": "El archivo supera los 8 MB.",
+      "fileType": "Este tipo de archivo no es compatible.",
+      "rateLimit": "Demasiadas solicitudes. Vuelve a intentarlo en unos minutos.",
+      "generic": "No se pudo enviar tu solicitud. Vuelve a intentarlo o escribe a {email}.",
+      "consent": "Acepta la política de privacidad para enviar el formulario."
+    },
+    "success": {
+      "title": "Tu solicitud se ha enviado",
+      "text": "Tu solicitud se ha enviado al fondo para su evaluación. Guarda tu código de seguimiento por si necesitas consultarlo más adelante.",
+      "code": "Código de seguimiento",
+      "again": "Enviar otra solicitud",
+      "home": "Volver al inicio"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contacto con Sabano | Teléfono, correo y dirección",
+      "description": "Contacta con el Fondo de Investigación y Tecnología Sabano: teléfonos de la oficina, correo info@sabano.ir y dirección en Abbasabad, Teherán."
+    },
+    "hero": {
+      "kicker": "Contacto",
+      "title": "Ponte en contacto con Sabano",
+      "lead": "Para hacer seguimiento de una solicitud o conocer los servicios del fondo, llama a la oficina o escribe a {email}. La oficina de Sabano se encuentra en la zona de Abbasabad–Andisheh, en Teherán."
+    },
+    "phone": "Teléfono",
+    "email": "Correo electrónico",
+    "address": "Dirección de la oficina",
+    "postalCode": "Código postal",
+    "hours": "Horario de atención",
+    "directions": "Cómo llegar",
+    "openIn": "Abrir en {app}",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "maps": { "neshan": "Neshan", "balad": "Balad", "google": "Google Maps" },
+    "formCta": {
+      "title": "¿Tienes una propuesta?",
+      "text": "Usa el formulario en línea para enviar una propuesta de inversión, una solicitud de empleo o una idea de colaboración.",
+      "button": "Abrir el formulario de colaboración"
+    },
+    "social": "Sigue a Sabano en redes sociales"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Política de privacidad de Sabano",
+      "description": "Qué información recibe Sabano a través de los formularios de este sitio web, con qué fin, cómo se almacena y qué derechos tienes."
+    },
+    "hero": {
+      "kicker": "Privacidad",
+      "title": "Política de privacidad",
+      "lead": "Sabano solo recopila la información necesaria para evaluar tu solicitud y responderte. En esta página se explica qué datos se recopilan, cómo se usan y cómo se almacenan."
+    },
+    "sections": [
+      { "title": "Qué datos recopilamos", "text": "Cuando envías el formulario de colaboración, almacenamos tu nombre, tus datos de contacto, la empresa y el sitio web (si los indicas), tu mensaje y cualquier archivo adjunto. Para evitar abusos, también se registran un hash unidireccional de tu dirección IP y el tipo de navegador." },
+      { "title": "Cómo los usamos", "text": "Tu información se usa únicamente para evaluar tu solicitud, comunicarnos contigo en relación con ella y evitar envíos malintencionados. No se comparte con terceros con fines publicitarios." },
+      { "title": "Cómo se almacenan", "text": "Las solicitudes y los archivos adjuntos se almacenan en los servidores del fondo y solo el personal autorizado puede acceder a ellos. Los adjuntos nunca están disponibles públicamente a través del sitio web." },
+      { "title": "Cookies", "text": "Este sitio web no utiliza cookies publicitarias ni de seguimiento. Solo se usan las cookies estrictamente necesarias para que el personal inicie sesión en el panel de administración." },
+      { "title": "Tus derechos", "text": "Puedes escribir a {email} para solicitar una copia de la información que enviaste o su eliminación, salvo que la ley nos obligue a conservarla." }
+    ]
+  },
+  "search": {
+    "meta": { "title": "Buscar en Sabano", "description": "Busca en las páginas, los servicios, los artículos y las preguntas frecuentes de Sabano." },
+    "title": "Buscar",
+    "placeholder": "Buscar en Sabano…",
+    "results": "{count} resultados para “{q}”",
+    "noResults": "No se encontraron resultados. Prueba con otro término.",
+    "hint": "Escribe para buscar páginas, servicios, artículos y preguntas.",
+    "suggestions": "Sugerencias",
+    "types": { "page": "Página", "service": "Servicio", "post": "Artículo", "faq": "Pregunta" },
+    "open": "Abrir búsqueda",
+    "keys": { "navigate": "navegar", "select": "seleccionar", "close": "cerrar" }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "text": "La página que buscas no existe o se ha movido.",
+    "home": "Volver al inicio",
+    "suggestions": "Estas páginas pueden ayudarte:"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "text": "Hubo un problema al mostrar esta página. Vuelve a intentarlo.",
+    "retry": "Reintentar"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@sabano/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts",
+    "./seed": "./src/seed/index.ts",
+    "./migrate": "./src/migrate.ts",
+    "./settings": "./src/settings.ts",
+    "./admin": "./src/admin.ts",
+    "./users": "./src/users.ts"
+  },
+  "scripts": {
+    "generate": "drizzle-kit generate",
+    "migrate": "tsx scripts/migrate.ts",
+    "seed": "tsx scripts/seed.ts",
+    "admin:create": "tsx scripts/create-admin.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.1.1",
+    "drizzle-orm": "^0.45.4",
+    "@sabano/i18n": "workspace:*"
+  },
+  "devDependencies": {
+    "@sabano/config": "workspace:*",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^22.10.0",
+    "drizzle-kit": "^0.31.11",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3"
+  }
+}

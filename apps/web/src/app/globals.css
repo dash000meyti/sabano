@@ -1,0 +1,253 @@
+@import 'tailwindcss';
+@import '@sabano/ui/theme.css';
+
+@source '../../../../packages/ui/src';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-paper);
+  }
+  html[lang^='fa'] {
+    font-family: var(--font-fa);
+    font-feature-settings: 'ss01';
+  }
+  html[lang^='zh'] {
+    font-family: var(--font-zh);
+  }
+  body {
+    min-height: 100dvh;
+    line-height: 1.7;
+    overflow-x: clip;
+  }
+  html[lang^='fa'] body {
+    line-height: 1.95;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.25;
+    text-wrap: balance;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+  }
+  html[lang^='fa'] :is(h1, h2, h3, h4) {
+    letter-spacing: 0;
+    line-height: 1.45;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: rgb(234 181 67 / 0.35);
+    color: var(--color-navy-950);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gold-400);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  [dir='ltr'] .flip-rtl {
+    transform: none;
+  }
+  [dir='rtl'] .flip-rtl {
+    transform: scaleX(-1);
+  }
+  img {
+    -webkit-user-drag: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Decorative utilities                                                */
+/* ------------------------------------------------------------------ */
+
+@utility bg-dot-grid {
+  background-image: radial-gradient(rgb(255 255 255 / 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+@utility bg-dot-grid-dark {
+  background-image: radial-gradient(rgb(6 33 64 / 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+@utility bg-line-grid {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+@utility bg-navy-mesh {
+  background-color: var(--color-navy-950);
+  background-image:
+    radial-gradient(60% 80% at 85% 10%, rgb(0 170 169 / 0.22), transparent 60%),
+    radial-gradient(50% 60% at 10% 90%, rgb(234 181 67 / 0.12), transparent 60%),
+    linear-gradient(180deg, var(--color-navy-900), var(--color-navy-950));
+}
+@utility text-gradient-gold {
+  background: linear-gradient(100deg, var(--color-gold-200), var(--color-gold-400) 45%, var(--color-gold-300));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility text-gradient-teal {
+  background: linear-gradient(100deg, #8ff0ef, var(--color-teal-400) 55%, var(--color-teal-300));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility hairline-gold {
+  background: linear-gradient(90deg, transparent, rgb(234 181 67 / 0.7), transparent);
+  height: 1px;
+}
+@utility mask-fade-x {
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+@utility glass-card {
+  background: linear-gradient(160deg, rgb(255 255 255 / 0.1), rgb(255 255 255 / 0.03));
+  border: 1px solid rgb(255 255 255 / 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Progressive enhancement helpers */
+.js [data-step-hidden='true'],
+.js .nojs-only {
+  display: none;
+}
+html:not(.js) .js-only {
+  display: none;
+}
+html:not(.js) fieldset + fieldset {
+  margin-top: 2.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll reveal (progressive: content is visible without JS)          */
+/* ------------------------------------------------------------------ */
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.8s var(--ease-out-expo);
+  transition-delay: calc(var(--reveal-delay, 0) * 1ms);
+}
+.js [data-reveal][data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Article typography                                                  */
+/* ------------------------------------------------------------------ */
+
+.prose-sabano {
+  color: var(--color-ink);
+  font-size: 1.075rem;
+  line-height: 1.95;
+}
+.prose-sabano > * + * {
+  margin-top: 1.15em;
+}
+.prose-sabano h2 {
+  margin-top: 2.2em;
+  font-size: 1.5rem;
+  color: var(--color-navy-900);
+  scroll-margin-top: 7rem;
+}
+.prose-sabano h3 {
+  margin-top: 1.8em;
+  font-size: 1.2rem;
+  color: var(--color-navy-900);
+  scroll-margin-top: 7rem;
+}
+.prose-sabano a {
+  color: var(--color-teal-700);
+  text-decoration: underline;
+  text-decoration-color: rgb(0 170 169 / 0.4);
+  text-underline-offset: 4px;
+}
+.prose-sabano a:hover {
+  text-decoration-color: currentColor;
+}
+.prose-sabano ul,
+.prose-sabano ol {
+  padding-inline-start: 1.4em;
+}
+.prose-sabano ul {
+  list-style: none;
+}
+.prose-sabano ul > li {
+  position: relative;
+}
+.prose-sabano ul > li + li,
+.prose-sabano ol > li + li {
+  margin-top: 0.5em;
+}
+.prose-sabano ul > li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -1.1em;
+  top: 0.8em;
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--color-teal-400), var(--color-gold-400));
+  transform: rotate(45deg);
+}
+.prose-sabano ol {
+  list-style: decimal;
+}
+.prose-sabano strong {
+  color: var(--color-navy-900);
+  font-weight: 700;
+}
+.prose-sabano blockquote {
+  border-inline-start: 3px solid var(--color-gold-400);
+  padding-inline-start: 1.1em;
+  color: var(--color-muted);
+  font-style: normal;
+}
+.prose-sabano img {
+  border-radius: 1rem;
+}
+.prose-sabano hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-line);
+}

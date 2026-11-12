@@ -1,0 +1,98 @@
+{
+  "people": {
+    "mehdi-sedaghat": { "name": "Mehdi Sedaghat E.", "role": "Director ejecutivo", "bio": null },
+    "mohammadreza-nazari": { "name": "Mohammadreza Nazari", "role": "Presidente del consejo", "bio": null },
+    "akbar-ghanbarpour": { "name": "Akbar Ghanbarpour", "role": "Vicepresidente del consejo", "bio": null },
+    "ali-salimi": { "name": "Ali Salimi", "role": "Miembro del consejo", "bio": null }
+  },
+  "partners": {
+    "inif": "Fondo Nacional de Innovación de Irán",
+    "isti": "Vicepresidencia de Ciencia, Tecnología y Economía Basada en el Conocimiento",
+    "rtfunds": "Secretaría del Grupo de Trabajo de Fondos de Investigación y Tecnología",
+    "irvc": "Asociación Iraní de Capital Riesgo"
+  },
+  "shareholders": {
+    "saba-mihan": { "name": "Holding Saba Mihan", "description": "Accionista principal" },
+    "jabiz": { "name": "Compañía de Desarrollo Tecnológico Jabiz", "description": null },
+    "yas": { "name": "Centro de Innovación Yas", "description": null },
+    "ala": { "name": "Ala Tejarat Fanavari", "description": null }
+  },
+  "faqs": {
+    "what-is-sabano": {
+      "q": "¿Qué es Sabano?",
+      "a": "El Fondo No Gubernamental de Investigación y Tecnología Sabano es una institución financiera especializada centrada en la economía digital. Apoya a las empresas tecnológicas y basadas en el conocimiento mediante garantías, servicios de crédito, inversión en empresas tecnológicas, agencia financiera y asesoría financiera."
+    },
+    "what-is-rt-fund": {
+      "q": "¿Qué es un fondo de investigación y tecnología?",
+      "a": "Los fondos no gubernamentales de investigación y tecnología son instituciones financieras especializadas creadas para financiar la investigación, la tecnología y la innovación. Mediante herramientas como garantías, líneas de crédito e inversión, facilitan el acceso de las empresas tecnológicas al capital."
+    },
+    "shareholders": {
+      "q": "¿Quiénes son los accionistas de Sabano?",
+      "a": "El accionista principal de Sabano es el Holding Saba Mihan. La Compañía de Desarrollo Tecnológico Jabiz, el Centro de Innovación Yas y Ala Tejarat Fanavari también son accionistas del fondo."
+    },
+    "office": {
+      "q": "¿Dónde está la oficina de Sabano?",
+      "a": "La oficina de Sabano se encuentra en: Unidad A, planta 1, n.º 9, calle 8, calle Shahid Javad Afraz, Andisheh, Abbasabad, Teherán, Irán. Código postal: 1586868113."
+    },
+    "focus-areas": {
+      "q": "¿En qué sectores invierte Sabano?",
+      "a": "Sabano se centra en la economía digital en cuatro áreas: inteligencia artificial y soluciones basadas en datos, fintech y servicios financieros modernos, infraestructura y servicios digitales, y tecnologías que darán forma al futuro."
+    },
+    "what-we-look-for": {
+      "q": "¿Qué busca Sabano en una propuesta?",
+      "a": "Las propuestas encajan mejor cuando resuelven un problema real, tienen un modelo de negocio claro, cuentan con un equipo capaz y muestran potencial de crecimiento en un área de la economía digital."
+    },
+    "commitment": {
+      "q": "¿Enviar una propuesta significa que Sabano invertirá?",
+      "a": "No. La recepción de una propuesta o solicitud no implica su aceptación, su aprobación ni un compromiso de inversión. Cada propuesta se evalúa conforme a la normativa del fondo."
+    },
+    "which-services": {
+      "q": "¿Qué servicios ofrece Sabano?",
+      "a": "Sabano ofrece garantías, servicios de crédito y financiación, inversión en empresas tecnológicas, agencia financiera y asesoría financiera y de inversión. Las condiciones de cada servicio se definen tras analizar las necesidades del solicitante."
+    },
+    "guarantee": {
+      "q": "¿Para qué sirve la garantía de un fondo de investigación y tecnología?",
+      "a": "Una garantía permite a las empresas tecnológicas participar en contratos, licitaciones y proyectos sin inmovilizar su propia liquidez. El tipo y las condiciones de cualquier garantía que emita Sabano se determinan tras analizar la solicitud conforme a la normativa del fondo."
+    },
+    "review-time": {
+      "q": "¿Cuánto tarda la evaluación?",
+      "a": "El plazo de evaluación depende del tipo de solicitud y de lo completos que estén la información y los documentos. Cuanto más claros sean tu resumen y tus archivos de apoyo, más rápida será la evaluación. Si se necesita más información, el fondo se pondrá en contacto contigo a través de los datos que hayas facilitado."
+    },
+    "how-to-submit": {
+      "q": "¿Cómo envío mi propuesta a Sabano?",
+      "a": "Completa el formulario de colaboración de este sitio web, elige un tipo de solicitud y, si lo deseas, adjunta un archivo de apoyo. Tu solicitud llegará directamente al fondo para su evaluación y recibirás un código de seguimiento."
+    },
+    "file-types": {
+      "q": "¿Qué archivos puedo adjuntar?",
+      "a": "Se aceptan archivos PDF, Word, Excel, PowerPoint, JPG y PNG de hasta 8 MB. Los archivos adjuntos son opcionales."
+    },
+    "jobs": {
+      "q": "¿Cómo solicito empleo en Sabano?",
+      "a": "En el formulario de colaboración, elige “Empleo y carrera profesional”, preséntate brevemente y adjunta tu CV."
+    },
+    "contact": {
+      "q": "¿Cómo puedo ponerme en contacto con Sabano?",
+      "a": "Llama al +98 21 88517259, +98 21 88517403, +98 21 88755672 o +98 21 88517315, o escribe a info@sabano.ir."
+    }
+  },
+  "posts": {
+    "what-is-a-research-and-technology-fund": {
+      "title": "¿Qué es un fondo de investigación y tecnología y cómo ayuda a las empresas tecnológicas?",
+      "excerpt": "Los fondos no gubernamentales de investigación y tecnología conectan el capital con la innovación. Esta guía explica qué son, qué herramientas utilizan y cómo puedes trabajar con ellos.",
+      "coverAlt": "Un centro de datos iluminado con estelas de luz azul",
+      "body": "<p>Las empresas tecnológicas necesitan capital para crecer, pero a menudo carecen de las garantías reales o del historial que exigen los bancos. Los fondos no gubernamentales de investigación y tecnología se crearon para cubrir esa brecha.</p><h2>¿Qué es un fondo de investigación y tecnología?</h2><p>Un fondo no gubernamental de investigación y tecnología es una institución financiera especializada creada para apoyar la investigación, la tecnología y la innovación. Como estos fondos conocen bien los negocios tecnológicos, pueden evaluar su riesgo mejor que las entidades de crédito generalistas.</p><h2>¿Qué herramientas utilizan?</h2><ul><li><strong>Garantías:</strong> para participar en licitaciones y contratos sin inmovilizar liquidez.</li><li><strong>Crédito y financiación:</strong> financiación adaptada a las necesidades y la situación del solicitante.</li><li><strong>Inversión:</strong> participación en el crecimiento de empresas innovadoras.</li><li><strong>Agencia financiera:</strong> gestión y asignación de fondos conforme a programas y acuerdos aprobados.</li><li><strong>Asesoría:</strong> elección de la vía de financiación adecuada y preparación para la inversión.</li></ul><h2>¿Qué papel desempeña Sabano?</h2><p>El Fondo No Gubernamental de Investigación y Tecnología Sabano se centra en la economía digital, incluidas la inteligencia artificial, la fintech, la infraestructura digital y las tecnologías que darán forma al futuro. Su objetivo es allanar el camino de crecimiento de las empresas tecnológicas y conectarlas con mercados más amplios.</p><h2>Cómo empezar</h2><p>Si diriges una empresa o un proyecto tecnológico, envía un breve resumen a través del formulario de colaboración de Sabano. Cada solicitud se evalúa conforme a la normativa del fondo, y enviar una propuesta no supone un compromiso de inversión.</p>"
+    },
+    "how-to-prepare-an-investment-proposal": {
+      "title": "Cómo preparar una propuesta de inversión sólida: lista de comprobación antes del envío",
+      "excerpt": "Una buena propuesta explica de forma clara y breve el problema, la solución, el mercado y el equipo. Usa esta lista para completar tu propuesta antes de enviarla a los inversores.",
+      "coverAlt": "Una red global de datos dentro de un centro de datos",
+      "body": "<p>Los evaluadores deciden rápidamente si una propuesta merece un análisis más detallado. Una propuesta con una estructura clara e información precisa tiene muchas más probabilidades de pasar a la siguiente fase.</p><h2>1. Define el problema con precisión</h2><p>Indica quién se enfrenta a qué problema y cuál es su gravedad. Un problema real y medible es la base de toda buena propuesta.</p><h2>2. Solución y ventaja competitiva</h2><p>Explica cómo tu producto o servicio resuelve el problema y qué lo diferencia de las alternativas existentes.</p><h2>3. Mercado y clientes</h2><p>Muestra el tamaño de tu mercado objetivo, tus primeros clientes y cómo llegarás a ellos, con datos respaldados por fuentes.</p><h2>4. Modelo de negocio</h2><p>Deja claro cómo generas ingresos, cuáles son tus principales costos y cómo escala el negocio.</p><h2>5. Equipo</h2><p>Presenta a los miembros clave del equipo y su experiencia relevante. Muchos inversores se fijan primero en el equipo.</p><h2>6. Situación actual y tracción</h2><p>Cualquier señal de avance, como un prototipo funcional, usuarios, contratos o ingresos, refuerza tu propuesta.</p><h2>7. Necesidad de financiación y destino de los fondos</h2><p>Indica qué tipo de apoyo necesitas y cómo lo vas a utilizar.</p><h2>Antes de enviarla</h2><ul><li>Resume la propuesta en uno o dos párrafos.</li><li>Prepara un PDF de apoyo de menos de 8 MB.</li><li>Facilita datos de contacto que revises con regularidad.</li></ul><p>Cuando lo tengas todo listo, envía tu propuesta a Sabano a través del formulario de colaboración.</p>"
+    },
+    "guarantees-for-technology-companies": {
+      "title": "Garantías para empresas tecnológicas: usos y cómo preparar una solicitud",
+      "excerpt": "Las garantías son una de las herramientas financieras más utilizadas por las empresas tecnológicas. Esta guía repasa sus usos habituales y los documentos que conviene tener preparados.",
+      "coverAlt": "Un brote que crece de una placa de circuito",
+      "body": "<p>Muchos contratos y licitaciones exigen que las empresas presenten una garantía. Para las empresas tecnológicas jóvenes, obtenerla por los canales habituales puede resultar difícil e inmovilizar su capital de trabajo.</p><h2>¿Cómo ayuda una garantía?</h2><p>Una garantía da al cliente la seguridad de que la empresa cumplirá sus obligaciones. Con ella, una empresa puede optar a proyectos de mayor envergadura y conservar su liquidez para desarrollar el producto y el equipo.</p><h2>Usos habituales</h2><p>Los fondos de investigación y tecnología suelen emitir garantías como las de licitación, de fiel cumplimiento y de anticipo. El tipo de garantía que emite Sabano para cada solicitud se determina tras su análisis y conforme a la normativa del fondo.</p><h2>Qué preparar</h2><ul><li>Una presentación de la empresa y su tecnología</li><li>El contrato o los pliegos de la licitación que exigen la garantía</li><li>Información financiera relevante y trayectoria en la ejecución de proyectos</li><li>El importe y el plazo de la garantía que necesitas</li></ul><h2>Cómo solicitarla</h2><p>Envía tu solicitud a través del formulario de colaboración, elige “Financiación” como tipo de solicitud y adjunta tu documentación de apoyo. Tras una revisión inicial, el fondo se pondrá en contacto contigo para indicarte los siguientes pasos.</p>"
+    }
+  }
+}

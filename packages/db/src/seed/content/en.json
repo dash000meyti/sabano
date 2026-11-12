@@ -1,0 +1,98 @@
+{
+  "people": {
+    "mehdi-sedaghat": { "name": "Mehdi Sedaghat E.", "role": "Chief Executive Officer", "bio": null },
+    "mohammadreza-nazari": { "name": "Mohammadreza Nazari", "role": "Chairman of the Board", "bio": null },
+    "akbar-ghanbarpour": { "name": "Akbar Ghanbarpour", "role": "Vice Chair of the Board", "bio": null },
+    "ali-salimi": { "name": "Ali Salimi", "role": "Board Member", "bio": null }
+  },
+  "partners": {
+    "inif": "Iran National Innovation Fund",
+    "isti": "Vice Presidency for Science, Technology and Knowledge-Based Economy",
+    "rtfunds": "Secretariat of the Research and Technology Funds Working Group",
+    "irvc": "Iranian Venture Capital Association"
+  },
+  "shareholders": {
+    "saba-mihan": { "name": "Saba Mihan Holding", "description": "Principal shareholder" },
+    "jabiz": { "name": "Jabiz Technology Development Company", "description": null },
+    "yas": { "name": "Yas Innovation Center", "description": null },
+    "ala": { "name": "Ala Tejarat Fanavari", "description": null }
+  },
+  "faqs": {
+    "what-is-sabano": {
+      "q": "What is Sabano?",
+      "a": "Sabano Non-Governmental Research and Technology Fund is a specialised financial institution focused on the digital economy. It supports technology and knowledge-based companies through guarantees, credit services, investment in technology ventures, financial agency and financial advisory."
+    },
+    "what-is-rt-fund": {
+      "q": "What is a research and technology fund?",
+      "a": "Non-governmental research and technology funds are specialised financial institutions set up to finance research, technology and innovation. Using tools such as guarantees, credit facilities and investment, they make it easier for technology companies to access capital."
+    },
+    "shareholders": {
+      "q": "Who are Sabano's shareholders?",
+      "a": "Sabano's principal shareholder is Saba Mihan Holding. Jabiz Technology Development Company, Yas Innovation Center and Ala Tejarat Fanavari are also shareholders of the fund."
+    },
+    "office": {
+      "q": "Where is Sabano's office?",
+      "a": "Sabano's office is at Unit A, Floor 1, No. 9, 8th St., Shahid Javad Afraz St., Andisheh, Abbasabad, Tehran, Iran. Postal code: 1586868113."
+    },
+    "focus-areas": {
+      "q": "Which sectors does Sabano invest in?",
+      "a": "Sabano focuses on the digital economy across four areas: artificial intelligence and data-driven solutions, fintech and modern financial services, digital infrastructure and services, and future-shaping technologies."
+    },
+    "what-we-look-for": {
+      "q": "What does Sabano look for in a proposal?",
+      "a": "Proposals are the best fit when they solve a real problem, have a clear business model, are backed by a capable team and show growth potential in an area of the digital economy."
+    },
+    "commitment": {
+      "q": "Does submitting a proposal mean Sabano will invest?",
+      "a": "No. Receiving a proposal or request does not mean acceptance, approval or a commitment to invest. Every proposal is assessed according to the fund's rules."
+    },
+    "which-services": {
+      "q": "What services does Sabano offer?",
+      "a": "Sabano offers guarantees, credit and financing services, investment in technology ventures, financial agency, and financial and investment advisory. The details of each service are set after reviewing the applicant's needs."
+    },
+    "guarantee": {
+      "q": "What is a research and technology fund guarantee used for?",
+      "a": "A guarantee lets technology companies take part in contracts, tenders and projects without tying up their own cash. The type and terms of any guarantee Sabano issues are determined after reviewing the request against the fund's rules."
+    },
+    "review-time": {
+      "q": "How long does a review take?",
+      "a": "Review time depends on the type of request and how complete the information and documents are. The clearer your summary and supporting files, the faster the review. If more information is needed, the fund will reach you through the contact details you provided."
+    },
+    "how-to-submit": {
+      "q": "How do I send my proposal to Sabano?",
+      "a": "Fill in the cooperation form on this website, choose a request type and, if you like, attach a supporting file. Your request goes straight to the fund for review and you receive a tracking code."
+    },
+    "file-types": {
+      "q": "Which files can I attach?",
+      "a": "PDF, Word, Excel, PowerPoint, JPG and PNG files up to 8 MB are accepted. Attachments are optional."
+    },
+    "jobs": {
+      "q": "How do I apply for a job at Sabano?",
+      "a": "In the cooperation form, choose “Employment and careers”, introduce yourself briefly and attach your CV."
+    },
+    "contact": {
+      "q": "How can I contact Sabano?",
+      "a": "Call +98 21 88517259, +98 21 88517403, +98 21 88755672 or +98 21 88517315, or email info@sabano.ir."
+    }
+  },
+  "posts": {
+    "what-is-a-research-and-technology-fund": {
+      "title": "What is a research and technology fund, and how does it help technology companies?",
+      "excerpt": "Non-governmental research and technology funds connect capital with innovation. This guide explains what they are, which tools they use and how you can work with them.",
+      "coverAlt": "A data centre lit with blue light trails",
+      "body": "<p>Technology companies need capital to grow, but they often lack the collateral or track record that banks ask for. Non-governmental research and technology funds were created to close that gap.</p><h2>What is a research and technology fund?</h2><p>A non-governmental research and technology fund is a specialised financial institution set up to support research, technology and innovation. Because these funds understand technology businesses, they can assess their risk better than general-purpose lenders.</p><h2>Which tools do they use?</h2><ul><li><strong>Guarantees:</strong> to take part in tenders and contracts without tying up cash.</li><li><strong>Credit and financing:</strong> funding matched to the applicant's needs and situation.</li><li><strong>Investment:</strong> participating in the growth of innovative ventures.</li><li><strong>Financial agency:</strong> managing and allocating funds under approved programmes and agreements.</li><li><strong>Advisory:</strong> choosing the right financing path and preparing for investment.</li></ul><h2>Where does Sabano fit in?</h2><p>Sabano Non-Governmental Research and Technology Fund focuses on the digital economy, including artificial intelligence, fintech, digital infrastructure and future-shaping technologies. Its goal is to smooth the growth path of technology companies and connect them with larger markets.</p><h2>How to get started</h2><p>If you run a technology company or project, send a short summary through Sabano's cooperation form. Every request is reviewed under the fund's rules, and submitting a proposal is not a commitment to invest.</p>"
+    },
+    "how-to-prepare-an-investment-proposal": {
+      "title": "How to prepare a strong investment proposal: a pre-submission checklist",
+      "excerpt": "A good proposal explains the problem, solution, market and team clearly and briefly. Use this checklist to complete your proposal before sending it to investors.",
+      "coverAlt": "A global data network inside a data centre",
+      "body": "<p>Reviewers decide quickly whether a proposal deserves a closer look. A proposal with a clear structure and accurate information is far more likely to reach the next stage.</p><h2>1. Define the problem precisely</h2><p>Say who faces which problem and how serious it is. A real, measurable problem is the foundation of every good proposal.</p><h2>2. Solution and competitive edge</h2><p>Explain how your product or service solves the problem and what sets it apart from existing alternatives.</p><h2>3. Market and customers</h2><p>Show the size of your target market, your early customers and how you will reach them, using data you can cite.</p><h2>4. Business model</h2><p>Make clear how you earn revenue, what your main costs are and how the business scales.</p><h2>5. Team</h2><p>Introduce the key team members and their relevant expertise. Many investors look at the team first.</p><h2>6. Current status and traction</h2><p>Any sign of progress, such as a working prototype, users, contracts or revenue, strengthens your case.</p><h2>7. Funding need and use of funds</h2><p>State what kind of support you need and how you will use it.</p><h2>Before you submit</h2><ul><li>Summarise the proposal in one or two paragraphs.</li><li>Prepare a supporting PDF under 8 MB.</li><li>Give contact details you check regularly.</li></ul><p>When you are ready, send your proposal to Sabano through the cooperation form.</p>"
+    },
+    "guarantees-for-technology-companies": {
+      "title": "Guarantees for technology companies: uses and how to prepare a request",
+      "excerpt": "Guarantees are one of the most widely used financial tools for technology companies. This guide covers their common uses and the documents worth having ready.",
+      "coverAlt": "A seedling growing from a circuit board",
+      "body": "<p>Many contracts and tenders require companies to provide a guarantee. For young technology companies, obtaining one through usual channels can be hard and can tie up working capital.</p><h2>How does a guarantee help?</h2><p>A guarantee reassures the client that the company will meet its obligations. With one in place, a company can bid for larger projects while keeping its cash for product and team development.</p><h2>Common uses</h2><p>Research and technology funds typically issue guarantees such as bid bonds, performance bonds and advance-payment guarantees. The type of guarantee Sabano issues for a given request is determined after review and according to the fund's rules.</p><h2>What to prepare</h2><ul><li>An introduction to the company and its technology</li><li>The contract or tender documents that require the guarantee</li><li>Relevant financial information and delivery track record</li><li>The amount and term of the guarantee you need</li></ul><h2>How to apply</h2><p>Submit your request through the cooperation form, choose “Financing” as the request type and attach your supporting documents. After an initial review, the fund will contact you about next steps.</p>"
+    }
+  }
+}

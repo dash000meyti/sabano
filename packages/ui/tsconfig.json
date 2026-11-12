@@ -1,0 +1,1 @@
+{ "extends": "@sabano/config/tsconfig.base.json", "include": ["src"] }

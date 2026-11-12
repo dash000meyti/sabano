@@ -1,0 +1,52 @@
+{
+  "name": "@sabano/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "e2e": "playwright test"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@sabano/db": "workspace:*",
+    "@sabano/i18n": "workspace:*",
+    "@sabano/ui": "workspace:*",
+    "@tiptap/extension-image": "^3.33.1",
+    "@tiptap/extension-link": "^3.33.1",
+    "@tiptap/pm": "^3.33.1",
+    "@tiptap/react": "^3.33.1",
+    "@tiptap/starter-kit": "^3.33.1",
+    "drizzle-orm": "^0.45.4",
+    "next": "16.4.6",
+    "next-intl": "^4.15.0",
+    "nodemailer": "^7.0.13",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sanitize-html": "^2.18.2",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@sabano/config": "workspace:*",
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^22.10.0",
+    "@types/nodemailer": "^7.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/sanitize-html": "^2.13.0",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "16.4.6",
+    "schema-dts": "^2.1.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "5.9.3",
+    "vitest": "^4.1.12"
+  }
+}

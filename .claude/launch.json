@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sabano-web",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@sabano/web", "dev"],
+      "port": 3000
+    }
+  ]
+}

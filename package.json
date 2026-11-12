@@ -1,0 +1,28 @@
+{
+  "name": "sabano",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "turbo run dev --filter=@sabano/web",
+    "build": "turbo run build --filter=@sabano/web",
+    "start": "pnpm --filter @sabano/web start",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "e2e": "pnpm --filter @sabano/web e2e",
+    "db:generate": "pnpm --filter @sabano/db generate",
+    "db:migrate": "pnpm --filter @sabano/db migrate",
+    "db:seed": "pnpm --filter @sabano/db seed",
+    "admin:create": "pnpm --filter @sabano/db admin:create",
+    "i18n:check": "pnpm --filter @sabano/i18n check"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.11",
+    "typescript": "5.9.3",
+    "prettier": "^3.6.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["better-sqlite3", "sharp", "esbuild"]
+  }
+}

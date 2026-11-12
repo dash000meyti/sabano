@@ -1,0 +1,742 @@
+{
+  "common": {
+    "siteName": "Sabano",
+    "orgName": "Sabano Non-Governmental Research and Technology Fund",
+    "orgShort": "Sabano Research and Technology Fund",
+    "brandSub": "Research & Technology Fund",
+    "tagline": "Smart investment for a digital future",
+    "skipToContent": "Skip to main content",
+    "readMore": "Read more",
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "submitProposal": "Submit a proposal",
+    "contactUs": "Contact us",
+    "home": "Home",
+    "breadcrumb": "Breadcrumb",
+    "lastUpdated": "Last updated: {date}",
+    "minutesRead": "{count} min read",
+    "language": "Site language",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "search": "Search",
+    "newTab": "(opens in a new tab)",
+    "onThisPage": "On this page",
+    "atAGlance": "Sabano at a glance",
+    "faqTitle": "Common questions",
+    "needHelp": "Have a question?",
+    "or": "or",
+    "close": "Close"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Sabano",
+    "aboutOverview": "About the fund",
+    "aboutOverviewDesc": "Mission, horizon and shareholders",
+    "leadership": "Leadership",
+    "leadershipDesc": "CEO and board of directors",
+    "services": "Services",
+    "investment": "Investment",
+    "investmentAreas": "Investment focus",
+    "investmentAreasDesc": "Four core areas of the digital economy",
+    "portfolio": "Portfolio",
+    "portfolioDesc": "Companies we work with",
+    "process": "How to apply",
+    "processDesc": "From proposal to decision",
+    "resources": "Resources",
+    "news": "News & insights",
+    "newsDesc": "News, analysis and guides",
+    "faq": "FAQ",
+    "faqDesc": "Short answers to common questions",
+    "cooperation": "Work with us",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "allServices": "All services",
+    "fund": "The fund"
+  },
+  "footer": {
+    "about": "Sabano Non-Governmental Research and Technology Fund focuses on the digital economy, supporting technology companies with guarantees, credit, investment and advisory.",
+    "contactTitle": "Contact Sabano",
+    "social": "Sabano on social media",
+    "rights": "© {year} Sabano Research and Technology Fund. All rights reserved.",
+    "rss": "RSS feed"
+  },
+  "sectors": {
+    "ai": "AI and data",
+    "fintech": "Fintech and modern financial services",
+    "digital": "Digital infrastructure and services",
+    "future": "Future-shaping technologies"
+  },
+  "facts": {
+    "type": { "label": "Type", "value": "Non-governmental research and technology fund" },
+    "focus": { "label": "Focus", "value": "Digital economy" },
+    "services": { "label": "Services", "value": "Guarantees, credit, investment, financial agency and advisory" },
+    "horizon": { "label": "Capital horizon", "value": "1,000 billion tomans by March 2027" },
+    "shareholder": { "label": "Principal shareholder", "value": "Saba Mihan Holding" },
+    "location": { "label": "Headquarters", "value": "Abbasabad, Tehran" }
+  },
+  "home": {
+    "meta": {
+      "title": "Sabano | Smart investment for a digital future",
+      "description": "Sabano Non-Governmental Research and Technology Fund supports technology companies in the digital economy with guarantees, credit, investment and advisory. Send us your proposal."
+    },
+    "hero": {
+      "eyebrow": "Sabano Non-Governmental Research and Technology Fund",
+      "title1": "Smart investment",
+      "title2": "for a digital future",
+      "intro": "Supporting innovative companies and ideas on the path to sustainable growth and a stronger digital economy, with guarantees, credit, investment and expert advisory.",
+      "ctaPrimary": "Submit a proposal",
+      "ctaSecondary": "About Sabano",
+      "scroll": "Scroll"
+    },
+    "pillars": [
+      { "title": "Venture investment", "text": "Backing technology ventures" },
+      { "title": "Financing innovation", "text": "Flexible financial tools" },
+      { "title": "Digital economy", "text": "Where Sabano focuses" },
+      { "title": "Sustainable value", "text": "A long-term perspective" }
+    ],
+    "about": {
+      "kicker": "About Sabano",
+      "title": "Growing innovation across the digital economy",
+      "text": "Sabano supports technology companies as they grow, expand into new markets and connect with global markets through financial services and investment. With a forward-looking approach, it also follows opportunities in artificial intelligence and financial technology.",
+      "horizonValue": "1,000",
+      "horizonUnit": "billion tomans",
+      "horizonLabel": "Capital horizon by March 2027",
+      "values": ["Focus on the digital economy", "Support for technology companies", "Long-term value creation"],
+      "cta": "More about Sabano"
+    },
+    "services": {
+      "kicker": "Sabano services",
+      "title": "Financial tools for technology businesses",
+      "text": "From guarantees to investment, each service is shaped after reviewing your needs against the fund’s rules.",
+      "cta": "All services",
+      "cooperationTitle": "Proposals and cooperation",
+      "cooperationText": "Send a proposal, a partnership idea or a job application."
+    },
+    "investment": {
+      "kicker": "Investment focus",
+      "title": "Opportunities in the digital economy",
+      "text": "Sabano backs innovative solutions in key areas of the digital economy, where technology solves a real problem with a clear business model.",
+      "cta": "Explore our focus"
+    },
+    "process": {
+      "kicker": "How it works",
+      "title": "From proposal to decision",
+      "text": "Working with Sabano starts with a simple online form. See how the review works and what you need at each step.",
+      "cta": "Read the full guide"
+    },
+    "portfolio": {
+      "kicker": "Portfolio",
+      "title": "Companies we work with",
+      "cta": "View portfolio"
+    },
+    "news": {
+      "kicker": "News & insights",
+      "title": "Latest articles",
+      "cta": "All articles"
+    },
+    "faq": {
+      "kicker": "FAQ",
+      "title": "Short answers to common questions",
+      "cta": "All questions"
+    },
+    "related": {
+      "kicker": "Innovation ecosystem",
+      "title": "Related institutions"
+    },
+    "cta": {
+      "title": "Have a technology venture in mind?",
+      "text": "Send a short summary of your proposal and it goes straight to the fund for review. Attachments are optional and it only takes a few minutes.",
+      "primary": "Submit a proposal",
+      "secondary": "Contact us"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About Sabano | Non-governmental research and technology fund",
+      "description": "Sabano is a non-governmental research and technology fund focused on the digital economy. Learn about its mission, capital horizon, values and shareholders."
+    },
+    "hero": {
+      "kicker": "About Sabano",
+      "title": "Capital for innovation and growth",
+      "lead": "Sabano Non-Governmental Research and Technology Fund is a financial institution focused on the digital economy. It works alongside technology companies and innovative businesses to make financial tools and investment easier to access. Its principal shareholder is Saba Mihan Holding and it is headquartered in Tehran."
+    },
+    "what": {
+      "title": "What does Sabano do?",
+      "text": "Through guarantees, credit services, investment in technology ventures, financial agency and financial advisory, Sabano smooths the growth path of technology companies and helps connect them with larger markets. With a forward-looking approach, it also follows opportunities in artificial intelligence and financial technology."
+    },
+    "mission": {
+      "title": "Mission and approach",
+      "text": "With a focus on the digital economy, Sabano helps technology companies grow and helps create sustainable growth opportunities. Each service is provided according to the assessment of the project and the applicable rules."
+    },
+    "horizon": {
+      "title": "Development horizon",
+      "value": "1,000",
+      "unit": "billion tomans",
+      "label": "Target capital by March 2027",
+      "text": "Sabano’s development horizon is to grow its capital to 1,000 billion tomans by the end of the Iranian year 1405 (March 2027) and to play a leading role in the country’s knowledge-based sector. The target will be refined as the fund’s strategy documents are completed."
+    },
+    "values": {
+      "title": "What we stand for",
+      "items": [
+        { "title": "Focus on the digital economy", "text": "Artificial intelligence, fintech, digital infrastructure and future-shaping technologies are at the heart of Sabano’s work." },
+        { "title": "Support for technology companies", "text": "The fund’s financial tools are designed around the real needs of technology businesses." },
+        { "title": "Long-term value creation", "text": "Sabano thinks in terms of sustainable growth rather than short-term returns, for companies and for the wider economy." }
+      ]
+    },
+    "shareholders": {
+      "kicker": "Ownership",
+      "title": "Who are Sabano’s shareholders?",
+      "text": "Sabano’s principal shareholder is Saba Mihan Holding. Jabiz Technology Development Company, Yas Innovation Center and Ala Tejarat Fanavari are also shareholders of the fund.",
+      "main": "Principal shareholder",
+      "other": "Shareholder"
+    },
+    "leadership": {
+      "title": "Leadership",
+      "text": "Meet the chief executive and the board members who guide Sabano’s strategy.",
+      "cta": "Meet the leadership"
+    },
+    "ecosystem": {
+      "title": "Alongside institutions that support innovation"
+    },
+    "cta": {
+      "title": "Work with Sabano",
+      "text": "To explore a partnership or introduce a project, use the cooperation form.",
+      "button": "Submit a proposal"
+    }
+  },
+  "leadership": {
+    "meta": {
+      "title": "Sabano leadership | CEO and board of directors",
+      "description": "Meet the chief executive and board members of Sabano Non-Governmental Research and Technology Fund."
+    },
+    "hero": {
+      "kicker": "Organization",
+      "title": "Sabano leadership",
+      "lead": "Sabano Research and Technology Fund is led by its chief executive and a board of directors that guide the fund’s strategy in the digital economy."
+    },
+    "management": "Management",
+    "board": "Board of directors",
+    "linkedin": "{name} on LinkedIn"
+  },
+  "services": {
+    "meta": {
+      "title": "Sabano services | Guarantees, credit, investment and advisory",
+      "description": "Services for technology companies from Sabano Research and Technology Fund: guarantees, credit facilities, investment in technology ventures, financial agency and financial advisory."
+    },
+    "hero": {
+      "kicker": "Sabano services",
+      "title": "Financial tools for technology businesses",
+      "lead": "Sabano offers five core services to technology and knowledge-based companies: guarantees, credit and financing services, investment in technology ventures, financial agency, and financial and investment advisory. The details of each service are set after reviewing the applicant’s needs against the fund’s rules."
+    },
+    "chooser": {
+      "title": "Which service is right for you?",
+      "need": "If you…",
+      "service": "Suggested service",
+      "rows": [
+        { "need": "need a guarantee to bid in a tender or deliver a contract", "slug": "guarantee" },
+        { "need": "need funds to deliver a contract, build a product or cover working capital", "slug": "credit" },
+        { "need": "are looking for an investment partner to grow your business", "slug": "investment" },
+        { "need": "have funds that should reach technology projects under an approved programme", "slug": "fund-agency" },
+        { "need": "are not sure which financing path suits you best", "slug": "consulting" }
+      ]
+    },
+    "labels": {
+      "whoFor": "Who is this service for?",
+      "benefits": "How does it help you?",
+      "steps": "How the service works",
+      "documents": "What should I prepare?",
+      "other": "Other services",
+      "request": "Request this service",
+      "note": "The exact terms of each service are set after reviewing the request and according to the fund’s rules."
+    },
+    "steps": [
+      { "title": "Submit a request", "text": "Fill in the cooperation form and attach your supporting documents." },
+      { "title": "Initial review", "text": "The request is checked for fit with the fund’s services, and more information is requested if needed." },
+      { "title": "Expert assessment", "text": "The project is assessed under the fund’s rules, looking at technical, financial and team aspects." },
+      { "title": "Decision", "text": "You are informed of the outcome and, if approved, of the terms and next steps." }
+    ],
+    "cta": {
+      "title": "Request a review",
+      "text": "Use the cooperation form to introduce your need or project.",
+      "button": "Send a request"
+    },
+    "items": {
+      "guarantee": {
+        "title": "Guarantees",
+        "short": "Guarantees to support eligible activities of technology companies and projects.",
+        "metaTitle": "Guarantees for technology companies | Sabano",
+        "metaDescription": "Sabano issues guarantees for eligible activities of technology companies and projects. Learn how guarantees help, what to prepare and how to apply.",
+        "lead": "Sabano issues guarantees to support eligible activities of technology companies and projects. A guarantee lets a technology company take part in tenders and contracts without tying up its own cash. The type and terms of each guarantee are set after reviewing the request and according to the fund’s rules.",
+        "whoFor": [
+          "Technology and knowledge-based companies bidding for tenders or contracts",
+          "Technology projects that need backing for their commitments",
+          "Businesses active in the digital economy"
+        ],
+        "benefits": [
+          "Keep your cash for product and team development",
+          "Take part in larger projects and contracts",
+          "An assessment that understands technology businesses"
+        ],
+        "documents": [
+          "An introduction to the company and its technology",
+          "The related contract or tender documents",
+          "Financial information and delivery track record",
+          "The amount and term of the guarantee you need"
+        ],
+        "faqs": [
+          { "q": "What kinds of guarantees does Sabano issue?", "a": "The type of guarantee depends on the applicant’s needs and the fund’s rules. Research and technology funds typically issue guarantees such as bid bonds, performance bonds and advance-payment guarantees. Submit a request to find out whether the guarantee you need can be issued." },
+          { "q": "Can any company get a guarantee?", "a": "Guarantees are issued for eligible activities after the request has been reviewed. The exact criteria are assessed under the fund’s rules." },
+          { "q": "Where do I start?", "a": "Submit your request through the cooperation form, choose “Financing” as the request type and attach documents such as the contract or tender papers." }
+        ]
+      },
+      "credit": {
+        "title": "Credit and financing",
+        "short": "Review of financing options and credit services suited to the applicant’s needs.",
+        "metaTitle": "Credit and financing for technology companies | Sabano",
+        "metaDescription": "Sabano reviews financing and credit options matched to the needs of technology companies. See what to prepare and how to apply.",
+        "lead": "Sabano reviews financing and credit services matched to each applicant’s needs and situation. The service is for technology companies that need funds to deliver a contract, develop a product or cover working capital. The terms of any facility are set after the project has been assessed.",
+        "whoFor": [
+          "Technology companies that need funds to deliver a contract",
+          "Businesses that need capital for product or market development",
+          "Projects with clear and predictable revenue"
+        ],
+        "benefits": [
+          "A review of your funding need by people who understand technology businesses",
+          "A service shaped around your situation",
+          "Access to the fund’s other services where needed"
+        ],
+        "documents": [
+          "An introduction to the company and team",
+          "Your funding need and how the funds will be used",
+          "Financial statements or a performance report",
+          "Related contracts or quotations"
+        ],
+        "faqs": [
+          { "q": "How are Sabano’s financing terms set?", "a": "The terms of each facility are set after reviewing the project and according to the fund’s rules. Submit a request to learn which terms fit your needs." },
+          { "q": "What can financing be used for?", "a": "For funding needs linked to technology activities, such as delivering a contract, developing a product or covering working capital. Whether financing is possible is decided after review." },
+          { "q": "Which documents do I need?", "a": "A company introduction, a description of your funding need, financial information and related contracts help speed up the review. Further documents are requested if needed." }
+        ]
+      },
+      "investment": {
+        "title": "Investment in technology ventures",
+        "short": "Assessment of innovative opportunities and potential participation in business growth.",
+        "metaTitle": "Investment in technology ventures and startups | Sabano",
+        "metaDescription": "Sabano assesses innovative opportunities in the digital economy and takes part in the growth of promising businesses. See the assessment criteria and what to prepare.",
+        "lead": "Sabano assesses innovative opportunities and, where they fit the fund’s strategy, takes part in the growth of the business. Sabano invests with a focus on the digital economy, from artificial intelligence and fintech to digital infrastructure and future-shaping technologies.",
+        "whoFor": [
+          "Startups and technology companies in the digital economy",
+          "Teams with a clear product or solution to a real problem",
+          "Businesses with the potential to grow into larger markets"
+        ],
+        "benefits": [
+          "A financial partner with a long-term view",
+          "Deep understanding of the digital economy and fintech",
+          "Support on the path to growth and larger markets"
+        ],
+        "documents": [
+          "A one- or two-paragraph summary",
+          "A pitch deck",
+          "An introduction to the team and relevant experience",
+          "Current status, traction and financial plan"
+        ],
+        "faqs": [
+          { "q": "Which sectors does Sabano invest in?", "a": "Sabano focuses on the digital economy: artificial intelligence and data-driven solutions, fintech and modern financial services, digital infrastructure and services, and future-shaping technologies." },
+          { "q": "How are proposals assessed?", "a": "The problem and solution, target market, business model, team capability and fit with Sabano’s investment focus are among the most important factors." },
+          { "q": "Does submitting a proposal mean Sabano will invest?", "a": "No. Receiving a proposal is not approval or a commitment to invest, and every proposal is assessed under the fund’s rules." }
+        ]
+      },
+      "fund-agency": {
+        "title": "Financial agency",
+        "short": "Management and allocation of funds under approved programmes and agreements.",
+        "metaTitle": "Financial agency for innovation funding | Sabano",
+        "metaDescription": "Sabano manages and allocates funds under approved agreements and programmes, channelling support to technology projects.",
+        "lead": "As a financial agent, Sabano manages and allocates funds under approved agreements and programmes. The service helps institutions and organisations that want to channel their funds to technology projects and companies through a specialised financial institution.",
+        "whoFor": [
+          "Institutions and organisations with funds to support innovation",
+          "Support programmes that need specialised fund management",
+          "Organisations that want to back technology companies financially"
+        ],
+        "benefits": [
+          "Funds managed under an approved agreement and programme",
+          "Expert assessment of technology projects",
+          "Allocation of funds to eligible projects"
+        ],
+        "documents": [
+          "An introduction to your institution and programme",
+          "The size and purpose of the funds",
+          "The criteria you want projects to meet"
+        ],
+        "faqs": [
+          { "q": "What is financial agency?", "a": "In financial agency, a specialised institution such as Sabano manages an organisation’s or programme’s funds under an approved agreement and allocates them to eligible projects and companies." },
+          { "q": "Which institutions can use this service?", "a": "Institutions and organisations that have funds for technology activities and want them allocated under an approved agreement. Whether a partnership is possible is decided after review." },
+          { "q": "How do I start?", "a": "In the cooperation form, choose “Strategic partnership” and briefly describe the programme and funds you have in mind." }
+        ]
+      },
+      "consulting": {
+        "title": "Financial and investment advisory",
+        "short": "Guidance on financing pathways and investment readiness.",
+        "metaTitle": "Financial advisory and investment readiness for startups | Sabano",
+        "metaDescription": "Sabano helps technology companies review financing options and prepare to raise investment. See who this service is for.",
+        "lead": "Sabano helps technology companies review different financing paths and prepare to raise investment. The service suits businesses that want a clear picture of their options, strengths and gaps before applying for credit or investment.",
+        "whoFor": [
+          "Teams raising investment for the first time",
+          "Companies weighing different financing options",
+          "Businesses preparing to pitch to investors"
+        ],
+        "benefits": [
+          "Know which financing options suit your stage",
+          "Be better prepared to pitch to investors",
+          "A clearer view of requirements and documents"
+        ],
+        "documents": [
+          "An introduction to the business and team",
+          "Financial position and growth plan",
+          "Your main questions or challenges"
+        ],
+        "faqs": [
+          { "q": "What does Sabano’s advisory cover?", "a": "Reviewing financing paths, choosing the right financial tool and preparing to raise investment. The exact scope is set after reviewing your needs." },
+          { "q": "Who is advisory for?", "a": "Teams raising investment for the first time, companies weighing financing options and businesses preparing to pitch to investors." },
+          { "q": "How do I request advisory?", "a": "In the cooperation form, choose “Financing” and mention in your description that you need advisory." }
+        ]
+      }
+    }
+  },
+  "investment": {
+    "meta": {
+      "title": "Investment and partnerships | Sabano’s focus on the digital economy",
+      "description": "Sabano’s investment focus in the digital economy: artificial intelligence, fintech, digital infrastructure and future-shaping technologies. See how proposals are assessed."
+    },
+    "hero": {
+      "kicker": "Investment and partnerships",
+      "title": "Focused on the digital economy",
+      "lead": "Sabano reviews innovative opportunities across four core areas of the digital economy: artificial intelligence and data-driven solutions, fintech and modern financial services, digital infrastructure and services, and future-shaping technologies. The key test is a real problem solved with a clear business model and room to grow."
+    },
+    "areasTitle": "Which sectors does Sabano invest in?",
+    "examplesLabel": "Example fields",
+    "areas": {
+      "ai": {
+        "title": "Artificial intelligence and data",
+        "text": "Data-driven and AI solutions that address a clear need with a sound business model.",
+        "examples": ["Language processing and text analytics", "Data analytics and business intelligence", "Computer vision and automation"]
+      },
+      "fintech": {
+        "title": "Fintech and modern financial services",
+        "text": "Innovative services and infrastructure that improve access, experience and efficiency in financial markets.",
+        "examples": ["Payments and financial infrastructure", "Credit scoring and risk management", "New investment services"]
+      },
+      "digital": {
+        "title": "Digital infrastructure and services",
+        "text": "Technology and services that contribute to the growth of the digital economy and of technology businesses.",
+        "examples": ["Cloud and data infrastructure", "Digital platforms and services", "Cybersecurity"]
+      },
+      "future": {
+        "title": "Future-shaping technologies",
+        "text": "Emerging trends and opportunities that may reshape markets and the digital economy in the years ahead.",
+        "examples": ["Emerging technologies", "Smart cities and energy", "Transformative innovation"]
+      }
+    },
+    "criteria": {
+      "title": "What does Sabano look for in a proposal?",
+      "items": [
+        { "title": "A real problem", "text": "The project solves a clear, measurable problem for a defined group of customers." },
+        { "title": "A clear business model", "text": "Revenue, main costs and the path to scale are well defined." },
+        { "title": "A capable team", "text": "Key members have the expertise and experience to deliver." },
+        { "title": "Room to grow", "text": "The target market is large enough and the project can reach bigger markets." },
+        { "title": "Digital economy fit", "text": "The project sits within one of Sabano’s investment focus areas." }
+      ]
+    },
+    "disclaimer": "Receiving a proposal or form does not constitute approval or a commitment to invest.",
+    "cta": {
+      "title": "Propose an investment opportunity",
+      "text": "Send a short project summary and supporting documents through the form. Submission does not constitute approval or a commitment to invest.",
+      "button": "Introduce an opportunity",
+      "secondary": "How to apply"
+    }
+  },
+  "process": {
+    "meta": {
+      "title": "How to apply for investment and services from Sabano",
+      "description": "A step-by-step guide to working with Sabano: preparing your summary and documents, submitting a request, initial review, expert assessment and decision."
+    },
+    "hero": {
+      "kicker": "Process guide",
+      "title": "Working with Sabano, step by step",
+      "lead": "Working with Sabano starts with a request through the online form. Your request receives an initial review, further information is gathered if needed, and the project is then assessed under the fund’s rules before a decision is shared. This guide explains each step and what to prepare."
+    },
+    "stepsTitle": "What are the steps to work with Sabano?",
+    "stepLabel": "Step {n}",
+    "steps": [
+      { "title": "Prepare", "text": "Get your project summary, team introduction and supporting documents ready. The more precise the information, the faster the review." },
+      { "title": "Submit", "text": "Fill in the cooperation form, choose a request type and attach a supporting file. You receive a tracking code once it is submitted." },
+      { "title": "Initial review", "text": "The request is checked for fit with Sabano’s services and focus areas, and further information is requested if needed." },
+      { "title": "Expert assessment", "text": "Projects that fit the fund’s strategy are assessed under its rules, looking at technical, market, financial and team aspects." },
+      { "title": "Decision", "text": "You are informed of the outcome and, if approved, of the terms and next steps." }
+    ],
+    "note": "Exact steps and timing vary with the type of request and service.",
+    "prepare": {
+      "title": "What should I prepare before submitting?",
+      "items": [
+        "A one- or two-paragraph project summary",
+        "An introduction to the team and relevant experience",
+        "Current status of the product or service and traction",
+        "Funding need and how the funds will be used",
+        "A supporting file (preferably PDF, up to 8 MB)"
+      ]
+    },
+    "timing": {
+      "title": "How long does a review take?",
+      "text": "Review time depends on the type of request, how complete the information is and how complex the project is. Sending accurate and complete information from the start is the single biggest factor in shortening it."
+    },
+    "mistakes": {
+      "title": "Common mistakes when submitting a proposal",
+      "items": [
+        "Long, general descriptions that never state the core problem",
+        "No information about the team and each member’s role",
+        "An unclear funding need or use of funds",
+        "Contact details that are not checked regularly"
+      ]
+    },
+    "guide": "Read the full proposal preparation guide",
+    "cta": {
+      "title": "Ready? Send your proposal",
+      "text": "Submitting a request takes only a few minutes and you receive a tracking code straight away.",
+      "button": "Submit a proposal"
+    }
+  },
+  "portfolio": {
+    "meta": {
+      "title": "Sabano portfolio | Companies we work with",
+      "description": "Technology companies and projects that Sabano Research and Technology Fund has supported on their growth path, in AI, fintech and digital infrastructure."
+    },
+    "hero": {
+      "kicker": "Portfolio",
+      "title": "Companies we work with",
+      "lead": "Sabano works alongside technology companies and projects across the digital economy. This section introduces the companies Sabano has supported on their growth path."
+    },
+    "all": "All",
+    "website": "Website",
+    "year": "Since",
+    "sector": "Sector",
+    "back": "Back to portfolio",
+    "count": "{count} companies",
+    "empty": {
+      "title": "Coming soon",
+      "text": "The list of companies Sabano works with will be published here soon. If you run a technology company or project, you can take the first step today.",
+      "cta": "Submit a proposal"
+    }
+  },
+  "news": {
+    "meta": {
+      "title": "Sabano news and insights",
+      "description": "News from Sabano Research and Technology Fund, analysis of the digital economy and practical guides to financing and investment for technology companies."
+    },
+    "hero": {
+      "kicker": "News & insights",
+      "title": "News, analysis and guides",
+      "lead": "The latest news from Sabano Research and Technology Fund, analysis of the digital economy and practical guides for technology companies looking for financing and investment."
+    },
+    "categories": {
+      "all": "All",
+      "news": "News",
+      "insight": "Analysis",
+      "guide": "Guide"
+    },
+    "featured": "Featured",
+    "empty": "Nothing has been published here yet.",
+    "prev": "Previous",
+    "next": "Next",
+    "page": "Page {page} of {total}",
+    "published": "Published {date}",
+    "updated": "Updated {date}",
+    "toc": "Contents",
+    "related": "Related articles",
+    "back": "Back to news & insights",
+    "rss": "RSS feed",
+    "endCta": {
+      "title": "Send your proposal to Sabano",
+      "text": "If you run a technology company or project, send a short summary through the cooperation form.",
+      "button": "Submit a proposal"
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Frequently asked questions about Sabano",
+      "description": "Answers to common questions about Sabano Research and Technology Fund, its services, investment focus and how to submit a proposal or request."
+    },
+    "hero": {
+      "kicker": "FAQ",
+      "title": "Answers to common questions",
+      "lead": "Short, clear answers to common questions about Sabano, the fund’s services, investment and how to submit a proposal. If you cannot find your answer, get in touch through the contact page."
+    },
+    "categories": {
+      "all": "All",
+      "general": "General",
+      "investment": "Investment",
+      "services": "Services",
+      "cooperation": "Proposals and cooperation"
+    },
+    "searchPlaceholder": "Search questions…",
+    "noResults": "No questions match your search.",
+    "still": {
+      "title": "Didn’t find your answer?",
+      "text": "Ask Sabano directly by phone or email.",
+      "cta": "Contact us"
+    }
+  },
+  "cooperation": {
+    "meta": {
+      "title": "Work with Sabano | Proposals, partnerships and careers",
+      "description": "Online form to send an investment proposal, financing request, strategic partnership idea or job application to Sabano Research and Technology Fund, with an optional attachment."
+    },
+    "hero": {
+      "kicker": "Work with us",
+      "title": "Proposals, partnerships and careers",
+      "lead": "Submit your request using the form below and it goes straight to the fund for review. You can send an investment proposal, a financing request, a strategic partnership idea or a job application, and attach a supporting file."
+    },
+    "whatToSend": {
+      "title": "What can you send?",
+      "items": [
+        "Investment or financing proposals",
+        "Strategic partnership ideas and other proposals",
+        "Job applications and career inquiries"
+      ]
+    },
+    "disclaimer": "Submission does not guarantee acceptance, investment or employment. Attachments are optional and limited to 8 MB.",
+    "responseEmail": "Contact:",
+    "tipsTitle": "For a faster review",
+    "tips": [
+      "Explain the problem and solution in a few sentences.",
+      "State where you are today and what you need.",
+      "Give contact details you check regularly."
+    ],
+    "form": {
+      "title": "Request form",
+      "steps": ["Topic", "Contact details", "Details & file"],
+      "stepOf": "Step {current} of {total}",
+      "type": "Request type",
+      "types": {
+        "investment": "Investment opportunity",
+        "partnership": "Strategic partnership",
+        "financing": "Financing",
+        "employment": "Employment and careers",
+        "other": "Other"
+      },
+      "typeHints": {
+        "investment": "Introduce a startup or project for investment",
+        "partnership": "Institutional partnership, financial agency or strategic idea",
+        "financing": "Guarantees, credit or financial advisory",
+        "employment": "Send your CV and apply for a role",
+        "other": "Any other proposal or request"
+      },
+      "name": "Your name or organization",
+      "contact": "Email or mobile number",
+      "contactHint": "We will use this to follow up on your request.",
+      "company": "Company name",
+      "website": "Website",
+      "optional": "optional",
+      "message": "Brief description",
+      "messageHint": "Briefly describe the problem, your solution, where you are today and what you need.",
+      "attachment": "Attachment",
+      "attachmentHint": "PDF, Word, Excel, PowerPoint, JPG or PNG; up to 8 MB",
+      "chooseFile": "choose a file",
+      "dropFile": "Drop a file here or",
+      "removeFile": "Remove file",
+      "consent": "By submitting this form I accept Sabano’s privacy policy.",
+      "privacyLink": "Read the privacy policy",
+      "next": "Next",
+      "back": "Back",
+      "submit": "Submit request",
+      "sending": "Sending…",
+      "characters": "{count} characters"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "type": "Please choose a request type.",
+      "contact": "Enter a valid email address or mobile number.",
+      "tooShort": "Please tell us a little more (at least 20 characters).",
+      "tooLong": "The text is too long.",
+      "url": "The website address is not valid.",
+      "fileSize": "The file is larger than 8 MB.",
+      "fileType": "This file type is not supported.",
+      "rateLimit": "Too many requests. Please try again in a few minutes.",
+      "generic": "Your request could not be sent. Please try again or email {email}.",
+      "consent": "Please accept the privacy policy to submit."
+    },
+    "success": {
+      "title": "Your request has been submitted",
+      "text": "Your request has been sent to the fund for review. Keep your tracking code in case you need to refer to it.",
+      "code": "Tracking code",
+      "again": "Send another request",
+      "home": "Back to home"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Sabano | Phone, email and address",
+      "description": "Contact Sabano Research and Technology Fund: office phone numbers, email info@sabano.ir and office address in Abbasabad, Tehran."
+    },
+    "hero": {
+      "kicker": "Contact",
+      "title": "Get in touch with Sabano",
+      "lead": "To follow up on a request or learn about the fund’s services, call the office or email {email}. Sabano’s office is in the Abbasabad–Andisheh area of Tehran."
+    },
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Office address",
+    "postalCode": "Postal code",
+    "hours": "Office hours",
+    "directions": "Directions",
+    "openIn": "Open in {app}",
+    "copy": "Copy",
+    "copied": "Copied",
+    "maps": { "neshan": "Neshan", "balad": "Balad", "google": "Google Maps" },
+    "formCta": {
+      "title": "Have a proposal?",
+      "text": "Use the online form to send an investment proposal, job application or partnership idea.",
+      "button": "Open the cooperation form"
+    },
+    "social": "Follow Sabano on social media"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Sabano privacy policy",
+      "description": "Which information Sabano receives through this website’s forms, why, how it is stored and what rights you have."
+    },
+    "hero": {
+      "kicker": "Privacy",
+      "title": "Privacy policy",
+      "lead": "Sabano only collects the information needed to review and respond to your request. This page explains what is collected, how it is used and how it is stored."
+    },
+    "sections": [
+      { "title": "What we collect", "text": "When you submit the cooperation form, we store your name, contact details, company and website (if provided), your message and any attachment. To prevent abuse, a one-way hash of your IP address and your browser type are also recorded." },
+      { "title": "How we use it", "text": "Your information is used only to review your request, contact you about it and prevent malicious submissions. It is not shared with third parties for advertising." },
+      { "title": "How it is stored", "text": "Requests and attachments are stored on the fund’s servers and only authorised staff can access them. Attachments are never publicly available through the website." },
+      { "title": "Cookies", "text": "This website does not use advertising or tracking cookies. Only strictly necessary cookies are used for staff sign-in to the admin panel." },
+      { "title": "Your rights", "text": "You can email {email} to ask for a copy of the information you sent or for it to be deleted, unless the law requires us to keep it." }
+    ]
+  },
+  "search": {
+    "meta": { "title": "Search Sabano", "description": "Search Sabano’s pages, services, articles and frequently asked questions." },
+    "title": "Search",
+    "placeholder": "Search Sabano…",
+    "results": "{count} results for “{q}”",
+    "noResults": "No results found. Try a different term.",
+    "hint": "Type to search pages, services, articles and questions.",
+    "suggestions": "Suggestions",
+    "types": { "page": "Page", "service": "Service", "post": "Article", "faq": "Question" },
+    "open": "Open search",
+    "keys": { "navigate": "navigate", "select": "select", "close": "close" }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you were looking for doesn’t exist or has moved.",
+    "home": "Back to home",
+    "suggestions": "These pages might help:"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "text": "There was a problem showing this page. Please try again.",
+    "retry": "Try again"
+  }
+}

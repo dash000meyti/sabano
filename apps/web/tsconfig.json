@@ -1,0 +1,13 @@
+{
+  "extends": "@sabano/config/tsconfig.base.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] },
+    "types": ["node"],
+    "allowJs": true,
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "src", "tests", "*.ts", "*.mjs", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
+  "exclude": ["node_modules", ".next"]
+}
