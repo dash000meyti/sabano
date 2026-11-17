@@ -27,8 +27,8 @@ function Input({ f, name, value, isNew }: { f: FieldDef; name: string; value: un
       );
     case 'checkbox':
       return (
-        <label className="flex items-center gap-2.5 text-sm font-semibold text-navy-900">
-          <input type="checkbox" name={name} defaultChecked={isNew ? !!f.defaultChecked : value === true} className="size-4.5 accent-teal-600" />
+        <label className="flex items-center gap-2.5 text-sm font-semibold text-fg">
+          <input type="checkbox" name={name} defaultChecked={isNew ? !!f.defaultChecked : value === true} className="size-5 accent-teal-600" />
           {f.label}
         </label>
       );
@@ -52,7 +52,7 @@ export function EntityForm({ cfg, record, saved, error }: { cfg: EntityConfig; r
     locales.map((l) => [
       l,
       <div key={l} className="grid gap-5">
-        {l !== 'fa' && <p className="text-xs leading-6 text-muted">برای حذف این زبان از سایت، فیلد «{cfg.tr.find((f) => f.name === cfg.trKey)?.label}» را خالی بگذارید.</p>}
+        {l !== 'fa' && <p className="text-xs leading-6 text-fg-muted">برای حذف این زبان از سایت، فیلد «{cfg.tr.find((f) => f.name === cfg.trKey)?.label}» را خالی بگذارید.</p>}
         {cfg.tr.map((f) => (
           <Field key={f.name} label={f.label} required={f.required} hint={f.hint} htmlFor={`t-${l}-${f.name}`}>
             <Input f={f} name={`t.${l}.${f.name}`} value={record?.translations[l]?.[f.name]} isNew={isNew} />
@@ -101,10 +101,10 @@ export function EntityForm({ cfg, record, saved, error }: { cfg: EntityConfig; r
         </div>
       </form>
       {!isNew && (
-        <form action={deleteEntityAction} className="mt-10 border-t border-line pt-6">
+        <form action={deleteEntityAction} className="mt-10 border-t border-edge pt-6">
           <input type="hidden" name="_entity" value={cfg.key} />
           <input type="hidden" name="_id" value={record.id} />
-          <SubmitButton variant="ghost" className="text-red-600 hover:bg-red-50" confirm={`این ${cfg.singular} برای همیشه حذف شود؟`}>
+          <SubmitButton variant="ghost" className="text-danger hover:bg-danger-soft" confirm={`این ${cfg.singular} برای همیشه حذف شود؟`}>
             حذف {cfg.singular}
           </SubmitButton>
         </form>

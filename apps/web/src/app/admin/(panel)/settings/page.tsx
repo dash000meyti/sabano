@@ -11,7 +11,7 @@ function LocalizedInputs({ prefix, values, textarea }: { prefix: string; values:
   return (
     <div className="grid gap-3">
       {locales.map((l) => (
-        <label key={l} className="grid grid-cols-[5.5rem_1fr] items-start gap-3 text-xs font-bold text-muted">
+        <label key={l} className="grid grid-cols-[5.5rem_1fr] items-start gap-3 text-xs font-bold text-fg-muted">
           <span className="pt-2.5">{localeMeta[l].name}</span>
           {textarea ? (
             <textarea name={`${prefix}.${l}`} rows={2} defaultValue={values[l] ?? ''} dir={localeMeta[l].dir} className={inputClass} />
@@ -85,7 +85,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
                   ['x', 'ایکس'],
                 ] as const
               ).map(([k, label]) => (
-                <label key={k} className="grid grid-cols-[5.5rem_1fr] items-center gap-3 text-xs font-bold text-muted">
+                <label key={k} className="grid grid-cols-[5.5rem_1fr] items-center gap-3 text-xs font-bold text-fg-muted">
                   {label}
                   <input name={k} dir="ltr" defaultValue={social[k] ?? ''} placeholder="https://" className={inputClass} />
                 </label>
@@ -121,8 +121,8 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
             <form action={saveSettingsAction} className="grid gap-5">
               <input type="hidden" name="_section" value="stats" />
               {[0, 1, 2, 3].map((i) => (
-                <fieldset key={i} className="grid gap-3 rounded-xl border border-line p-4">
-                  <legend className="px-1 text-xs font-bold text-muted">آمار {(i + 1).toLocaleString('fa-IR')}</legend>
+                <fieldset key={i} className="grid gap-3 rounded-xl border border-edge p-4">
+                  <legend className="px-1 text-xs font-bold text-fg-muted">آمار {(i + 1).toLocaleString('fa-IR')}</legend>
                   <input name={`stat.${i}.value`} defaultValue={stats[i]?.value ?? ''} placeholder="مقدار، مثلاً ۴۵+" className={inputClass} />
                   <LocalizedInputs prefix={`stat.${i}.label`} values={stats[i]?.label ?? {}} />
                 </fieldset>

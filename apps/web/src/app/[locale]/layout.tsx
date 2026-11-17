@@ -5,10 +5,12 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { localeMeta, type Locale } from '@sabano/i18n';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
-import { RevealObserver } from '@/components/layout/RevealObserver';
+import { Effects } from '@/components/layout/Effects';
+import { ThemeSync } from '@/components/layout/ThemeSync';
 import { SearchPalette } from '@/components/layout/SearchPalette';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/site';
+import { THEME_COLORS, themeScript } from '@/lib/theme';
 import '../globals.css';
 
 // Pages are rendered on first request and cached (ISR); admin edits revalidate them.
@@ -19,8 +21,11 @@ export const dynamicParams = true;
 export const revalidate = 3600;
 
 export const viewport: Viewport = {
-  themeColor: '#062140',
-  colorScheme: 'light',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: THEME_COLORS.light },
+    { media: '(prefers-color-scheme: dark)', color: THEME_COLORS.dark },
+  ],
+  colorScheme: 'light dark',
   width: 'device-width',
   initialScale: 1,
 };
@@ -49,7 +54,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 // Only the namespaces client components need are sent to the browser.
-const clientNamespaces = ['common', 'search', 'cooperation', 'faq', 'contact', 'portfolio', 'error'] as const;
+const clientNamespaces = ['common', 'search', 'cooperation', 'faq', 'contact', 'portfolio', 'error', 'notFound'] as const;
 
 export default async function LocaleLayout({
   children,
@@ -63,12 +68,17 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const meta = localeMeta[locale as Locale];
   const messages = await getMessages();
-  const clientMessages = Object.fromEntries(clientNamespaces.map((ns) => [ns, messages[ns]]));
+  const nav = messages.nav as Record<string, string>;
+  const clientMessages = {
+    ...Object.fromEntries(clientNamespaces.map((ns) => [ns, messages[ns]])),
+    // Only the nav labels the client-rendered 404 page links to.
+    nav: Object.fromEntries(['services', 'investmentAreas', 'cooperation', 'faq', 'contact'].map((k) => [k, nav[k]])),
+  };
 
   return (
     <html lang={meta.hreflang} dir={meta.dir} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {locale === 'fa' ? (
           <link rel="preload" href="/fonts/vazirmatn-nl-v33.woff2" as="font" type="font/woff2" crossOrigin="" />
         ) : (
@@ -76,7 +86,8 @@ export default async function LocaleLayout({
         )}
         {locale === 'ru' && <link rel="preload" href="/fonts/manrope-cyrillic-v5.woff2" as="font" type="font/woff2" crossOrigin="" />}
       </head>
-      <body className="bg-paper text-ink antialiased">
+      <body className="bg-canvas text-fg antialiased">
+        <div aria-hidden className="scroll-progress fixed inset-x-0 top-0 z-[60] h-[2px] bg-[linear-gradient(90deg,#2fe3d2,#eab543)]" />
         <NextIntlClientProvider locale={locale} messages={clientMessages}>
           <Header locale={locale as Locale} />
           <main id="main" tabIndex={-1} className="outline-none">
@@ -84,7 +95,8 @@ export default async function LocaleLayout({
           </main>
           <Footer locale={locale as Locale} />
           <SearchPalette />
-          <RevealObserver />
+          <Effects />
+          <ThemeSync />
         </NextIntlClientProvider>
       </body>
     </html>

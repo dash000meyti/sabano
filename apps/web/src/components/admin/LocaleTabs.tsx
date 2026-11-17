@@ -12,7 +12,7 @@ export function LocaleTabs({ filled, panels }: { filled: Partial<Record<Locale, 
   const [active, setActive] = useState<Locale>('fa');
   return (
     <div>
-      <div role="tablist" className="flex flex-wrap gap-1.5 border-b border-line pb-3">
+      <div role="tablist" className="flex flex-wrap gap-1.5 border-b border-edge pb-3">
         {locales.map((l) => (
           <button
             key={l}
@@ -22,7 +22,7 @@ export function LocaleTabs({ filled, panels }: { filled: Partial<Record<Locale, 
             onClick={() => setActive(l)}
             className={cn(
               'inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-bold transition-colors',
-              active === l ? 'bg-navy-900 text-white' : 'text-navy-700 hover:bg-navy-50',
+              active === l ? 'bg-fg text-canvas' : 'text-fg/80 hover:bg-tint',
             )}
           >
             {localeMeta[l].name}

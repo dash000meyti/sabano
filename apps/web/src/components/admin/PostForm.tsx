@@ -24,7 +24,7 @@ export function PostForm({ record, saved, error }: { record?: EntityRecord; save
     locales.map((l) => [
       l,
       <div key={l} className="grid gap-5">
-        {l !== 'fa' && <p className="text-xs leading-6 text-muted">برای منتشر نشدن مطلب در این زبان، عنوان را خالی بگذارید.</p>}
+        {l !== 'fa' && <p className="text-xs leading-6 text-fg-muted">برای منتشر نشدن مطلب در این زبان، عنوان را خالی بگذارید.</p>}
         <Field label="عنوان" htmlFor={`t-${l}-title`}>
           <input id={`t-${l}-title`} name={`t.${l}.title`} defaultValue={tr(l, 'title')} className={cn(inputClass, 'text-base font-bold')} />
         </Field>
@@ -34,8 +34,8 @@ export function PostForm({ record, saved, error }: { record?: EntityRecord; save
         <Field label="متن مطلب" hint="برای ساختار بهتر در موتورهای جست‌وجو و پاسخ، از عنوان‌های H2 به شکل پرسش استفاده کنید.">
           <RichTextEditor name={`t.${l}.body`} defaultValue={tr(l, 'body')} dir={localeMeta[l].dir} />
         </Field>
-        <details className="rounded-xl border border-line p-4">
-          <summary className="cursor-pointer text-sm font-bold text-navy-900">تنظیمات سئو و تصویر</summary>
+        <details className="rounded-xl border border-edge p-4">
+          <summary className="cursor-pointer py-2 text-sm font-bold text-fg">تنظیمات سئو و تصویر</summary>
           <div className="mt-4 grid gap-4">
             <Field label="متن جایگزین تصویر کاور (alt)" htmlFor={`t-${l}-coverAlt`}>
               <input id={`t-${l}-coverAlt`} name={`t.${l}.coverAlt`} defaultValue={tr(l, 'coverAlt')} className={inputClass} />
@@ -90,8 +90,8 @@ export function PostForm({ record, saved, error }: { record?: EntityRecord; save
               <Field label="تاریخ و ساعت انتشار (به وقت تهران)" hint="برای زمان‌بندی، تاریخی در آینده وارد کنید." htmlFor="publishedAt">
                 <input id="publishedAt" name="publishedAt" type="datetime-local" dir="ltr" defaultValue={toLocalInput(record?.publishedAt)} className={inputClass} />
               </Field>
-              <label className="flex items-center gap-2.5 text-sm font-semibold text-navy-900">
-                <input type="checkbox" name="featured" defaultChecked={record?.featured === true} className="size-4.5 accent-teal-600" />
+              <label className="flex items-center gap-2.5 text-sm font-semibold text-fg">
+                <input type="checkbox" name="featured" defaultChecked={record?.featured === true} className="size-5 accent-teal-600" />
                 مطلب ویژه
               </label>
               <SubmitButton>ذخیره</SubmitButton>
@@ -117,9 +117,9 @@ export function PostForm({ record, saved, error }: { record?: EntityRecord; save
         </div>
       </form>
       {!isNew && (
-        <form action={deletePostAction} className="mt-10 border-t border-line pt-6">
+        <form action={deletePostAction} className="mt-10 border-t border-edge pt-6">
           <input type="hidden" name="_id" value={record.id} />
-          <SubmitButton variant="ghost" className="text-red-600 hover:bg-red-50" confirm="این مطلب در همهٔ زبان‌ها حذف شود؟">
+          <SubmitButton variant="ghost" className="text-danger hover:bg-danger-soft" confirm="این مطلب در همهٔ زبان‌ها حذف شود؟">
             حذف مطلب
           </SubmitButton>
         </form>

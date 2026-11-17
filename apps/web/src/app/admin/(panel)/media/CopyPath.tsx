@@ -12,7 +12,7 @@ export function CopyPath({ path }: { path: string }) {
         setDone(true);
         setTimeout(() => setDone(false), 1500);
       }}
-      className="rounded-lg px-2 py-1 text-xs font-bold text-teal-700 hover:bg-teal-50"
+      className="rounded-lg px-2 py-1 text-xs font-bold text-accent hover:bg-accent-soft"
     >
       {done ? 'کپی شد' : 'کپی نشانی'}
     </button>

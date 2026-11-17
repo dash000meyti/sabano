@@ -62,7 +62,6 @@ const nextConfig: NextConfig = {
     return [
       { source: '/:path*', headers: security },
       { source: '/fonts/:file*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
-      { source: '/decor/:file*', headers: [{ key: 'Cache-Control', value: 'public, max-age=2592000' }] },
       { source: '/images/:file*', headers: [{ key: 'Cache-Control', value: 'public, max-age=2592000, stale-while-revalidate=86400' }] },
       { source: '/admin/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] },
     ];

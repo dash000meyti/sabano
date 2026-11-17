@@ -81,6 +81,7 @@ export async function Header({ locale }: { locale: Locale }) {
         brandName: tc('siteName'),
         brandSub: tc('brandSub'),
         skip: tc('skipToContent'),
+        theme: tc('themeToggle'),
       }}
     />
   );

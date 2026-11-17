@@ -3,7 +3,9 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { PostCategory } from '@sabano/db';
 import type { Locale } from '@sabano/i18n';
 import { cn } from '@sabano/ui';
-import { RssIcon } from '@/components/icons';
+import { NewspaperIcon, PaperPlaneTiltIcon, RssIcon } from '@/components/icons';
+import { AnimatedIcon } from '@/components/ui/AnimatedIcon';
+import { heroVisuals } from '@/components/visual-maps';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { PageHero } from '@/components/sections/PageHero';
 import { PostCard } from '@/components/sections/PostCard';
@@ -68,7 +70,7 @@ export default async function NewsPage({ params, searchParams }: Props) {
           itemListLd(items.map((p) => ({ name: p.title, url: pageUrl(locale, `/news/${p.slug}`) }))),
         ]}
       />
-      <PageHero locale={locale} crumbs={[{ label: tn('news'), href: '/news' }]} kicker={t('hero.kicker')} title={t('hero.title')} lead={t('hero.lead')} />
+      <PageHero locale={locale} crumbs={[{ label: tn('news'), href: '/news' }]} kicker={t('hero.kicker')} icon={NewspaperIcon} anim="tilt" visual={heroVisuals.news} title={t('hero.title')} lead={t('hero.lead')} />
       <Section>
         <div className="flex flex-wrap items-center justify-between gap-4">
           <nav aria-label={t('hero.kicker')} className="flex flex-wrap gap-2">
@@ -79,21 +81,21 @@ export default async function NewsPage({ params, searchParams }: Props) {
                 aria-current={category === c ? 'page' : undefined}
                 className={cn(
                   'rounded-full px-4 py-2 text-sm font-bold transition-colors',
-                  category === c ? 'bg-navy-900 text-white' : 'border border-line bg-white text-navy-800 hover:border-navy-900/30',
+                  category === c ? 'bg-fg text-canvas' : 'border border-edge bg-card text-fg hover:border-edge-strong',
                 )}
               >
                 {t(`categories.${c ?? 'all'}`)}
               </Link>
             ))}
           </nav>
-          <a href={localizedPath(locale, '/news/rss.xml')} className="inline-flex items-center gap-1.5 text-sm font-bold text-gold-600 hover:text-gold-700">
-            <RssIcon weight="bold" className="size-4" aria-hidden />
+          <a href={localizedPath(locale, '/news/rss.xml')} className="group inline-flex min-h-10 items-center gap-1.5 text-sm font-bold text-gold-ink hover:opacity-80">
+            <AnimatedIcon icon={RssIcon} anim="beat" weight="bold" trigger="hover" iconClassName="size-4" />
             {t('rss')}
           </a>
         </div>
 
         {items.length === 0 ? (
-          <p className="mt-16 rounded-3xl border border-dashed border-line p-12 text-center text-muted">{t('empty')}</p>
+          <p className="mt-16 rounded-3xl border border-dashed border-edge p-12 text-center text-fg-muted">{t('empty')}</p>
         ) : (
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {items.map((p, i) => (
@@ -114,20 +116,20 @@ export default async function NewsPage({ params, searchParams }: Props) {
         {pages > 1 && (
           <nav aria-label={t('page', { page: localizeDigits(page, locale), total: localizeDigits(pages, locale) })} className="mt-12 flex items-center justify-center gap-3">
             {page > 1 && (
-              <Link href={href(category, page - 1)} rel="prev" className="rounded-full border border-line px-5 py-2 text-sm font-bold text-navy-900 hover:bg-surface">
+              <Link href={href(category, page - 1)} rel="prev" className="rounded-full border border-edge px-5 py-2 text-sm font-bold text-fg hover:bg-canvas-alt">
                 {t('prev')}
               </Link>
             )}
-            <span className="text-sm text-muted">{t('page', { page: localizeDigits(page, locale), total: localizeDigits(pages, locale) })}</span>
+            <span className="text-sm text-fg-muted">{t('page', { page: localizeDigits(page, locale), total: localizeDigits(pages, locale) })}</span>
             {page < pages && (
-              <Link href={href(category, page + 1)} rel="next" className="rounded-full border border-line px-5 py-2 text-sm font-bold text-navy-900 hover:bg-surface">
+              <Link href={href(category, page + 1)} rel="next" className="rounded-full border border-edge px-5 py-2 text-sm font-bold text-fg hover:bg-canvas-alt">
                 {t('next')}
               </Link>
             )}
           </nav>
         )}
       </Section>
-      <CtaBand title={t('endCta.title')} text={t('endCta.text')} primary={{ href: '/cooperation', label: t('endCta.button') }} />
+      <CtaBand icon={PaperPlaneTiltIcon} anim="glide" title={t('endCta.title')} text={t('endCta.text')} primary={{ href: '/cooperation', label: t('endCta.button') }} />
     </>
   );
 }

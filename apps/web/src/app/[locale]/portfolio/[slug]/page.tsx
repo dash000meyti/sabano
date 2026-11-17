@@ -9,6 +9,7 @@ import { CtaBand } from '@/components/sections/CtaBand';
 import { PageHero } from '@/components/sections/PageHero';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Section } from '@/components/ui/Section';
+import { areaAnims, areaIcons } from '@/components/visual-maps';
 import { Link } from '@/i18n/navigation';
 import { getCompanyBySlug } from '@/lib/data';
 import { localizeDigits } from '@/lib/format';
@@ -62,6 +63,8 @@ export default async function CompanyPage({ params }: LocaleSlugParams) {
           { label: c.name, href: `/portfolio/${slug}` },
         ]}
         kicker={tsec(c.sector)}
+        icon={areaIcons[c.sector]}
+        anim={areaAnims[c.sector]}
         title={c.name}
         lead={c.summary}
         compact
@@ -69,21 +72,21 @@ export default async function CompanyPage({ params }: LocaleSlugParams) {
       <Section>
         <div className="grid gap-10 lg:grid-cols-[1fr_20rem]">
           <div className="prose-sabano whitespace-pre-line">{c.description ?? c.summary}</div>
-          <aside className="h-fit space-y-5 rounded-3xl border border-line bg-surface p-7">
+          <aside className="h-fit space-y-5 rounded-3xl border border-edge bg-canvas-alt p-7">
             {c.logo && (
-              <div className="grid h-28 place-items-center rounded-2xl bg-white">
+              <div className="grid h-28 place-items-center rounded-2xl bg-card">
                 <Image src={c.logo} alt={c.name} width={180} height={80} className="max-h-20 w-auto object-contain" />
               </div>
             )}
             <dl className="space-y-4 text-sm">
               <div>
-                <dt className="text-muted">{t('sector')}</dt>
-                <dd className="mt-1 font-bold text-navy-900">{tsec(c.sector)}</dd>
+                <dt className="text-fg-muted">{t('sector')}</dt>
+                <dd className="mt-1 font-bold text-fg">{tsec(c.sector)}</dd>
               </div>
               {c.year && (
                 <div>
-                  <dt className="text-muted">{t('year')}</dt>
-                  <dd className="mt-1 font-bold text-navy-900">{localizeDigits(c.year, locale)}</dd>
+                  <dt className="text-fg-muted">{t('year')}</dt>
+                  <dd className="mt-1 font-bold text-fg">{localizeDigits(c.year, locale)}</dd>
                 </div>
               )}
             </dl>
@@ -94,7 +97,7 @@ export default async function CompanyPage({ params }: LocaleSlugParams) {
                 <span className="sr-only">{tc('newTab')}</span>
               </a>
             )}
-            <Link href="/portfolio" className="block text-center text-sm font-bold text-teal-700">
+            <Link href="/portfolio" className="block text-center text-sm font-bold text-accent">
               {t('back')}
             </Link>
           </aside>

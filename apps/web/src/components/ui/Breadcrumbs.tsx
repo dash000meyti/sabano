@@ -15,21 +15,21 @@ export async function Breadcrumbs({ locale, items, tone = 'light' }: { locale: L
   return (
     <>
       <nav aria-label={t('breadcrumb')}>
-        <ol className={cn('flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8rem]', tone === 'light' ? 'text-white/60' : 'text-muted')}>
+        <ol className={cn('inline-flex flex-wrap items-center gap-x-2 rounded-full px-4 py-1 text-[0.8rem]', tone === 'light' ? 'glass text-fg-subtle' : 'border border-edge bg-card text-fg-muted')}>
           {all.map((c, i) => {
             const last = i === all.length - 1;
             return (
               <li key={c.href} className="flex items-center gap-2">
                 {last ? (
-                  <span aria-current="page" className={tone === 'light' ? 'text-white/90' : 'text-navy-900'}>
+                  <span aria-current="page" className={tone === 'light' ? 'text-fg/90' : 'text-fg'}>
                     {c.label}
                   </span>
                 ) : (
-                  <Link href={c.href} className={cn('transition-colors', tone === 'light' ? 'hover:text-white' : 'hover:text-navy-900')}>
+                  <Link href={c.href} className={cn('inline-block py-1.5 transition-colors', tone === 'light' ? 'hover:text-fg' : 'hover:text-fg')}>
                     {c.label}
                   </Link>
                 )}
-                {!last && <span aria-hidden className="text-[0.65rem] opacity-60">{locale === 'fa' ? '‹' : '›'}</span>}
+                {!last && <span aria-hidden className="text-xs opacity-60">{locale === 'fa' ? '‹' : '›'}</span>}
               </li>
             );
           })}

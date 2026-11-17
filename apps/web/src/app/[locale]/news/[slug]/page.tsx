@@ -11,7 +11,10 @@ import { PostCard } from '@/components/sections/PostCard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ForwardArrow } from '@/components/ui/ArrowIcon';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { Aurora } from '@/components/decor/Aurora';
 import { Kicker, Section } from '@/components/ui/Section';
+import { categoryVisuals } from '@/components/visual-maps';
+import { Words } from '@/components/ui/Words';
 import { Link } from '@/i18n/navigation';
 import { getPostBySlug } from '@/lib/data';
 import { formatDate, localizeDigits } from '@/lib/format';
@@ -76,8 +79,9 @@ export default async function ArticlePage({ params }: LocaleSlugParams) {
         ]}
       />
       <article>
-        <header className="relative isolate overflow-hidden bg-navy-mesh text-white">
-          <div className="pointer-events-none absolute inset-0 -z-10 bg-dot-grid opacity-40" />
+        <header className="grain relative isolate overflow-hidden bg-hero text-fg">
+          <Aurora intensity={0.9} />
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-grid mask-radial" />
           <div className={`${containerClasses} pb-40 pt-36 sm:pt-40`}>
             <Breadcrumbs
               locale={locale}
@@ -87,14 +91,16 @@ export default async function ArticlePage({ params }: LocaleSlugParams) {
               ]}
             />
             <div className="mx-auto mt-10 max-w-3xl text-center">
-              <Kicker tone="light" className="justify-center">
+              <Kicker icon={categoryVisuals[post.category].icon} anim={categoryVisuals[post.category].anim} className="justify-center">
                 {t(`categories.${post.category}`)}
               </Kicker>
-              <h1 className="mt-4 text-[clamp(1.8rem,1.2rem+2.4vw,3rem)] font-extrabold leading-tight">{post.title}</h1>
-              <p className="mx-auto mt-5 max-w-2xl text-lg leading-9 text-white/75">{post.excerpt}</p>
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-5 text-sm text-white/65">
+              <h1 className="mt-6 text-[clamp(1.9rem,1.2rem+2.6vw,3.4rem)] font-black leading-[1.25]">
+                <Words mode="intro" text={post.title} delay={120} wordClassName={() => 'text-sheen'} />
+              </h1>
+              <p className="mx-auto mt-5 max-w-2xl text-lg leading-9 text-fg-muted">{post.excerpt}</p>
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-5 text-sm text-fg-muted">
                 <span className="inline-flex items-center gap-1.5">
-                  <CalendarIcon weight="duotone" className="size-4.5 text-teal-300" aria-hidden />
+                  <CalendarIcon weight="duotone" className="size-4.5 text-accent" aria-hidden />
                   <time dateTime={post.publishedAt.toISOString()}>{t('published', { date: formatDate(post.publishedAt, locale) })}</time>
                 </span>
                 {showUpdated && (
@@ -103,7 +109,7 @@ export default async function ArticlePage({ params }: LocaleSlugParams) {
                   </span>
                 )}
                 <span className="inline-flex items-center gap-1.5">
-                  <ClockIcon weight="duotone" className="size-4.5 text-teal-300" aria-hidden />
+                  <ClockIcon weight="duotone" className="size-4.5 text-accent" aria-hidden />
                   {tc('minutesRead', { count: localizeDigits(post.readingMinutes, locale) })}
                 </span>
               </div>
@@ -112,7 +118,7 @@ export default async function ArticlePage({ params }: LocaleSlugParams) {
         </header>
         {post.coverImage && (
           <div className={`${containerClasses} relative -mt-28`}>
-            <div className="relative mx-auto aspect-[21/9] max-w-5xl overflow-hidden rounded-[2rem] shadow-lift ring-1 ring-white/20">
+            <div className="relative mx-auto aspect-[21/9] max-w-5xl overflow-hidden rounded-[2.25rem] shadow-[0_50px_100px_-40px_rgb(2_10_24/0.8)] ring-1 ring-edge" data-reveal="scale">
               <Image src={post.coverImage} alt={post.coverAlt ?? ''} fill priority fetchPriority="high" sizes="(min-width: 1024px) 1024px, 100vw" className="object-cover" />
             </div>
           </div>
@@ -122,12 +128,12 @@ export default async function ArticlePage({ params }: LocaleSlugParams) {
             <div className="prose-sabano min-w-0" dangerouslySetInnerHTML={{ __html: html }} />
             {toc.length > 1 && (
               <aside className="order-first lg:order-none">
-                <nav aria-label={t('toc')} className="rounded-3xl border border-line bg-surface p-6 lg:sticky lg:top-28">
-                  <p className="text-sm font-extrabold text-navy-900">{t('toc')}</p>
+                <nav aria-label={t('toc')} className="rounded-[1.75rem] border border-edge bg-card p-6 shadow-card lg:sticky lg:top-28">
+                  <p className="text-sm font-extrabold text-fg">{t('toc')}</p>
                   <ol className="mt-4 space-y-2 text-sm">
                     {toc.map((x) => (
                       <li key={x.id} className={x.level === 3 ? 'ps-4' : undefined}>
-                        <a href={`#${x.id}`} className="leading-6 text-muted transition-colors hover:text-teal-700">
+                        <a href={`#${x.id}`} className="leading-6 text-fg-muted transition-colors hover:text-accent">
                           {x.text}
                         </a>
                       </li>
@@ -137,10 +143,11 @@ export default async function ArticlePage({ params }: LocaleSlugParams) {
               </aside>
             )}
           </div>
-          <div className="mx-auto mt-14 max-w-5xl overflow-hidden rounded-[1.75rem] bg-navy-mesh p-8 text-white sm:p-10">
-            <h2 className="text-xl font-extrabold">{t('endCta.title')}</h2>
-            <p className="mt-3 text-white/75">{t('endCta.text')}</p>
-            <Link href="/cooperation" className={buttonClasses('gold', 'md', 'mt-6')}>
+          <div className="scheme-dark grain border-glow relative isolate mx-auto mt-16 max-w-5xl overflow-hidden rounded-[2.25rem] bg-night p-6 text-fg sm:p-12">
+            <Aurora intensity={1} />
+            <h2 className="text-2xl font-black">{t('endCta.title')}</h2>
+            <p className="mt-3 text-fg-muted">{t('endCta.text')}</p>
+            <Link href="/cooperation" data-magnetic className={buttonClasses('gold', 'lg', 'mt-7')}>
               {t('endCta.button')}
               <ForwardArrow />
             </Link>
@@ -150,10 +157,10 @@ export default async function ArticlePage({ params }: LocaleSlugParams) {
       {related.length > 0 && (
         <Section tone="surface" labelledBy="related-title">
           <div className="flex items-end justify-between gap-4">
-            <h2 id="related-title" className="text-2xl font-extrabold text-navy-900">
+            <h2 id="related-title" className="text-2xl font-extrabold text-fg">
               {t('related')}
             </h2>
-            <Link href="/news" className="text-sm font-bold text-teal-700">
+            <Link href="/news" className="inline-flex min-h-10 items-center text-sm font-bold text-accent">
               {t('back')}
             </Link>
           </div>

@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { buttonClasses } from '@sabano/ui';
-import { SignalRows } from '@/components/decor/DataLines';
-import { RocketLaunchIcon } from '@/components/icons';
+import { Aurora, Orb, Orbits } from '@/components/decor/Aurora';
+import { BriefcaseIcon, RocketLaunchIcon } from '@/components/icons';
+import { heroVisuals } from '@/components/visual-maps';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { PageHero } from '@/components/sections/PageHero';
 import { PortfolioGrid } from '@/components/sections/PortfolioGrid';
@@ -49,6 +50,9 @@ export default async function PortfolioPage({ params }: LocaleParams) {
           { label: tn('portfolio'), href: '/portfolio' },
         ]}
         kicker={t('hero.kicker')}
+        icon={BriefcaseIcon}
+        anim="drop"
+        visual={heroVisuals.portfolio}
         title={t('hero.title')}
         lead={t('hero.lead')}
       />
@@ -60,14 +64,14 @@ export default async function PortfolioPage({ params }: LocaleParams) {
             allLabel={t('all')}
           />
         ) : (
-          <div className="relative mx-auto max-w-2xl overflow-hidden rounded-[2rem] border border-line bg-surface p-10 text-center sm:p-14" data-reveal>
-            <SignalRows className="absolute -end-4 top-6 w-32 opacity-20" />
-            <IconTile size="lg" className="mx-auto">
-              <RocketLaunchIcon weight="duotone" aria-hidden />
-            </IconTile>
-            <h2 className="mt-6 text-2xl font-extrabold text-navy-900">{t('empty.title')}</h2>
-            <p className="mt-4 text-[1rem] leading-8 text-muted">{t('empty.text')}</p>
-            <Link href="/cooperation" className={buttonClasses('gold', 'lg', 'mt-8')}>
+          <div className="scheme-dark grain border-glow relative isolate mx-auto max-w-3xl overflow-hidden rounded-[2.5rem] bg-night p-7 text-center text-fg shadow-lift sm:p-16" data-reveal="scale">
+            <Aurora intensity={1} />
+            <Orbits className="pointer-events-none absolute left-1/2 top-1/2 -z-10 w-[40rem] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-35" />
+            <Orb tone="gold" size={46} className="end-[12%] top-[16%] animate-float" />
+            <IconTile icon={RocketLaunchIcon} anim="rise" trigger="always" tone="gold" size="xl" shape="blob" className="mx-auto" />
+            <h2 className="text-gold mt-8 text-4xl font-black">{t('empty.title')}</h2>
+            <p className="mx-auto mt-5 max-w-xl text-[1.04rem] leading-8 text-fg-muted">{t('empty.text')}</p>
+            <Link href="/cooperation" data-magnetic className={buttonClasses('gold', 'xl', 'mt-10')}>
               {t('empty.cta')}
               <ForwardArrow />
             </Link>

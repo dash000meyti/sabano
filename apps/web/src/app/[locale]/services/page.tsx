@@ -1,14 +1,18 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { CheckCircleIcon } from '@/components/icons';
+import { cn } from '@sabano/ui';
+import { Orbits } from '@/components/decor/Aurora';
+import { CheckCircleIcon, HandCoinsIcon } from '@/components/icons';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { PageHero } from '@/components/sections/PageHero';
 import { StepsTimeline } from '@/components/sections/StepsTimeline';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ForwardArrow } from '@/components/ui/ArrowIcon';
 import { IconTile, Section, SectionHeader } from '@/components/ui/Section';
-import { serviceIcons } from '@/components/visual-maps';
+import { AnimatedIcon } from '@/components/ui/AnimatedIcon';
+import { heroVisuals, serviceAnims, serviceIcons, stepIconsFor } from '@/components/visual-maps';
 import { Link } from '@/i18n/navigation';
+import { localizeDigits } from '@/lib/format';
 import { itemListLd, serviceLd, webPageLd } from '@/lib/jsonld';
 import { readLocale, type LocaleParams } from '@/lib/params';
 import { buildMetadata, ogImageFor } from '@/lib/seo';
@@ -39,57 +43,55 @@ export default async function ServicesPage({ params }: LocaleParams) {
           itemListLd(
             serviceSlugs.map((s) => ({
               name: t(`items.${s}.title`),
-              item: serviceLd({
-                locale,
-                path: `/services/${s}`,
-                name: t(`items.${s}.title`),
-                description: t(`items.${s}.short`),
-                serviceType: t(`items.${s}.title`),
-                audience: t.raw(`items.${s}.whoFor`) as string[],
-              }),
+              item: serviceLd({ locale, path: `/services/${s}`, name: t(`items.${s}.title`), description: t(`items.${s}.short`), serviceType: t(`items.${s}.title`), audience: t.raw(`items.${s}.whoFor`) as string[] }),
             })),
           ),
         ]}
       />
-      <PageHero locale={locale} crumbs={[{ label: tn('services'), href: '/services' }]} kicker={t('hero.kicker')} title={t('hero.title')} lead={t('hero.lead')} />
+      <PageHero locale={locale} crumbs={[{ label: tn('services'), href: '/services' }]} kicker={t('hero.kicker')} icon={HandCoinsIcon} anim="float" visual={heroVisuals.services} title={t('hero.title')} lead={t('hero.lead')} highlight={2} />
 
-      <Section labelledBy="list-title">
+      <Section tone="dark" aurora={false} labelledBy="list-title" className="pt-16 sm:pt-20 lg:pt-24">
         <h2 id="list-title" className="sr-only">
           {t('hero.title')}
         </h2>
-        <ul className="grid gap-6 md:grid-cols-2">
+        <ul className="grid gap-5 md:grid-cols-2">
           {serviceSlugs.map((slug, i) => {
             const Icon = serviceIcons[slug];
             const who = (t.raw(`items.${slug}.whoFor`) as string[]).slice(0, 2);
+            const wide = i === 0;
             return (
-              <li key={slug} id={slug} className="scroll-mt-28" data-reveal style={{ '--reveal-delay': (i % 2) * 90 } as React.CSSProperties}>
+              <li key={slug} id={slug} className={cn('scroll-mt-28', wide && 'md:col-span-2')} data-reveal style={{ '--reveal-delay': (i % 2) * 100 } as React.CSSProperties}>
                 {legacyAnchors[slug] && <span id={legacyAnchors[slug]} className="block scroll-mt-28" />}
-                <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-line bg-white p-8 shadow-card transition-all duration-500 hover:-translate-y-1 hover:border-teal-200 hover:shadow-lift">
-                  <div className="flex items-start gap-5">
-                    <IconTile size="lg">
-                      <Icon weight="duotone" aria-hidden />
-                    </IconTile>
-                    <div>
-                      <h3 className="text-xl font-extrabold text-navy-900">
-                        <Link href={`/services/${slug}`} className="after:absolute after:inset-0">
-                          {t(`items.${slug}.title`)}
-                        </Link>
-                      </h3>
-                      <p className="mt-2 text-[0.95rem] leading-8 text-muted">{t(`items.${slug}.short`)}</p>
-                    </div>
-                  </div>
-                  <ul className="mt-6 space-y-2.5 border-t border-line pt-6">
-                    {who.map((w) => (
-                      <li key={w} className="flex gap-2.5 text-[0.9rem] leading-7 text-navy-800">
-                        <CheckCircleIcon weight="fill" className="mt-1 size-4.5 shrink-0 text-teal-500" aria-hidden />
-                        {w}
-                      </li>
-                    ))}
-                  </ul>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-teal-700">
-                    {tc('learnMore')}
-                    <ForwardArrow className="transition-transform group-hover:-translate-x-1 ltr:group-hover:translate-x-1" />
+                <article className={cn('group spotlight border-gradient relative flex h-full flex-col overflow-hidden rounded-[2rem] bg-card p-6 transition-colors duration-500 hover:bg-card-hover sm:p-10', wide && 'lg:flex-row lg:items-center lg:gap-14')}>
+                  <span aria-hidden className="text-outline pointer-events-none absolute -bottom-8 end-6 text-[9rem] font-black leading-none">
+                    {localizeDigits(String(i + 1).padStart(2, '0'), locale)}
                   </span>
+                  {wide && <Orbits className="pointer-events-none absolute -end-32 -top-40 w-[30rem] opacity-30" />}
+                  <div className={cn('relative z-[1]', wide && 'lg:w-1/2')}>
+                    <IconTile icon={Icon} anim={serviceAnims[slug]} size={wide ? 'xl' : 'lg'} shape="hex" trigger={wide ? 'always' : 'hover'} />
+                    <h3 className={cn('mt-7 font-black text-fg', wide ? 'text-[clamp(1.7rem,1.2rem+1.4vw,2.5rem)]' : 'text-2xl')}>
+                      <Link href={`/services/${slug}`} className="after:absolute after:inset-0">
+                        {t(`items.${slug}.title`)}
+                      </Link>
+                    </h3>
+                    <p className={cn('mt-3 leading-8 text-fg-muted', wide && 'max-w-lg text-[1.05rem]')}>{t(`items.${slug}.short`)}</p>
+                  </div>
+                  <div className={cn('relative z-[1] mt-8', wide && 'lg:mt-0 lg:w-1/2')}>
+                    <ul className="space-y-3 border-t border-edge pt-6 lg:border-t-0 lg:pt-0">
+                      {who.map((w) => (
+                        <li key={w} className="flex gap-3 text-[0.95rem] leading-7 text-fg/80">
+                          <CheckCircleIcon weight="fill" className="mt-1 size-5 shrink-0 text-accent" aria-hidden />
+                          {w}
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-accent">
+                      {tc('learnMore')}
+                      <span className="grid size-8 place-items-center rounded-full border border-edge transition-all duration-500 group-hover:border-accent group-hover:bg-accent group-hover:text-midnight">
+                        <ForwardArrow className="size-3.5" />
+                      </span>
+                    </span>
+                  </div>
                 </article>
               </li>
             );
@@ -98,31 +100,37 @@ export default async function ServicesPage({ params }: LocaleParams) {
       </Section>
 
       <Section tone="surface" labelledBy="chooser-title">
-        <SectionHeader id="chooser-title" title={t('chooser.title')} />
-        <div className="mt-10 overflow-hidden rounded-3xl border border-line bg-white shadow-card" data-reveal>
-          <table className="w-full border-collapse text-start text-[0.95rem]">
-            <thead className="bg-navy-900 text-white">
-              <tr>
-                <th scope="col" className="px-6 py-4 text-start font-bold">
+        <SectionHeader id="chooser-title" title={t('chooser.title')} highlight={2} />
+        <div className="mt-12 overflow-hidden rounded-[2rem] border border-edge bg-card shadow-lift" data-reveal>
+          <table className="w-full border-collapse text-start text-[0.98rem]">
+            <thead>
+              <tr className="scheme-dark bg-night text-fg">
+                <th scope="col" className="px-7 py-5 text-start text-sm font-bold text-fg-muted">
                   {t('chooser.need')}
                 </th>
-                <th scope="col" className="px-6 py-4 text-start font-bold">
+                <th scope="col" className="px-7 py-5 text-start text-sm font-bold text-fg-muted">
                   {t('chooser.service')}
                 </th>
               </tr>
             </thead>
             <tbody>
-              {rows.map((r) => (
-                <tr key={r.slug} className="border-t border-line transition-colors hover:bg-surface/70">
-                  <td className="px-6 py-4 leading-7 text-navy-800">{r.need}</td>
-                  <td className="px-6 py-4">
-                    <Link href={`/services/${r.slug}`} className="inline-flex items-center gap-1.5 font-bold text-teal-700 hover:text-teal-800">
-                      {t(`items.${r.slug}.title`)}
-                      <ForwardArrow />
-                    </Link>
-                  </td>
-                </tr>
-              ))}
+              {rows.map((r) => {
+                const Icon = serviceIcons[r.slug];
+                return (
+                  <tr key={r.slug} className="group border-t border-edge transition-colors hover:bg-accent-soft">
+                    <td className="px-7 py-5 leading-8 text-fg">{r.need}</td>
+                    <td className="px-7 py-5">
+                      <Link href={`/services/${r.slug}`} className="inline-flex items-center gap-3 font-bold text-fg hover:text-accent">
+                        <span className="grid size-10 place-items-center rounded-full bg-accent-soft text-accent ring-1 ring-accent/20">
+                          <AnimatedIcon icon={Icon} anim={serviceAnims[r.slug]} trigger="hover" iconClassName="size-5" />
+                        </span>
+                        {t(`items.${r.slug}.title`)}
+                        <ForwardArrow />
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -130,10 +138,10 @@ export default async function ServicesPage({ params }: LocaleParams) {
 
       <Section labelledBy="steps-title">
         <SectionHeader id="steps-title" title={t('labels.steps')} text={t('labels.note')} />
-        <StepsTimeline locale={locale} steps={steps} className="mt-12" />
+        <StepsTimeline locale={locale} steps={steps} icons={stepIconsFor(steps.length)} className="mt-14" />
       </Section>
 
-      <CtaBand title={t('cta.title')} text={t('cta.text')} primary={{ href: '/cooperation', label: t('cta.button') }} secondary={{ href: '/process', label: tn('process') }} />
+      <CtaBand icon={HandCoinsIcon} anim="float" title={t('cta.title')} text={t('cta.text')} primary={{ href: '/cooperation', label: t('cta.button') }} secondary={{ href: '/process', label: tn('process') }} />
     </>
   );
 }

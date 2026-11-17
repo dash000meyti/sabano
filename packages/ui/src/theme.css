@@ -1,6 +1,7 @@
 /*
- * Sabano design tokens (Tailwind CSS v4).
- * Brand: navy #062140 · teal #00aaa9 · gold #eab543
+ * Sabano design system v2 — "Midnight Aurora".
+ * Brand: navy #062140 · teal #00aaa9 · gold #eab543, extended with luminous
+ * aqua and champagne accents for glow on dark surfaces.
  */
 
 /* Vazirmatn "NL" = Arabic-script glyphs only (48 KB); Latin falls back to Manrope. */
@@ -32,12 +33,183 @@
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
+/* Animatable custom properties (rotating gradient borders, counters…) */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --mx {
+  syntax: '<length-percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+@property --my {
+  syntax: '<length-percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+/*
+ * Theme tokens. Light is the default (:root); `html.dark` switches the whole page,
+ * and `.scheme-dark` / `.scheme-light` force a theme for one subtree (feature cards,
+ * text on photos…). Utilities below read these variables, so one class works in both.
+ */
+:root,
+.scheme-light {
+  --canvas: #ffffff;
+  --canvas-alt: #f3f6fa;
+  --canvas-deep: #e9f0f7;
+  --card: #ffffff;
+  --card-hover: #f7fafd;
+  --card-solid: #ffffff;
+  --fg: #0b1f3a;
+  --fg-muted: #55687f;
+  --fg-subtle: #5f7187;
+  --edge: #e2e9f1;
+  --edge-strong: rgb(6 33 64 / 0.18);
+  --tint: rgb(6 33 64 / 0.05);
+  --accent: #04797a;
+  --accent-soft: #e6f6f6;
+  --gold-ink: #8c5a1d;
+  --gold-soft: #fdf8ec;
+  --gold-edge: #f6dd9d;
+  --danger: #b91c1c;
+  --danger-soft: #fef2f2;
+  --danger-edge: #fecaca;
+  --spot: rgb(0 170 169 / 0.1);
+  --glass-bg: linear-gradient(155deg, rgb(255 255 255 / 0.86), rgb(255 255 255 / 0.62));
+  --glass-border: rgb(6 33 64 / 0.08);
+  --glass-shadow: 0 10px 30px -14px rgb(6 33 64 / 0.25), inset 0 1px 0 rgb(255 255 255 / 0.9);
+  --glass-strong-bg: rgb(255 255 255 / 0.82);
+  --grid-line: rgb(6 33 64 / 0.055);
+  --dots: rgb(6 33 64 / 0.1);
+  --aurora-a: rgb(0 170 169 / 0.2);
+  --aurora-b: rgb(234 181 67 / 0.2);
+  --aurora-c: rgb(47 227 210 / 0.14);
+  --aurora-gold: rgb(234 181 67 / 0.26);
+  --aurora-cool: rgb(76 115 163 / 0.18);
+  --hero-top: rgb(0 170 169 / 0.1);
+  --hero-from: #f2f7fb;
+  --hero-to: #ffffff;
+  --gold-1: #b07720;
+  --gold-2: #d4972a;
+  --gold-3: #8c5a1d;
+  --sheen-1: #062140;
+  --sheen-2: #1f4a7a;
+  --brand-1: #036e6f;
+  --brand-2: #00aaa9;
+  --brand-3: #b07720;
+  --outline-stroke: rgb(6 33 64 / 0.14);
+  --hairline: rgb(6 33 64 / 0.14);
+  --grain-opacity: 0.035;
+  --tile-bg: linear-gradient(145deg, #ffffff, #eef6f8);
+  --tile-shadow: 0 10px 24px -12px rgb(6 33 64 / 0.35), inset 0 1px 0 #ffffff;
+  --skyline-opacity: 0.09;
+  --skyline-filter: grayscale(1) contrast(1.1);
+  --skyline-blend: multiply;
+  --scrollbar: #c9d4e0;
+  color-scheme: light;
+}
+
+html.dark,
+.scheme-dark {
+  --canvas: #020a18;
+  --canvas-alt: #04122a;
+  --canvas-deep: #071c3a;
+  --card: rgb(255 255 255 / 0.035);
+  --card-hover: rgb(255 255 255 / 0.065);
+  --card-solid: #071c3a;
+  --fg: #ffffff;
+  --fg-muted: rgb(255 255 255 / 0.66);
+  --fg-subtle: rgb(255 255 255 / 0.52);
+  --edge: rgb(255 255 255 / 0.1);
+  --edge-strong: rgb(255 255 255 / 0.22);
+  --tint: rgb(255 255 255 / 0.08);
+  --accent: #6ff5e6;
+  --accent-soft: rgb(47 227 210 / 0.12);
+  --gold-ink: #f0c86a;
+  --gold-soft: rgb(234 181 67 / 0.08);
+  --gold-edge: rgb(234 181 67 / 0.26);
+  --danger: #fca5a5;
+  --danger-soft: rgb(248 113 113 / 0.1);
+  --danger-edge: rgb(248 113 113 / 0.32);
+  --spot: rgb(47 227 210 / 0.16);
+  --glass-bg: linear-gradient(155deg, rgb(255 255 255 / 0.09), rgb(255 255 255 / 0.025));
+  --glass-border: rgb(255 255 255 / 0.1);
+  --glass-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08);
+  --glass-strong-bg: rgb(4 18 42 / 0.74);
+  --grid-line: rgb(255 255 255 / 0.045);
+  --dots: rgb(255 255 255 / 0.14);
+  --aurora-a: rgb(0 170 169 / 0.42);
+  --aurora-b: rgb(234 181 67 / 0.2);
+  --aurora-c: rgb(47 227 210 / 0.22);
+  --aurora-gold: rgb(234 181 67 / 0.32);
+  --aurora-cool: rgb(43 83 133 / 0.55);
+  --hero-top: rgb(15 49 87 / 0.9);
+  --hero-from: #04122a;
+  --hero-to: #020a18;
+  --gold-1: #f7dfa8;
+  --gold-2: #eab543;
+  --gold-3: #fff1c7;
+  --sheen-1: #ffffff;
+  --sheen-2: rgb(255 255 255 / 0.62);
+  --brand-1: #a5fff4;
+  --brand-2: #2fe3d2;
+  --brand-3: #eab543;
+  --outline-stroke: rgb(255 255 255 / 0.22);
+  --hairline: rgb(255 255 255 / 0.18);
+  --grain-opacity: 0.07;
+  --tile-bg: linear-gradient(145deg, rgb(47 227 210 / 0.22), rgb(255 255 255 / 0.04));
+  --tile-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 12px 30px -12px rgb(47 227 210 / 0.5);
+  --skyline-opacity: 0.28;
+  --skyline-filter: none;
+  --skyline-blend: luminosity;
+  --scrollbar: #1a3f6d;
+  color-scheme: dark;
+}
+
+/* A forced-scheme subtree must also restyle text that merely inherits its colour. */
+.scheme-dark,
+.scheme-light {
+  color: var(--fg);
+}
+
+/* Semantic colour utilities (inline so they follow the nearest scheme) */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-canvas-alt: var(--canvas-alt);
+  --color-canvas-deep: var(--canvas-deep);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-card-solid: var(--card-solid);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-edge: var(--edge);
+  --color-edge-strong: var(--edge-strong);
+  --color-tint: var(--tint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-gold-ink: var(--gold-ink);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-edge: var(--gold-edge);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-edge: var(--danger-edge);
+}
+
 @theme {
   --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial,
     sans-serif;
   --font-fa: 'Vazirmatn', 'Manrope', Tahoma, 'Segoe UI', sans-serif;
   --font-zh: 'Manrope', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC',
     'Source Han Sans SC', sans-serif;
+
+  /* Surfaces */
+  --color-midnight: #020a18;
+  --color-abyss: #04122a;
+  --color-deep: #071c3a;
 
   --color-navy-50: #eef3f9;
   --color-navy-100: #d6e1ee;
@@ -62,6 +234,12 @@
   --color-teal-800: #075859;
   --color-teal-900: #0a494a;
 
+  /* Luminous accents for glow on dark */
+  --color-aqua-200: #a5fff4;
+  --color-aqua-300: #6ff5e6;
+  --color-aqua-400: #2fe3d2;
+  --color-aqua-500: #12c8b8;
+
   --color-gold-50: #fdf8ec;
   --color-gold-100: #fbefd0;
   --color-gold-200: #f6dd9d;
@@ -70,57 +248,104 @@
   --color-gold-500: #d4972a;
   --color-gold-600: #b07720;
   --color-gold-700: #8c5a1d;
+  --color-champagne: #f7dfa8;
 
-  --color-ink: #0d2440;
+  --color-ink: #0b1f3a;
   --color-muted: #586b82;
   --color-subtle: #8496ab;
-  --color-line: #e2e9f0;
-  --color-surface: #f5f8fb;
+  --color-line: #e3e9f0;
+  --color-surface: #f4f7fb;
   --color-paper: #ffffff;
 
   --radius-xl: 1rem;
   --radius-2xl: 1.25rem;
   --radius-3xl: 1.75rem;
+  --radius-4xl: 2.25rem;
 
-  --shadow-card: 0 1px 2px rgb(6 33 64 / 0.04), 0 8px 24px -12px rgb(6 33 64 / 0.12);
-  --shadow-lift: 0 2px 4px rgb(6 33 64 / 0.05), 0 22px 48px -18px rgb(6 33 64 / 0.28);
-  --shadow-glow: 0 0 0 1px rgb(234 181 67 / 0.35), 0 12px 40px -12px rgb(234 181 67 / 0.45);
+  --shadow-card: 0 1px 2px rgb(6 33 64 / 0.04), 0 10px 30px -14px rgb(6 33 64 / 0.16);
+  --shadow-lift: 0 2px 4px rgb(6 33 64 / 0.05), 0 30px 60px -22px rgb(6 33 64 / 0.35);
+  --shadow-glow: 0 0 0 1px rgb(47 227 210 / 0.25), 0 20px 60px -20px rgb(47 227 210 / 0.45);
+  --shadow-gold: 0 14px 40px -12px rgb(234 181 67 / 0.65), inset 0 1px 0 rgb(255 255 255 / 0.5);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  --animate-float: float 9s ease-in-out infinite;
-  --animate-dash: dash 6s linear infinite;
-  --animate-pulse-dot: pulse-dot 3.2s ease-in-out infinite;
-  --animate-marquee: marquee 40s linear infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-slow: float 12s ease-in-out infinite;
+  --animate-drift: drift 22s ease-in-out infinite alternate;
+  --animate-drift-rev: drift 26s ease-in-out infinite alternate-reverse;
+  --animate-spin-slow: spin 40s linear infinite;
+  --animate-spin-slower: spin 80s linear infinite;
+  --animate-border-spin: border-spin 6s linear infinite;
+  --animate-shimmer: shimmer 6s linear infinite;
+  --animate-marquee: marquee 50s linear infinite;
+  --animate-pulse-ring: pulse-ring 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  --animate-shine: shine 3.5s ease-in-out infinite;
+  --animate-scroll-hint: scroll-hint 2s ease-in-out infinite;
 
   @keyframes float {
     0%,
     100% {
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translate3d(0, -14px, 0);
     }
   }
-  @keyframes dash {
-    to {
-      stroke-dashoffset: -400;
+  @keyframes drift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
     }
-  }
-  @keyframes pulse-dot {
-    0%,
+    50% {
+      transform: translate3d(6%, -4%, 0) scale(1.12);
+    }
     100% {
-      opacity: 0.35;
-      transform: scale(1);
+      transform: translate3d(-5%, 5%, 0) scale(0.95);
     }
-    50% {
-      opacity: 1;
-      transform: scale(1.35);
+  }
+  @keyframes border-spin {
+    to {
+      --angle: 360deg;
+    }
+  }
+  @keyframes shimmer {
+    to {
+      background-position: 200% center;
     }
   }
   @keyframes marquee {
     to {
-      transform: translateX(calc(-50% * var(--marquee-dir, 1)));
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.6);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+  }
+  @keyframes shine {
+    0%,
+    60% {
+      transform: translateX(-120%) skewX(-20deg);
+    }
+    100% {
+      transform: translateX(220%) skewX(-20deg);
+    }
+  }
+  @keyframes scroll-hint {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(8px);
+      opacity: 0.4;
     }
   }
 }

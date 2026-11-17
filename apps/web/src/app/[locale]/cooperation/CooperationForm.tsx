@@ -133,7 +133,7 @@ export function CooperationForm({ email, initialType }: { email: string; initial
 
   const err = (k: string) =>
     errors[k] ? (
-      <p id={`${id}-${k}-err`} className="mt-2 flex items-center gap-1.5 text-sm font-semibold text-red-600" role="alert">
+      <p id={`${id}-${k}-err`} className="mt-2 flex items-center gap-1.5 text-sm font-semibold text-danger" role="alert">
         <WarningCircleIcon weight="fill" className="size-4" aria-hidden />
         {t(`errors.${errors[k]}`, { email })}
       </p>
@@ -141,21 +141,21 @@ export function CooperationForm({ email, initialType }: { email: string; initial
 
   const inputCls = (k: string) =>
     cn(
-      'mt-2 block w-full rounded-2xl border bg-white px-4 py-3.5 text-[0.98rem] text-navy-900 outline-none transition-all placeholder:text-subtle focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10',
-      errors[k] ? 'border-red-400' : 'border-line',
+      'mt-2 block w-full rounded-2xl border bg-card px-4 py-3.5 text-[0.98rem] text-fg outline-none transition-all placeholder:text-fg-subtle focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10',
+      errors[k] ? 'border-danger' : 'border-edge',
     );
 
   if (state.status === 'success') {
     return (
-      <div ref={topRef} className="scroll-mt-28 rounded-[2rem] border border-teal-200 bg-gradient-to-b from-teal-50 to-white p-8 text-center sm:p-12" role="status">
+      <div ref={topRef} className="scroll-mt-28 rounded-[2rem] border border-accent/40 bg-gradient-to-b from-accent-soft to-card p-6 text-center sm:p-12" role="status">
         <span className="mx-auto grid size-16 place-items-center rounded-full bg-teal-500 text-white shadow-[0_12px_30px_-10px_rgb(0_170_169/0.8)]">
           <CheckCircleIcon weight="fill" className="size-9" aria-hidden />
         </span>
-        <h2 className="mt-6 text-2xl font-extrabold text-navy-900">{t('success.title')}</h2>
-        <p className="mx-auto mt-3 max-w-md leading-8 text-muted">{t('success.text')}</p>
-        <div className="mx-auto mt-7 inline-flex items-center gap-3 rounded-2xl border border-line bg-white px-5 py-3">
-          <span className="text-sm text-muted">{t('success.code')}</span>
-          <span className="font-mono text-lg font-bold tracking-wider text-navy-900" dir="ltr">
+        <h2 className="mt-6 text-2xl font-extrabold text-fg">{t('success.title')}</h2>
+        <p className="mx-auto mt-3 max-w-md leading-8 text-fg-muted">{t('success.text')}</p>
+        <div className="mx-auto mt-7 inline-flex items-center gap-3 rounded-2xl border border-edge bg-card px-5 py-3">
+          <span className="text-sm text-fg-muted">{t('success.code')}</span>
+          <span className="font-mono text-lg font-bold tracking-wider text-fg" dir="ltr">
             {state.code}
           </span>
           <button
@@ -164,7 +164,7 @@ export function CooperationForm({ email, initialType }: { email: string; initial
               void navigator.clipboard?.writeText(state.code);
               setCopied(true);
             }}
-            className="grid size-8 place-items-center rounded-lg text-teal-700 hover:bg-teal-50"
+            className="grid size-8 place-items-center rounded-lg text-accent hover:bg-accent-soft"
             aria-label="Copy"
           >
             {copied ? <CheckCircleIcon weight="fill" className="size-5" /> : <CopyIcon className="size-5" />}
@@ -193,14 +193,14 @@ export function CooperationForm({ email, initialType }: { email: string; initial
             <span
               className={cn(
                 'grid size-9 shrink-0 place-items-center rounded-full text-sm font-black transition-colors',
-                i < step ? 'bg-teal-500 text-white' : i === step ? 'bg-navy-900 text-white' : 'bg-surface text-subtle ring-1 ring-line',
+                i < step ? 'bg-teal-500 text-white' : i === step ? 'bg-fg text-canvas' : 'bg-canvas-alt text-fg-subtle ring-1 ring-edge',
               )}
               aria-current={i === step ? 'step' : undefined}
             >
               {i < step ? <CheckCircleIcon weight="bold" className="size-5" aria-hidden /> : locale === 'fa' ? '۱۲۳'[i] : i + 1}
             </span>
-            <span className={cn('hidden text-sm font-bold sm:block', i === step ? 'text-navy-900' : 'text-subtle')}>{label}</span>
-            {i < 2 && <span className={cn('h-px flex-1', i < step ? 'bg-teal-400' : 'bg-line')} />}
+            <span className={cn('hidden text-sm font-bold sm:block', i === step ? 'text-fg' : 'text-fg-subtle')}>{label}</span>
+            {i < 2 && <span className={cn('h-px flex-1', i < step ? 'bg-teal-400' : 'bg-edge')} />}
           </li>
         ))}
       </ol>
@@ -208,7 +208,8 @@ export function CooperationForm({ email, initialType }: { email: string; initial
       <form action={formAction} onSubmit={onSubmit} noValidate className="mt-8" encType="multipart/form-data">
         <input type="hidden" name="locale" value={locale} />
         <input type="hidden" name="started_at" value={startedAt} />
-        <div aria-hidden className="absolute -start-[9999px] h-0 w-0 overflow-hidden">
+        {/* Honeypot: invisible to people, still in place for bots (no off-screen offset that could widen the page) */}
+        <div aria-hidden className="pointer-events-none absolute size-px overflow-hidden opacity-0 [clip-path:inset(50%)]">
           <label>
             Fax
             <input type="text" name="fax_number" tabIndex={-1} autoComplete="off" />
@@ -217,7 +218,7 @@ export function CooperationForm({ email, initialType }: { email: string; initial
 
         {/* Step 1 — type */}
         <fieldset data-step-hidden={step !== 0} className="space-y-3">
-          <legend className="text-lg font-extrabold text-navy-900">{t('form.type')}</legend>
+          <legend className="text-lg font-extrabold text-fg">{t('form.type')}</legend>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {TYPES.map((type) => {
               const Icon = typeIcons[type];
@@ -227,7 +228,7 @@ export function CooperationForm({ email, initialType }: { email: string; initial
                   key={type}
                   className={cn(
                     'group relative flex cursor-pointer items-start gap-4 rounded-2xl border p-4 transition-all',
-                    checked ? 'border-teal-500 bg-teal-50/60 ring-4 ring-teal-500/10' : 'border-line bg-white hover:border-navy-900/25',
+                    checked ? 'border-teal-500 bg-accent-soft ring-4 ring-teal-500/10' : 'border-edge bg-card hover:border-edge-strong',
                     type === 'other' && 'sm:col-span-2',
                   )}
                 >
@@ -240,14 +241,14 @@ export function CooperationForm({ email, initialType }: { email: string; initial
                     className="peer sr-only"
                     aria-describedby={errors.type ? `${id}-type-err` : undefined}
                   />
-                  <span className={cn('grid size-11 shrink-0 place-items-center rounded-xl transition-colors', checked ? 'bg-teal-500 text-white' : 'bg-surface text-teal-700')}>
+                  <span className={cn('grid size-11 shrink-0 place-items-center rounded-xl transition-colors', checked ? 'bg-teal-500 text-white' : 'bg-canvas-alt text-accent')}>
                     <Icon weight="duotone" className="size-6" aria-hidden />
                   </span>
                   <span>
-                    <span className="block font-bold text-navy-900">{t(`form.types.${type}`)}</span>
-                    <span className="mt-0.5 block text-sm leading-6 text-muted">{t(`form.typeHints.${type}`)}</span>
+                    <span className="block font-bold text-fg">{t(`form.types.${type}`)}</span>
+                    <span className="mt-0.5 block text-sm leading-6 text-fg-muted">{t(`form.typeHints.${type}`)}</span>
                   </span>
-                  <span className="absolute end-4 top-4 hidden size-5 rounded-full border-2 border-line peer-checked:block peer-checked:border-[6px] peer-checked:border-teal-500 sm:block" aria-hidden />
+                  <span className="absolute end-4 top-4 hidden size-5 rounded-full border-2 border-edge peer-checked:block peer-checked:border-[6px] peer-checked:border-teal-500 sm:block" aria-hidden />
                   <span className="pointer-events-none absolute inset-0 rounded-2xl peer-focus-visible:ring-2 peer-focus-visible:ring-gold-400" />
                 </label>
               );
@@ -258,10 +259,10 @@ export function CooperationForm({ email, initialType }: { email: string; initial
 
         {/* Step 2 — contact */}
         <fieldset data-step-hidden={step !== 1} className="grid gap-5 sm:grid-cols-2">
-          <legend className="mb-1 text-lg font-extrabold text-navy-900 sm:col-span-2">{steps[1]}</legend>
+          <legend className="mb-1 text-lg font-extrabold text-fg sm:col-span-2">{steps[1]}</legend>
           <div className="sm:col-span-2">
-            <label htmlFor={`${id}-name`} className="text-sm font-bold text-navy-900">
-              {t('form.name')} <span className="text-red-500">*</span>
+            <label htmlFor={`${id}-name`} className="text-sm font-bold text-fg">
+              {t('form.name')} <span className="text-danger">*</span>
             </label>
             <input
               id={`${id}-name`}
@@ -278,8 +279,8 @@ export function CooperationForm({ email, initialType }: { email: string; initial
             {err('name')}
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor={`${id}-contact`} className="text-sm font-bold text-navy-900">
-              {t('form.contact')} <span className="text-red-500">*</span>
+            <label htmlFor={`${id}-contact`} className="text-sm font-bold text-fg">
+              {t('form.contact')} <span className="text-danger">*</span>
             </label>
             <input
               id={`${id}-contact`}
@@ -295,21 +296,21 @@ export function CooperationForm({ email, initialType }: { email: string; initial
               aria-describedby={`${id}-contact-hint${errors.contact ? ` ${id}-contact-err` : ''}`}
               className={cn(inputCls('contact'), 'text-start rtl:text-end')}
             />
-            <p id={`${id}-contact-hint`} className="mt-2 text-xs text-muted">
+            <p id={`${id}-contact-hint`} className="mt-2 text-xs text-fg-muted">
               {t('form.contactHint')}
             </p>
             {err('contact')}
           </div>
           <div>
-            <label htmlFor={`${id}-company`} className="text-sm font-bold text-navy-900">
-              {t('form.company')} <span className="font-normal text-subtle">({t('form.optional')})</span>
+            <label htmlFor={`${id}-company`} className="text-sm font-bold text-fg">
+              {t('form.company')} <span className="font-normal text-fg-subtle">({t('form.optional')})</span>
             </label>
             <input id={`${id}-company`} name="company" value={values.company} onChange={(e) => set('company', e.target.value)} autoComplete="organization" maxLength={120} className={inputCls('company')} />
             {err('company')}
           </div>
           <div>
-            <label htmlFor={`${id}-website`} className="text-sm font-bold text-navy-900">
-              {t('form.website')} <span className="font-normal text-subtle">({t('form.optional')})</span>
+            <label htmlFor={`${id}-website`} className="text-sm font-bold text-fg">
+              {t('form.website')} <span className="font-normal text-fg-subtle">({t('form.optional')})</span>
             </label>
             <input
               id={`${id}-website`}
@@ -329,13 +330,13 @@ export function CooperationForm({ email, initialType }: { email: string; initial
 
         {/* Step 3 — details */}
         <fieldset data-step-hidden={step !== 2} className="space-y-5">
-          <legend className="mb-1 text-lg font-extrabold text-navy-900">{steps[2]}</legend>
+          <legend className="mb-1 text-lg font-extrabold text-fg">{steps[2]}</legend>
           <div>
             <div className="flex items-baseline justify-between">
-              <label htmlFor={`${id}-message`} className="text-sm font-bold text-navy-900">
-                {t('form.message')} <span className="text-red-500">*</span>
+              <label htmlFor={`${id}-message`} className="text-sm font-bold text-fg">
+                {t('form.message')} <span className="text-danger">*</span>
               </label>
-              <span className="text-xs text-subtle">{t('form.characters', { count: values.message.length })}</span>
+              <span className="text-xs text-fg-subtle">{t('form.characters', { count: values.message.length })}</span>
             </div>
             <textarea
               id={`${id}-message`}
@@ -349,15 +350,15 @@ export function CooperationForm({ email, initialType }: { email: string; initial
               aria-describedby={`${id}-message-hint${errors.message ? ` ${id}-message-err` : ''}`}
               className={cn(inputCls('message'), 'resize-y leading-8')}
             />
-            <p id={`${id}-message-hint`} className="mt-2 text-xs text-muted">
+            <p id={`${id}-message-hint`} className="mt-2 text-xs text-fg-muted">
               {t('form.messageHint')}
             </p>
             {err('message')}
           </div>
 
           <div>
-            <p className="text-sm font-bold text-navy-900">
-              {t('form.attachment')} <span className="font-normal text-subtle">({t('form.optional')})</span>
+            <p className="text-sm font-bold text-fg">
+              {t('form.attachment')} <span className="font-normal text-fg-subtle">({t('form.optional')})</span>
             </p>
             <input
               ref={fileRef}
@@ -370,17 +371,17 @@ export function CooperationForm({ email, initialType }: { email: string; initial
               aria-describedby={`${id}-file-hint`}
             />
             {file ? (
-              <div className="mt-2 flex items-center gap-3 rounded-2xl border border-teal-200 bg-teal-50/50 p-4">
-                <PaperclipIcon weight="duotone" className="size-6 shrink-0 text-teal-700" aria-hidden />
+              <div className="mt-2 flex items-center gap-3 rounded-2xl border border-accent/40 bg-accent-soft p-4">
+                <PaperclipIcon weight="duotone" className="size-6 shrink-0 text-accent" aria-hidden />
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm font-bold text-navy-900" dir="auto">
+                  <span className="block truncate text-sm font-bold text-fg" dir="auto">
                     {file.name}
                   </span>
-                  <span className="text-xs text-muted" dir="ltr">
+                  <span className="text-xs text-fg-muted" dir="ltr">
                     {fmtSize(file.size)}
                   </span>
                 </span>
-                <button type="button" onClick={() => onFile(null)} className="grid size-9 place-items-center rounded-xl text-red-600 hover:bg-red-50" aria-label={t('form.removeFile')}>
+                <button type="button" onClick={() => onFile(null)} className="grid size-9 place-items-center rounded-xl text-danger hover:bg-danger-soft" aria-label={t('form.removeFile')}>
                   <TrashIcon weight="duotone" className="size-5" aria-hidden />
                 </button>
               </div>
@@ -399,14 +400,14 @@ export function CooperationForm({ email, initialType }: { email: string; initial
                 }}
                 className={cn(
                   'mt-2 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed px-6 py-8 text-center transition-colors',
-                  drag ? 'border-teal-500 bg-teal-50' : 'border-line bg-surface/60 hover:border-teal-300',
+                  drag ? 'border-teal-500 bg-accent-soft' : 'border-edge bg-canvas-alt/60 hover:border-accent/40',
                 )}
               >
-                <UploadSimpleIcon weight="duotone" className="size-8 text-teal-600" aria-hidden />
-                <span className="text-sm text-navy-800">
-                  {t('form.dropFile')} <span className="font-bold text-teal-700 underline underline-offset-4">{t('form.chooseFile')}</span>
+                <UploadSimpleIcon weight="duotone" className="size-8 text-accent" aria-hidden />
+                <span className="text-sm text-fg">
+                  {t('form.dropFile')} <span className="font-bold text-accent underline underline-offset-4">{t('form.chooseFile')}</span>
                 </span>
-                <span id={`${id}-file-hint`} className="text-xs text-muted">
+                <span id={`${id}-file-hint`} className="text-xs text-fg-muted">
                   {t('form.attachmentHint')}
                 </span>
               </label>
@@ -415,7 +416,7 @@ export function CooperationForm({ email, initialType }: { email: string; initial
           </div>
 
           <div>
-            <label className="flex cursor-pointer items-start gap-3 text-sm leading-7 text-navy-800">
+            <label className="flex cursor-pointer items-start gap-3 text-sm leading-7 text-fg">
               <input
                 type="checkbox"
                 name="consent"
@@ -426,7 +427,7 @@ export function CooperationForm({ email, initialType }: { email: string; initial
               />
               <span>
                 {t('form.consent')}{' '}
-                <Link href="/privacy" className="font-bold text-teal-700 underline underline-offset-4" target="_blank">
+                <Link href="/privacy" className="font-bold text-accent underline underline-offset-4" target="_blank">
                   {t('form.privacyLink')}
                 </Link>
               </span>
@@ -436,14 +437,14 @@ export function CooperationForm({ email, initialType }: { email: string; initial
         </fieldset>
 
         {state.status === 'error' && state.formError && (
-          <p className="mt-6 flex items-center gap-2 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-semibold text-red-700" role="alert">
+          <p className="mt-6 flex items-center gap-2 rounded-2xl border border-danger-edge bg-danger-soft p-4 text-sm font-semibold text-danger" role="alert">
             <WarningCircleIcon weight="fill" className="size-5 shrink-0" aria-hidden />
             {t(`errors.${state.formError}`, { email })}
           </p>
         )}
 
         {/* Navigation */}
-        <div className="mt-8 flex items-center justify-between gap-3 border-t border-line pt-6">
+        <div className="mt-8 flex items-center justify-between gap-3 border-t border-edge pt-6">
           {step > 0 ? (
             <button type="button" onClick={() => setStep((s) => s - 1)} className={buttonClasses('ghost', 'md')}>
               <ArrowLeftIcon weight="bold" className="size-4 rtl:-scale-x-100" aria-hidden />

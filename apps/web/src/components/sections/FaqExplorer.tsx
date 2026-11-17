@@ -37,7 +37,7 @@ export function FaqExplorer({ faqs, categories }: { faqs: Faq[]; categories: { k
               onClick={() => setCat(c.key)}
               className={cn(
                 'rounded-full px-4 py-2 text-sm font-bold transition-colors',
-                cat === c.key ? 'bg-navy-900 text-white' : 'border border-line bg-white text-navy-800 hover:border-navy-900/30',
+                cat === c.key ? 'bg-fg text-canvas shadow-[0_10px_24px_-12px_rgb(6_33_64/0.6)]' : 'border border-edge bg-card text-fg hover:border-edge-strong',
               )}
             >
               {c.label}
@@ -46,33 +46,38 @@ export function FaqExplorer({ faqs, categories }: { faqs: Faq[]; categories: { k
         </div>
         <label className="relative block md:w-80">
           <span className="sr-only">{t('searchPlaceholder')}</span>
-          <MagnifyingGlassIcon weight="bold" className="pointer-events-none absolute start-4 top-1/2 size-4.5 -translate-y-1/2 text-subtle" aria-hidden />
+          <MagnifyingGlassIcon weight="bold" className="pointer-events-none absolute start-4 top-1/2 size-4.5 -translate-y-1/2 text-fg-subtle" aria-hidden />
           <input
             type="search"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder={t('searchPlaceholder')}
-            className="h-12 w-full rounded-full border border-line bg-white ps-11 pe-4 text-[0.95rem] text-navy-900 outline-none transition-colors placeholder:text-subtle focus:border-teal-500"
+            className="h-13 w-full rounded-full border border-edge bg-card ps-11 pe-4 text-[0.95rem] text-fg shadow-card outline-none transition-all placeholder:text-fg-subtle focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10"
           />
         </label>
       </div>
       {shown.length === 0 ? (
-        <p className="mt-10 rounded-3xl border border-dashed border-line p-10 text-center text-muted">{t('noResults')}</p>
+        <p className="mt-10 rounded-3xl border border-dashed border-edge p-10 text-center text-fg-muted">{t('noResults')}</p>
       ) : (
-        <div className="mt-8 divide-y divide-line overflow-hidden rounded-3xl border border-line bg-white">
+        <div className="mt-10 space-y-3">
           {shown.map((f, i) => (
-            <details key={f.id} id={`faq-${f.id}`} className="group/faq scroll-mt-28" open={i === 0 && !q}>
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 transition-colors hover:bg-surface/70">
-                <h2 className="text-[1rem] font-bold leading-8 text-navy-900">{f.question}</h2>
+            <details
+              key={f.id}
+              id={`faq-${f.id}`}
+              className="group/faq scroll-mt-28 overflow-hidden rounded-[1.5rem] border border-edge bg-card transition-all duration-500 open:border-accent/40 open:shadow-lift"
+              open={i === 0 && !q}
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:gap-6 sm:px-7 sm:py-5">
+                <h2 className="text-[0.98rem] font-bold leading-8 sm:text-[1.02rem] text-fg">{f.question}</h2>
                 <span
                   aria-hidden
-                  className="relative grid size-8 shrink-0 place-items-center rounded-full border border-line text-teal-700 transition-all group-open/faq:rotate-45 group-open/faq:border-teal-500 group-open/faq:bg-teal-500 group-open/faq:text-white"
+                  className="relative grid size-9 shrink-0 place-items-center rounded-full bg-canvas-alt text-accent transition-all duration-500 group-open/faq:rotate-[135deg] group-open/faq:bg-fg group-open/faq:text-canvas"
                 >
-                  <span className="absolute h-0.5 w-3 rounded bg-current" />
-                  <span className="absolute h-3 w-0.5 rounded bg-current" />
+                  <span className="absolute h-0.5 w-3.5 rounded bg-current" />
+                  <span className="absolute h-3.5 w-0.5 rounded bg-current" />
                 </span>
               </summary>
-              <div className="px-6 pb-6 text-[0.98rem] leading-8 text-muted">{f.answer}</div>
+              <div className="px-6 pb-6 text-[0.98rem] leading-8 text-fg-muted sm:px-7">{f.answer}</div>
             </details>
           ))}
         </div>

@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { locales, localeMeta, localizedPath, type Locale } from '@sabano/i18n';
+import { cn } from '@sabano/ui';
 import { Link } from '@/i18n/navigation';
 import { getCompanyCount, getContact, getSocial } from '@/lib/data';
 import { formatPhone, localizeDigits, phoneHref } from '@/lib/format';
 import { serviceSlugs } from '@/lib/site';
 import { Logo } from '../brand/Logo';
+import { Aurora } from '../decor/Aurora';
 import {
   EnvelopeSimpleIcon,
   InstagramLogoIcon,
@@ -79,21 +81,22 @@ export async function Footer({ locale }: { locale: Locale }) {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-navy-mesh text-white" aria-labelledby="footer-title">
+    <footer className="grain relative isolate overflow-hidden bg-hero text-fg" aria-labelledby="footer-title">
       <h2 id="footer-title" className="sr-only">
         {tc('orgName')}
       </h2>
-      <div className="pointer-events-none absolute inset-0 bg-line-grid opacity-60 [mask-image:linear-gradient(to_bottom,transparent,#000_30%,#000)]" />
-      <div className="hairline-gold absolute inset-x-0 top-0" />
-      <div className="relative mx-auto max-w-[1240px] px-4 pb-10 pt-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1fr_2.7fr]">
+      <Aurora intensity={0.6} variant="cool" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-grid mask-fade-b opacity-60" />
+      <div className="hairline absolute inset-x-0 top-0" />
+      <div className="relative z-[2] mx-auto max-w-[1280px] px-5 pt-20 sm:px-8 lg:px-10">
+        <div className="grid gap-14 xl:grid-cols-[1.1fr_2.6fr]">
           <div>
-            <Link href="/" className="inline-block rounded-2xl" aria-label={tc('home')}>
+            <Link href="/" className="inline-block rounded-full">
               <Logo name={tc('siteName')} sub={tc('brandSub')} tone="light" />
             </Link>
-            <p className="mt-5 max-w-sm text-[0.92rem] leading-8 text-white/70">{t('about')}</p>
+            <p className="mt-6 max-w-sm text-[0.95rem] leading-8 text-fg-muted">{t('about')}</p>
             {socials.length > 0 && (
-              <div className="mt-6">
+              <div className="mt-7">
                 <p className="sr-only">{t('social')}</p>
                 <ul className="flex flex-wrap gap-2">
                   {socials.map((s) => (
@@ -103,7 +106,8 @@ export async function Footer({ locale }: { locale: Locale }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${s.label} ${tc('newTab')}`}
-                        className="grid size-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white/85 transition-all hover:-translate-y-0.5 hover:border-gold-400/60 hover:text-gold-300"
+                        data-magnetic
+                        className="grid size-11 place-items-center rounded-full border border-edge bg-card text-fg/80 transition-colors hover:border-accent/60 hover:text-accent"
                       >
                         {s.icon}
                       </a>
@@ -114,14 +118,16 @@ export async function Footer({ locale }: { locale: Locale }) {
             )}
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1.25fr_1fr_1.45fr]">
-            {columns.map((col) => (
-              <nav key={col.title} aria-label={col.title}>
-                <h3 className="text-sm font-bold text-gold-300">{col.title}</h3>
-                <ul className="mt-4 space-y-2.5">
+          {/* Phones: two short link columns side by side; services and contact get full rows */}
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[1fr_1.25fr_1fr_1.45fr]">
+            {columns.map((col, ci) => (
+              <nav key={col.title} aria-label={col.title} className={cn(ci === 1 && 'max-sm:order-3 max-sm:col-span-2')}>
+                <h3 className="text-[0.75rem] font-bold tracking-wide text-accent/90">{col.title}</h3>
+                <ul className="mt-5 space-y-3">
                   {col.links.map((l) => (
                     <li key={l.href}>
-                      <Link href={l.href} className="text-[0.9rem] text-white/70 transition-colors hover:text-white">
+                      <Link href={l.href} className="group/fl inline-flex items-center gap-2 text-[0.92rem] text-fg-muted transition-colors hover:text-fg">
+                        <span aria-hidden className="h-px w-0 bg-gold-400 transition-all duration-300 group-hover/fl:w-3" />
                         {l.label}
                       </Link>
                     </li>
@@ -129,26 +135,26 @@ export async function Footer({ locale }: { locale: Locale }) {
                 </ul>
               </nav>
             ))}
-            <div>
-              <h3 className="text-sm font-bold text-gold-300">{t('contactTitle')}</h3>
-              <address className="mt-4 space-y-3 text-[0.9rem] not-italic text-white/75">
-                <a href={`mailto:${contact.email}`} className="flex items-center gap-2 hover:text-white">
-                  <EnvelopeSimpleIcon weight="duotone" className="size-4 shrink-0 text-teal-300" aria-hidden />
+            <div className="max-sm:order-4 max-sm:col-span-2">
+              <h3 className="text-[0.75rem] font-bold tracking-wide text-accent/90">{t('contactTitle')}</h3>
+              <address className="mt-5 space-y-3.5 text-[0.92rem] not-italic text-fg-muted">
+                <a href={`mailto:${contact.email}`} className="flex items-center gap-2.5 hover:text-fg">
+                  <EnvelopeSimpleIcon weight="duotone" className="size-4.5 shrink-0 text-gold-ink" aria-hidden />
                   <span dir="ltr">{contact.email}</span>
                 </a>
-                <span className="flex items-start gap-2">
-                  <PhoneIcon weight="duotone" className="mt-1 size-4 shrink-0 text-teal-300" aria-hidden />
+                <span className="flex items-start gap-2.5">
+                  <PhoneIcon weight="duotone" className="mt-1 size-4.5 shrink-0 text-gold-ink" aria-hidden />
                   <span className="sr-only">{tct('phone')}</span>
-                  <span className="flex flex-col gap-1">
+                  <span className="flex flex-col gap-1.5">
                     {contact.phones.map((p) => (
-                      <a key={p} href={phoneHref(p)} dir="ltr" className="text-start hover:text-white">
+                      <a key={p} href={phoneHref(p)} dir="ltr" className="tabular whitespace-nowrap text-start hover:text-fg">
                         {formatPhone(p, locale)}
                       </a>
                     ))}
                   </span>
                 </span>
-                <span className="flex items-start gap-2">
-                  <MapPinIcon weight="duotone" className="mt-1 size-4 shrink-0 text-teal-300" aria-hidden />
+                <span className="flex items-start gap-2.5">
+                  <MapPinIcon weight="duotone" className="mt-1 size-4.5 shrink-0 text-gold-ink" aria-hidden />
                   <span className="leading-7">{contact.address[locale] ?? contact.address.en}</span>
                 </span>
               </address>
@@ -156,7 +162,7 @@ export async function Footer({ locale }: { locale: Locale }) {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-5 border-t border-white/10 pt-6 text-[0.8rem] text-white/55 md:flex-row md:items-center md:justify-between">
+        <div className="mt-16 flex flex-col gap-5 border-t border-edge pt-7 text-[0.8rem] text-fg-subtle md:flex-row md:items-center md:justify-between">
           <p>{t('rights', { year })}</p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <nav aria-label={tc('language')} className="flex flex-wrap gap-x-3 gap-y-1">
@@ -166,18 +172,27 @@ export async function Footer({ locale }: { locale: Locale }) {
                   href={localizedPath(l, '/')}
                   lang={localeMeta[l].hreflang}
                   hrefLang={localeMeta[l].hreflang}
-                  className={l === locale ? 'font-bold text-white' : 'hover:text-white'}
+                  className={cn('inline-block py-1.5', l === locale ? 'font-bold text-fg' : 'hover:text-fg')}
                 >
                   {localeMeta[l].name}
                 </a>
               ))}
             </nav>
-            <a href={localizedPath(locale, '/news/rss.xml')} className="inline-flex items-center gap-1.5 hover:text-white">
+            <a href={localizedPath(locale, '/news/rss.xml')} className="inline-flex items-center gap-1.5 py-1.5 hover:text-fg">
               <RssIcon weight="bold" className="size-3.5" aria-hidden />
               {t('rss')}
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Giant wordmark */}
+      <div aria-hidden className="pointer-events-none relative z-[1] mt-6 select-none overflow-hidden">
+        <p
+          className={`text-outline text-center font-black leading-[0.85] tracking-tighter ${locale === 'fa' ? 'text-[26vw]' : 'text-[20vw]'} translate-y-[18%] bg-[linear-gradient(180deg,rgb(255_255_255/0.14),transparent_75%)] bg-clip-text`}
+        >
+          {locale === 'fa' ? 'صبانو' : 'SABANO'}
+        </p>
       </div>
     </footer>
   );

@@ -56,7 +56,7 @@ export function AdminNav({ newCount, isAdmin }: { newCount: number; isAdmin: boo
     <nav className="space-y-6" aria-label="منوی پنل">
       {groups.map((g) => (
         <div key={g.title}>
-          <p className="px-3 text-[0.7rem] font-bold text-white/40">{g.title}</p>
+          <p className="px-3 text-xs font-bold text-fg-subtle">{g.title}</p>
           <ul className="mt-2 space-y-0.5">
             {g.items
               .filter((i) => !i.adminOnly || isAdmin)
@@ -68,12 +68,12 @@ export function AdminNav({ newCount, isAdmin }: { newCount: number; isAdmin: boo
                       href={i.href}
                       className={cn(
                         'flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors',
-                        active ? 'bg-white text-navy-900 shadow-sm' : 'text-white/75 hover:bg-white/10 hover:text-white',
+                        active ? 'bg-card text-fg shadow-sm' : 'text-fg-muted hover:bg-tint hover:text-fg',
                       )}
                     >
-                      <i.icon weight={active ? 'fill' : 'duotone'} className={cn('size-5', active ? 'text-teal-600' : 'text-teal-300')} aria-hidden />
+                      <i.icon weight={active ? 'fill' : 'duotone'} className={cn('size-5', active ? 'text-accent' : 'text-teal-300')} aria-hidden />
                       <span className="flex-1">{i.label}</span>
-                      {!!i.badge && <span className="rounded-full bg-gold-400 px-2 py-0.5 text-[0.7rem] font-black text-navy-950">{i.badge}</span>}
+                      {!!i.badge && <span className="rounded-full bg-gold-400 px-2 py-0.5 text-xs font-black text-navy-950">{i.badge}</span>}
                     </Link>
                   </li>
                 );

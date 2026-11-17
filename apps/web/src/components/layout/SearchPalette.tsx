@@ -45,15 +45,15 @@ export function SearchButton({ label, tone }: { label: string; tone: 'light' | '
       onClick={() => setOpen(true)}
       aria-label={label}
       className={cn(
-        'inline-flex h-10 items-center gap-2 rounded-full px-3 text-sm font-semibold transition-colors',
-        tone === 'dark' ? 'text-navy-900 hover:bg-navy-50' : 'text-white/90 hover:bg-white/10',
+        'inline-flex h-11 items-center gap-2 rounded-full px-3 text-sm font-semibold transition-colors',
+        tone === 'dark' ? 'text-fg hover:bg-tint' : 'text-fg/90 hover:bg-tint',
       )}
     >
       <MagnifyingGlassIcon weight="bold" className="size-5" aria-hidden />
       <kbd
         className={cn(
           'hidden rounded-md border px-1.5 py-0.5 font-sans text-[0.7rem] font-bold xl:inline',
-          tone === 'dark' ? 'border-navy-900/15 text-muted' : 'border-white/25 text-white/70',
+          tone === 'dark' ? 'border-edge-strong text-fg-muted' : 'border-edge-strong text-fg-muted',
         )}
         dir="ltr"
       >
@@ -161,19 +161,19 @@ export function SearchPalette() {
       ref={dialogRef}
       onClose={() => setOpen(false)}
       onClick={(e) => e.target === dialogRef.current && setOpen(false)}
-      className="m-0 mx-auto mt-[10vh] w-[min(640px,calc(100vw-2rem))] max-w-none overflow-visible bg-transparent p-0 backdrop:bg-navy-950/60 backdrop:backdrop-blur-sm"
+      className="m-0 mx-auto mt-[12vh] w-[min(680px,calc(100vw-2rem))] max-w-none overflow-visible bg-transparent p-0 backdrop:bg-midnight/70 backdrop:backdrop-blur-md"
       aria-label={t('title')}
     >
-      <div className="overflow-hidden rounded-3xl bg-white shadow-[0_40px_120px_-40px_rgb(0_0_0/0.6)] ring-1 ring-navy-900/10">
-        <div className="flex items-center gap-3 border-b border-line px-5">
-          <MagnifyingGlassIcon weight="bold" className="size-5 shrink-0 text-muted" aria-hidden />
+      <div className="border-glow glass-strong overflow-hidden rounded-[1.75rem] text-fg shadow-[0_50px_140px_-40px_rgb(0_0_0/0.9)]">
+        <div className="relative z-[1] flex items-center gap-3 border-b border-edge px-6">
+          <MagnifyingGlassIcon weight="bold" className="size-5 shrink-0 text-accent" aria-hidden />
           <input
             ref={inputRef}
             value={q}
             onChange={(e) => setQ(e.target.value)}
             onKeyDown={onKeyDown}
             placeholder={t('placeholder')}
-            className="h-16 w-full bg-transparent text-base text-navy-900 outline-none placeholder:text-subtle"
+            className="h-[4.25rem] w-full bg-transparent text-lg text-fg outline-none placeholder:text-fg/35"
             role="combobox"
             aria-expanded={visibleHits.length > 0}
             aria-controls={listId}
@@ -182,14 +182,14 @@ export function SearchPalette() {
             spellCheck={false}
             enterKeyHint="search"
           />
-          {loading && <span className="size-4 shrink-0 animate-spin rounded-full border-2 border-teal-500 border-t-transparent" />}
-          <kbd className="hidden rounded-md border border-line px-1.5 py-0.5 text-[0.7rem] font-bold text-muted sm:inline">Esc</kbd>
+          {loading && <span className="size-4 shrink-0 animate-spin rounded-full border-2 border-aqua-400 border-t-transparent" />}
+          <kbd className="hidden rounded-md border border-edge px-1.5 py-0.5 text-[0.7rem] font-bold text-fg-subtle sm:inline">Esc</kbd>
         </div>
-        <ul id={listId} role="listbox" className="max-h-[55vh] overflow-y-auto p-2">
+        <ul id={listId} role="listbox" className="relative z-[1] max-h-[55vh] overflow-y-auto p-2" data-lenis-prevent>
           {q.trim().length < 2 ? (
-            <li className="px-4 py-8 text-center text-sm text-muted">{t('hint')}</li>
+            <li className="px-4 py-10 text-center text-sm text-fg-subtle">{t('hint')}</li>
           ) : visibleHits.length === 0 && !loading ? (
-            <li className="px-4 py-8 text-center text-sm text-muted">{t('noResults')}</li>
+            <li className="px-4 py-10 text-center text-sm text-fg-subtle">{t('noResults')}</li>
           ) : (
             visibleHits.map((hit, i) => {
               const Icon = typeIcons[hit.type];
@@ -201,29 +201,29 @@ export function SearchPalette() {
                     onClick={() => go(hit)}
                     className={cn(
                       'flex w-full items-start gap-3 rounded-2xl p-3 text-start transition-colors',
-                      i === active ? 'bg-surface' : 'hover:bg-surface',
+                      i === active ? 'bg-card-hover' : 'hover:bg-card-hover',
                     )}
                   >
-                    <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-xl bg-teal-50 text-teal-700">
+                    <span className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent ring-1 ring-edge">
                       <Icon weight="duotone" className="size-5" aria-hidden />
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="flex items-center gap-2">
-                        <span className="truncate text-sm font-bold text-navy-900">{hit.title}</span>
-                        <span className="shrink-0 rounded-full bg-navy-50 px-2 py-0.5 text-[0.68rem] font-semibold text-navy-600">
+                        <span className="truncate text-sm font-bold text-fg">{hit.title}</span>
+                        <span className="shrink-0 rounded-full bg-tint px-2 py-0.5 text-xs font-semibold text-fg-muted">
                           {t(`types.${hit.type}`)}
                         </span>
                       </span>
-                      <span className="mt-0.5 line-clamp-2 block text-[0.82rem] leading-6 text-muted">{hit.snippet}</span>
+                      <span className="mt-0.5 line-clamp-2 block text-[0.82rem] leading-6 text-fg-subtle">{hit.snippet}</span>
                     </span>
-                    <ArrowUpRightIcon className="mt-1 size-4 shrink-0 text-subtle rtl:-scale-x-100" aria-hidden />
+                    <ArrowUpRightIcon className="mt-1 size-4 shrink-0 text-fg-subtle rtl:-scale-x-100" aria-hidden />
                   </button>
                 </li>
               );
             })
           )}
         </ul>
-        <div className="flex items-center gap-4 border-t border-line bg-surface/60 px-5 py-2.5 text-[0.72rem] text-muted">
+        <div className="relative z-[1] flex items-center gap-4 border-t border-edge bg-card px-6 py-3 text-[0.72rem] text-fg-subtle">
           <span>
             <kbd className="font-sans font-bold">↑↓</kbd> {t('keys.navigate')}
           </span>

@@ -45,4 +45,5 @@ export type HeaderLabels = {
   brandName: string;
   brandSub: string;
   skip: string;
+  theme: string;
 };

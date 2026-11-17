@@ -40,22 +40,22 @@ export default async function SubmissionPage({ params, searchParams }: { params:
         }
       />
       <Flash message={saved ? 'تغییرات ذخیره شد.' : null} />
-      <div className="grid gap-6 xl:grid-cols-[1fr_22rem]">
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1fr_22rem]">
         <div className="space-y-6">
           <Card title="متن درخواست">
-            <p className="whitespace-pre-wrap text-[0.95rem] leading-8 text-navy-900" dir="auto">
+            <p className="whitespace-pre-wrap text-[0.95rem] leading-8 text-fg" dir="auto">
               {s.message}
             </p>
           </Card>
           {s.attachmentPath && (
             <Card title="فایل پیوست">
-              <div className="flex items-center gap-4 rounded-xl border border-line bg-surface p-4">
-                <PaperclipIcon weight="duotone" className="size-7 text-teal-600" aria-hidden />
+              <div className="flex items-center gap-4 rounded-xl border border-edge bg-canvas-alt p-4">
+                <PaperclipIcon weight="duotone" className="size-7 text-accent" aria-hidden />
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-bold text-navy-900" dir="auto">
+                  <p className="truncate text-sm font-bold text-fg" dir="auto">
                     {s.attachmentName}
                   </p>
-                  <p className="text-xs text-muted" dir="ltr">
+                  <p className="text-xs text-fg-muted" dir="ltr">
                     {s.attachmentMime} · {Math.ceil((s.attachmentSize ?? 0) / 1024)} KB
                   </p>
                 </div>
@@ -71,41 +71,41 @@ export default async function SubmissionPage({ params, searchParams }: { params:
           <Card title="مشخصات">
             <dl className="space-y-3.5 text-sm">
               <div>
-                <dt className="text-xs text-muted">کد پیگیری</dt>
-                <dd className="mt-0.5 font-mono font-bold text-navy-900" dir="ltr">
+                <dt className="text-xs text-fg-muted">کد پیگیری</dt>
+                <dd className="mt-0.5 font-mono font-bold text-fg" dir="ltr">
                   {s.code}
                 </dd>
               </div>
               <div>
-                <dt className="text-xs text-muted">راه تماس</dt>
+                <dt className="text-xs text-fg-muted">راه تماس</dt>
                 <dd className="mt-0.5 font-bold" dir="ltr">
-                  <a href={isEmail ? `mailto:${s.contact}` : `tel:${s.contact}`} className="text-teal-700">
+                  <a href={isEmail ? `mailto:${s.contact}` : `tel:${s.contact}`} className="text-accent">
                     {s.contact}
                   </a>
                 </dd>
               </div>
               {s.company && (
                 <div>
-                  <dt className="text-xs text-muted">شرکت</dt>
-                  <dd className="mt-0.5 font-bold text-navy-900">{s.company}</dd>
+                  <dt className="text-xs text-fg-muted">شرکت</dt>
+                  <dd className="mt-0.5 font-bold text-fg">{s.company}</dd>
                 </div>
               )}
               {s.website && (
                 <div>
-                  <dt className="text-xs text-muted">وب‌سایت</dt>
+                  <dt className="text-xs text-fg-muted">وب‌سایت</dt>
                   <dd className="mt-0.5" dir="ltr">
-                    <a href={s.website} target="_blank" rel="noopener noreferrer nofollow" className="font-bold text-teal-700">
+                    <a href={s.website} target="_blank" rel="noopener noreferrer nofollow" className="font-bold text-accent">
                       {s.website}
                     </a>
                   </dd>
                 </div>
               )}
               <div>
-                <dt className="text-xs text-muted">زبان فرم</dt>
-                <dd className="mt-0.5 font-bold text-navy-900">{localeMeta[s.locale as Locale]?.name ?? s.locale}</dd>
+                <dt className="text-xs text-fg-muted">زبان فرم</dt>
+                <dd className="mt-0.5 font-bold text-fg">{localeMeta[s.locale as Locale]?.name ?? s.locale}</dd>
               </div>
               <div>
-                <dt className="text-xs text-muted">وضعیت فعلی</dt>
+                <dt className="text-xs text-fg-muted">وضعیت فعلی</dt>
                 <dd className="mt-1">
                   <Badge tone={statusTones[s.status]}>{statusLabels[s.status]}</Badge>
                 </dd>
@@ -133,7 +133,7 @@ export default async function SubmissionPage({ params, searchParams }: { params:
           {user.role === 'admin' && (
             <form action={deleteSubmissionAction}>
               <input type="hidden" name="id" value={s.id} />
-              <SubmitButton variant="ghost" className="text-red-600 hover:bg-red-50" confirm="این درخواست و فایل پیوست آن برای همیشه حذف شود؟">
+              <SubmitButton variant="ghost" className="text-danger hover:bg-danger-soft" confirm="این درخواست و فایل پیوست آن برای همیشه حذف شود؟">
                 حذف درخواست
               </SubmitButton>
             </form>

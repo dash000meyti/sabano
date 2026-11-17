@@ -16,6 +16,7 @@
     "lastUpdated": "Last updated: {date}",
     "minutesRead": "{count} min read",
     "language": "Site language",
+    "themeToggle": "Toggle light and dark theme",
     "menu": "Menu",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -68,12 +69,30 @@
     "future": "Future-shaping technologies"
   },
   "facts": {
-    "type": { "label": "Type", "value": "Non-governmental research and technology fund" },
-    "focus": { "label": "Focus", "value": "Digital economy" },
-    "services": { "label": "Services", "value": "Guarantees, credit, investment, financial agency and advisory" },
-    "horizon": { "label": "Capital horizon", "value": "1,000 billion tomans by March 2027" },
-    "shareholder": { "label": "Principal shareholder", "value": "Saba Mihan Holding" },
-    "location": { "label": "Headquarters", "value": "Abbasabad, Tehran" }
+    "type": {
+      "label": "Type",
+      "value": "Non-governmental research and technology fund"
+    },
+    "focus": {
+      "label": "Focus",
+      "value": "Digital economy"
+    },
+    "services": {
+      "label": "Services",
+      "value": "Guarantees, credit, investment, financial agency and advisory"
+    },
+    "horizon": {
+      "label": "Capital horizon",
+      "value": "1,000 billion tomans by March 2027"
+    },
+    "shareholder": {
+      "label": "Principal shareholder",
+      "value": "Saba Mihan Holding"
+    },
+    "location": {
+      "label": "Headquarters",
+      "value": "Abbasabad, Tehran"
+    }
   },
   "home": {
     "meta": {
@@ -90,10 +109,22 @@
       "scroll": "Scroll"
     },
     "pillars": [
-      { "title": "Venture investment", "text": "Backing technology ventures" },
-      { "title": "Financing innovation", "text": "Flexible financial tools" },
-      { "title": "Digital economy", "text": "Where Sabano focuses" },
-      { "title": "Sustainable value", "text": "A long-term perspective" }
+      {
+        "title": "Venture investment",
+        "text": "Backing technology ventures"
+      },
+      {
+        "title": "Financing innovation",
+        "text": "Flexible financial tools"
+      },
+      {
+        "title": "Digital economy",
+        "text": "Where Sabano focuses"
+      },
+      {
+        "title": "Sustainable value",
+        "text": "A long-term perspective"
+      }
     ],
     "about": {
       "kicker": "About Sabano",
@@ -102,7 +133,11 @@
       "horizonValue": "1,000",
       "horizonUnit": "billion tomans",
       "horizonLabel": "Capital horizon by March 2027",
-      "values": ["Focus on the digital economy", "Support for technology companies", "Long-term value creation"],
+      "values": [
+        "Focus on the digital economy",
+        "Support for technology companies",
+        "Long-term value creation"
+      ],
       "cta": "More about Sabano"
     },
     "services": {
@@ -179,9 +214,18 @@
     "values": {
       "title": "What we stand for",
       "items": [
-        { "title": "Focus on the digital economy", "text": "Artificial intelligence, fintech, digital infrastructure and future-shaping technologies are at the heart of Sabano’s work." },
-        { "title": "Support for technology companies", "text": "The fund’s financial tools are designed around the real needs of technology businesses." },
-        { "title": "Long-term value creation", "text": "Sabano thinks in terms of sustainable growth rather than short-term returns, for companies and for the wider economy." }
+        {
+          "title": "Focus on the digital economy",
+          "text": "Artificial intelligence, fintech, digital infrastructure and future-shaping technologies are at the heart of Sabano’s work."
+        },
+        {
+          "title": "Support for technology companies",
+          "text": "The fund’s financial tools are designed around the real needs of technology businesses."
+        },
+        {
+          "title": "Long-term value creation",
+          "text": "Sabano thinks in terms of sustainable growth rather than short-term returns, for companies and for the wider economy."
+        }
       ]
     },
     "shareholders": {
@@ -234,11 +278,26 @@
       "need": "If you…",
       "service": "Suggested service",
       "rows": [
-        { "need": "need a guarantee to bid in a tender or deliver a contract", "slug": "guarantee" },
-        { "need": "need funds to deliver a contract, build a product or cover working capital", "slug": "credit" },
-        { "need": "are looking for an investment partner to grow your business", "slug": "investment" },
-        { "need": "have funds that should reach technology projects under an approved programme", "slug": "fund-agency" },
-        { "need": "are not sure which financing path suits you best", "slug": "consulting" }
+        {
+          "need": "need a guarantee to bid in a tender or deliver a contract",
+          "slug": "guarantee"
+        },
+        {
+          "need": "need funds to deliver a contract, build a product or cover working capital",
+          "slug": "credit"
+        },
+        {
+          "need": "are looking for an investment partner to grow your business",
+          "slug": "investment"
+        },
+        {
+          "need": "have funds that should reach technology projects under an approved programme",
+          "slug": "fund-agency"
+        },
+        {
+          "need": "are not sure which financing path suits you best",
+          "slug": "consulting"
+        }
       ]
     },
     "labels": {
@@ -251,10 +310,22 @@
       "note": "The exact terms of each service are set after reviewing the request and according to the fund’s rules."
     },
     "steps": [
-      { "title": "Submit a request", "text": "Fill in the cooperation form and attach your supporting documents." },
-      { "title": "Initial review", "text": "The request is checked for fit with the fund’s services, and more information is requested if needed." },
-      { "title": "Expert assessment", "text": "The project is assessed under the fund’s rules, looking at technical, financial and team aspects." },
-      { "title": "Decision", "text": "You are informed of the outcome and, if approved, of the terms and next steps." }
+      {
+        "title": "Submit a request",
+        "text": "Fill in the cooperation form and attach your supporting documents."
+      },
+      {
+        "title": "Initial review",
+        "text": "The request is checked for fit with the fund’s services, and more information is requested if needed."
+      },
+      {
+        "title": "Expert assessment",
+        "text": "The project is assessed under the fund’s rules, looking at technical, financial and team aspects."
+      },
+      {
+        "title": "Decision",
+        "text": "You are informed of the outcome and, if approved, of the terms and next steps."
+      }
     ],
     "cta": {
       "title": "Request a review",
@@ -285,9 +356,18 @@
           "The amount and term of the guarantee you need"
         ],
         "faqs": [
-          { "q": "What kinds of guarantees does Sabano issue?", "a": "The type of guarantee depends on the applicant’s needs and the fund’s rules. Research and technology funds typically issue guarantees such as bid bonds, performance bonds and advance-payment guarantees. Submit a request to find out whether the guarantee you need can be issued." },
-          { "q": "Can any company get a guarantee?", "a": "Guarantees are issued for eligible activities after the request has been reviewed. The exact criteria are assessed under the fund’s rules." },
-          { "q": "Where do I start?", "a": "Submit your request through the cooperation form, choose “Financing” as the request type and attach documents such as the contract or tender papers." }
+          {
+            "q": "What kinds of guarantees does Sabano issue?",
+            "a": "The type of guarantee depends on the applicant’s needs and the fund’s rules. Research and technology funds typically issue guarantees such as bid bonds, performance bonds and advance-payment guarantees. Submit a request to find out whether the guarantee you need can be issued."
+          },
+          {
+            "q": "Can any company get a guarantee?",
+            "a": "Guarantees are issued for eligible activities after the request has been reviewed. The exact criteria are assessed under the fund’s rules."
+          },
+          {
+            "q": "Where do I start?",
+            "a": "Submit your request through the cooperation form, choose “Financing” as the request type and attach documents such as the contract or tender papers."
+          }
         ]
       },
       "credit": {
@@ -313,9 +393,18 @@
           "Related contracts or quotations"
         ],
         "faqs": [
-          { "q": "How are Sabano’s financing terms set?", "a": "The terms of each facility are set after reviewing the project and according to the fund’s rules. Submit a request to learn which terms fit your needs." },
-          { "q": "What can financing be used for?", "a": "For funding needs linked to technology activities, such as delivering a contract, developing a product or covering working capital. Whether financing is possible is decided after review." },
-          { "q": "Which documents do I need?", "a": "A company introduction, a description of your funding need, financial information and related contracts help speed up the review. Further documents are requested if needed." }
+          {
+            "q": "How are Sabano’s financing terms set?",
+            "a": "The terms of each facility are set after reviewing the project and according to the fund’s rules. Submit a request to learn which terms fit your needs."
+          },
+          {
+            "q": "What can financing be used for?",
+            "a": "For funding needs linked to technology activities, such as delivering a contract, developing a product or covering working capital. Whether financing is possible is decided after review."
+          },
+          {
+            "q": "Which documents do I need?",
+            "a": "A company introduction, a description of your funding need, financial information and related contracts help speed up the review. Further documents are requested if needed."
+          }
         ]
       },
       "investment": {
@@ -341,9 +430,18 @@
           "Current status, traction and financial plan"
         ],
         "faqs": [
-          { "q": "Which sectors does Sabano invest in?", "a": "Sabano focuses on the digital economy: artificial intelligence and data-driven solutions, fintech and modern financial services, digital infrastructure and services, and future-shaping technologies." },
-          { "q": "How are proposals assessed?", "a": "The problem and solution, target market, business model, team capability and fit with Sabano’s investment focus are among the most important factors." },
-          { "q": "Does submitting a proposal mean Sabano will invest?", "a": "No. Receiving a proposal is not approval or a commitment to invest, and every proposal is assessed under the fund’s rules." }
+          {
+            "q": "Which sectors does Sabano invest in?",
+            "a": "Sabano focuses on the digital economy: artificial intelligence and data-driven solutions, fintech and modern financial services, digital infrastructure and services, and future-shaping technologies."
+          },
+          {
+            "q": "How are proposals assessed?",
+            "a": "The problem and solution, target market, business model, team capability and fit with Sabano’s investment focus are among the most important factors."
+          },
+          {
+            "q": "Does submitting a proposal mean Sabano will invest?",
+            "a": "No. Receiving a proposal is not approval or a commitment to invest, and every proposal is assessed under the fund’s rules."
+          }
         ]
       },
       "fund-agency": {
@@ -368,9 +466,18 @@
           "The criteria you want projects to meet"
         ],
         "faqs": [
-          { "q": "What is financial agency?", "a": "In financial agency, a specialised institution such as Sabano manages an organisation’s or programme’s funds under an approved agreement and allocates them to eligible projects and companies." },
-          { "q": "Which institutions can use this service?", "a": "Institutions and organisations that have funds for technology activities and want them allocated under an approved agreement. Whether a partnership is possible is decided after review." },
-          { "q": "How do I start?", "a": "In the cooperation form, choose “Strategic partnership” and briefly describe the programme and funds you have in mind." }
+          {
+            "q": "What is financial agency?",
+            "a": "In financial agency, a specialised institution such as Sabano manages an organisation’s or programme’s funds under an approved agreement and allocates them to eligible projects and companies."
+          },
+          {
+            "q": "Which institutions can use this service?",
+            "a": "Institutions and organisations that have funds for technology activities and want them allocated under an approved agreement. Whether a partnership is possible is decided after review."
+          },
+          {
+            "q": "How do I start?",
+            "a": "In the cooperation form, choose “Strategic partnership” and briefly describe the programme and funds you have in mind."
+          }
         ]
       },
       "consulting": {
@@ -395,9 +502,18 @@
           "Your main questions or challenges"
         ],
         "faqs": [
-          { "q": "What does Sabano’s advisory cover?", "a": "Reviewing financing paths, choosing the right financial tool and preparing to raise investment. The exact scope is set after reviewing your needs." },
-          { "q": "Who is advisory for?", "a": "Teams raising investment for the first time, companies weighing financing options and businesses preparing to pitch to investors." },
-          { "q": "How do I request advisory?", "a": "In the cooperation form, choose “Financing” and mention in your description that you need advisory." }
+          {
+            "q": "What does Sabano’s advisory cover?",
+            "a": "Reviewing financing paths, choosing the right financial tool and preparing to raise investment. The exact scope is set after reviewing your needs."
+          },
+          {
+            "q": "Who is advisory for?",
+            "a": "Teams raising investment for the first time, companies weighing financing options and businesses preparing to pitch to investors."
+          },
+          {
+            "q": "How do I request advisory?",
+            "a": "In the cooperation form, choose “Financing” and mention in your description that you need advisory."
+          }
         ]
       }
     }
@@ -418,32 +534,63 @@
       "ai": {
         "title": "Artificial intelligence and data",
         "text": "Data-driven and AI solutions that address a clear need with a sound business model.",
-        "examples": ["Language processing and text analytics", "Data analytics and business intelligence", "Computer vision and automation"]
+        "examples": [
+          "Language processing and text analytics",
+          "Data analytics and business intelligence",
+          "Computer vision and automation"
+        ]
       },
       "fintech": {
         "title": "Fintech and modern financial services",
         "text": "Innovative services and infrastructure that improve access, experience and efficiency in financial markets.",
-        "examples": ["Payments and financial infrastructure", "Credit scoring and risk management", "New investment services"]
+        "examples": [
+          "Payments and financial infrastructure",
+          "Credit scoring and risk management",
+          "New investment services"
+        ]
       },
       "digital": {
         "title": "Digital infrastructure and services",
         "text": "Technology and services that contribute to the growth of the digital economy and of technology businesses.",
-        "examples": ["Cloud and data infrastructure", "Digital platforms and services", "Cybersecurity"]
+        "examples": [
+          "Cloud and data infrastructure",
+          "Digital platforms and services",
+          "Cybersecurity"
+        ]
       },
       "future": {
         "title": "Future-shaping technologies",
         "text": "Emerging trends and opportunities that may reshape markets and the digital economy in the years ahead.",
-        "examples": ["Emerging technologies", "Smart cities and energy", "Transformative innovation"]
+        "examples": [
+          "Emerging technologies",
+          "Smart cities and energy",
+          "Transformative innovation"
+        ]
       }
     },
     "criteria": {
       "title": "What does Sabano look for in a proposal?",
       "items": [
-        { "title": "A real problem", "text": "The project solves a clear, measurable problem for a defined group of customers." },
-        { "title": "A clear business model", "text": "Revenue, main costs and the path to scale are well defined." },
-        { "title": "A capable team", "text": "Key members have the expertise and experience to deliver." },
-        { "title": "Room to grow", "text": "The target market is large enough and the project can reach bigger markets." },
-        { "title": "Digital economy fit", "text": "The project sits within one of Sabano’s investment focus areas." }
+        {
+          "title": "A real problem",
+          "text": "The project solves a clear, measurable problem for a defined group of customers."
+        },
+        {
+          "title": "A clear business model",
+          "text": "Revenue, main costs and the path to scale are well defined."
+        },
+        {
+          "title": "A capable team",
+          "text": "Key members have the expertise and experience to deliver."
+        },
+        {
+          "title": "Room to grow",
+          "text": "The target market is large enough and the project can reach bigger markets."
+        },
+        {
+          "title": "Digital economy fit",
+          "text": "The project sits within one of Sabano’s investment focus areas."
+        }
       ]
     },
     "disclaimer": "Receiving a proposal or form does not constitute approval or a commitment to invest.",
@@ -467,11 +614,26 @@
     "stepsTitle": "What are the steps to work with Sabano?",
     "stepLabel": "Step {n}",
     "steps": [
-      { "title": "Prepare", "text": "Get your project summary, team introduction and supporting documents ready. The more precise the information, the faster the review." },
-      { "title": "Submit", "text": "Fill in the cooperation form, choose a request type and attach a supporting file. You receive a tracking code once it is submitted." },
-      { "title": "Initial review", "text": "The request is checked for fit with Sabano’s services and focus areas, and further information is requested if needed." },
-      { "title": "Expert assessment", "text": "Projects that fit the fund’s strategy are assessed under its rules, looking at technical, market, financial and team aspects." },
-      { "title": "Decision", "text": "You are informed of the outcome and, if approved, of the terms and next steps." }
+      {
+        "title": "Prepare",
+        "text": "Get your project summary, team introduction and supporting documents ready. The more precise the information, the faster the review."
+      },
+      {
+        "title": "Submit",
+        "text": "Fill in the cooperation form, choose a request type and attach a supporting file. You receive a tracking code once it is submitted."
+      },
+      {
+        "title": "Initial review",
+        "text": "The request is checked for fit with Sabano’s services and focus areas, and further information is requested if needed."
+      },
+      {
+        "title": "Expert assessment",
+        "text": "Projects that fit the fund’s strategy are assessed under its rules, looking at technical, market, financial and team aspects."
+      },
+      {
+        "title": "Decision",
+        "text": "You are informed of the outcome and, if approved, of the terms and next steps."
+      }
     ],
     "note": "Exact steps and timing vary with the type of request and service.",
     "prepare": {
@@ -612,7 +774,11 @@
     ],
     "form": {
       "title": "Request form",
-      "steps": ["Topic", "Contact details", "Details & file"],
+      "steps": [
+        "Topic",
+        "Contact details",
+        "Details & file"
+      ],
       "stepOf": "Step {current} of {total}",
       "type": "Request type",
       "types": {
@@ -690,7 +856,11 @@
     "openIn": "Open in {app}",
     "copy": "Copy",
     "copied": "Copied",
-    "maps": { "neshan": "Neshan", "balad": "Balad", "google": "Google Maps" },
+    "maps": {
+      "neshan": "Neshan",
+      "balad": "Balad",
+      "google": "Google Maps"
+    },
     "formCta": {
       "title": "Have a proposal?",
       "text": "Use the online form to send an investment proposal, job application or partnership idea.",
@@ -709,24 +879,51 @@
       "lead": "Sabano only collects the information needed to review and respond to your request. This page explains what is collected, how it is used and how it is stored."
     },
     "sections": [
-      { "title": "What we collect", "text": "When you submit the cooperation form, we store your name, contact details, company and website (if provided), your message and any attachment. To prevent abuse, a one-way hash of your IP address and your browser type are also recorded." },
-      { "title": "How we use it", "text": "Your information is used only to review your request, contact you about it and prevent malicious submissions. It is not shared with third parties for advertising." },
-      { "title": "How it is stored", "text": "Requests and attachments are stored on the fund’s servers and only authorised staff can access them. Attachments are never publicly available through the website." },
-      { "title": "Cookies", "text": "This website does not use advertising or tracking cookies. Only strictly necessary cookies are used for staff sign-in to the admin panel." },
-      { "title": "Your rights", "text": "You can email {email} to ask for a copy of the information you sent or for it to be deleted, unless the law requires us to keep it." }
+      {
+        "title": "What we collect",
+        "text": "When you submit the cooperation form, we store your name, contact details, company and website (if provided), your message and any attachment. To prevent abuse, a one-way hash of your IP address and your browser type are also recorded."
+      },
+      {
+        "title": "How we use it",
+        "text": "Your information is used only to review your request, contact you about it and prevent malicious submissions. It is not shared with third parties for advertising."
+      },
+      {
+        "title": "How it is stored",
+        "text": "Requests and attachments are stored on the fund’s servers and only authorised staff can access them. Attachments are never publicly available through the website."
+      },
+      {
+        "title": "Cookies",
+        "text": "This website does not use advertising or tracking cookies. Only strictly necessary cookies are used for staff sign-in to the admin panel."
+      },
+      {
+        "title": "Your rights",
+        "text": "You can email {email} to ask for a copy of the information you sent or for it to be deleted, unless the law requires us to keep it."
+      }
     ]
   },
   "search": {
-    "meta": { "title": "Search Sabano", "description": "Search Sabano’s pages, services, articles and frequently asked questions." },
+    "meta": {
+      "title": "Search Sabano",
+      "description": "Search Sabano’s pages, services, articles and frequently asked questions."
+    },
     "title": "Search",
     "placeholder": "Search Sabano…",
     "results": "{count} results for “{q}”",
     "noResults": "No results found. Try a different term.",
     "hint": "Type to search pages, services, articles and questions.",
     "suggestions": "Suggestions",
-    "types": { "page": "Page", "service": "Service", "post": "Article", "faq": "Question" },
+    "types": {
+      "page": "Page",
+      "service": "Service",
+      "post": "Article",
+      "faq": "Question"
+    },
     "open": "Open search",
-    "keys": { "navigate": "navigate", "select": "select", "close": "close" }
+    "keys": {
+      "navigate": "navigate",
+      "select": "select",
+      "close": "close"
+    }
   },
   "notFound": {
     "title": "Page not found",

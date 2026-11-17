@@ -4,28 +4,29 @@ import { cn } from '@sabano/ui';
 type Props = {
   name: string;
   sub: string;
+  /** Kept for API compatibility; colours now follow the theme tokens. */
   tone?: 'light' | 'dark';
   className?: string;
   priority?: boolean;
+  compact?: boolean;
 };
 
 /** Brand lock-up: mark + wordmark. Swap the mark for the official SVG when it arrives. */
-export function Logo({ name, sub, tone = 'dark', className, priority }: Props) {
+export function Logo({ name, sub, className, priority, compact }: Props) {
   return (
     <span className={cn('inline-flex items-center gap-3', className)}>
       <span
         className={cn(
-          'relative grid size-11 shrink-0 place-items-center rounded-2xl transition-colors',
-          tone === 'light' ? 'bg-white shadow-[0_6px_20px_-8px_rgb(0_0_0/0.5)]' : 'bg-white ring-1 ring-navy-900/10',
+          'relative grid shrink-0 place-items-center rounded-full bg-white ring-1 ring-edge',
+          compact ? 'size-10' : 'size-12',
+          'shadow-[0_6px_18px_-8px_rgb(6_33_64/0.4)] dark:shadow-[0_0_0_4px_rgb(255_255_255/0.06),0_8px_24px_-6px_rgb(47_227_210/0.45)]',
         )}
       >
-        <Image src="/images/brand/sabano-mark.png" alt="" width={34} height={24} priority={priority} style={{ width: 34, height: 'auto' }} />
+        <Image src="/images/brand/sabano-mark.png" alt="" width={34} height={26} priority={priority} style={{ width: compact ? 28 : 34, height: 'auto' }} />
       </span>
       <span className="flex flex-col leading-none">
-        <span className={cn('text-[1.35rem] font-extrabold tracking-tight', tone === 'light' ? 'text-white' : 'text-navy-900')}>
-          {name}
-        </span>
-        <span className={cn('mt-1 text-[0.7rem] font-medium', tone === 'light' ? 'text-white/65' : 'text-muted')}>{sub}</span>
+        <span className={cn('font-black tracking-tight text-fg', compact ? 'text-[1.15rem]' : 'text-[1.4rem]')}>{name}</span>
+        <span className={cn('mt-1 text-[0.72rem] font-medium text-fg-subtle', compact && 'max-[25rem]:hidden')}>{sub}</span>
       </span>
     </span>
   );

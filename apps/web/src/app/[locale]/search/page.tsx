@@ -28,33 +28,33 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const hits = q ? await searchSite(locale, q, 30) : [];
   return (
     <>
-      <PageHero locale={locale} crumbs={[{ label: t('title'), href: '/search' }]} kicker={t('title')} title={q ? `«${q}»` : t('title')} compact>
+      <PageHero locale={locale} crumbs={[{ label: t('title'), href: '/search' }]} kicker={t('title')} icon={MagnifyingGlassIcon} anim="seek" title={q ? `«${q}»` : t('title')} compact>
         <form action="" method="get" role="search" className="relative mt-8 max-w-xl">
-          <MagnifyingGlassIcon weight="bold" className="pointer-events-none absolute start-5 top-1/2 size-5 -translate-y-1/2 text-white/60" aria-hidden />
+          <MagnifyingGlassIcon weight="bold" className="pointer-events-none absolute start-5 top-1/2 size-5 -translate-y-1/2 text-fg-muted" aria-hidden />
           <input
             type="search"
             name="q"
             defaultValue={q}
             placeholder={t('placeholder')}
             aria-label={t('placeholder')}
-            className="h-14 w-full rounded-full border border-white/20 bg-white/10 ps-13 pe-5 text-white outline-none backdrop-blur placeholder:text-white/50 focus:border-gold-400"
+            className="h-14 w-full rounded-full border border-edge-strong bg-tint ps-13 pe-5 text-fg outline-none backdrop-blur placeholder:text-fg-subtle focus:border-gold-400"
           />
         </form>
       </PageHero>
       <Section>
         {q ? (
           <>
-            <p className="text-sm text-muted">{t('results', { count: localizeDigits(hits.length, locale), q })}</p>
+            <p className="text-sm text-fg-muted">{t('results', { count: localizeDigits(hits.length, locale), q })}</p>
             {hits.length === 0 ? (
-              <p className="mt-8 rounded-3xl border border-dashed border-line p-10 text-center text-muted">{t('noResults')}</p>
+              <p className="mt-8 rounded-3xl border border-dashed border-edge p-10 text-center text-fg-muted">{t('noResults')}</p>
             ) : (
-              <ul className="mt-6 divide-y divide-line rounded-3xl border border-line bg-white">
+              <ul className="mt-6 divide-y divide-edge rounded-3xl border border-edge bg-card">
                 {hits.map((h) => (
                   <li key={h.href}>
-                    <Link href={h.href} className="block p-6 transition-colors hover:bg-surface/60">
-                      <span className="text-xs font-bold text-teal-700">{t(`types.${h.type}`)}</span>
-                      <span className="mt-1 block text-lg font-extrabold text-navy-900">{h.title}</span>
-                      <span className="mt-1 block text-sm leading-7 text-muted">{h.snippet}</span>
+                    <Link href={h.href} className="block p-6 transition-colors hover:bg-canvas-alt/60">
+                      <span className="text-xs font-bold text-accent">{t(`types.${h.type}`)}</span>
+                      <span className="mt-1 block text-lg font-extrabold text-fg">{h.title}</span>
+                      <span className="mt-1 block text-sm leading-7 text-fg-muted">{h.snippet}</span>
                     </Link>
                   </li>
                 ))}
@@ -62,7 +62,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
             )}
           </>
         ) : (
-          <p className="text-muted">{t('hint')}</p>
+          <p className="text-fg-muted">{t('hint')}</p>
         )}
       </Section>
     </>

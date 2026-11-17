@@ -39,8 +39,8 @@ export function LanguageSwitcher({ label, tone }: { label: string; tone: 'light'
         aria-controls={id}
         onClick={() => setOpen((o) => !o)}
         className={cn(
-          'inline-flex h-10 items-center gap-1.5 rounded-full px-3 text-sm font-bold transition-colors',
-          tone === 'dark' ? 'text-navy-900 hover:bg-navy-50' : 'text-white/90 hover:bg-white/10',
+          'inline-flex h-11 items-center gap-1.5 rounded-full px-3 text-sm font-bold transition-colors',
+          tone === 'dark' ? 'text-fg hover:bg-tint' : 'text-fg/90 hover:bg-tint',
         )}
       >
         <GlobeHemisphereEastIcon weight="duotone" className="size-5" aria-hidden />
@@ -51,7 +51,7 @@ export function LanguageSwitcher({ label, tone }: { label: string; tone: 'light'
         role="listbox"
         aria-label={label}
         className={cn(
-          'absolute end-0 top-full z-50 mt-2 w-48 origin-top rounded-2xl border border-navy-900/5 bg-white p-1.5 shadow-[0_24px_60px_-24px_rgb(6_33_64/0.45)] transition-all duration-200',
+          'glass-strong absolute end-0 top-full z-50 mt-3 w-52 origin-top rounded-2xl p-1.5 shadow-[0_30px_70px_-24px_rgb(0_0_0/0.8)] transition-all duration-300',
           open ? 'visible scale-100 opacity-100' : 'invisible scale-95 opacity-0',
         )}
       >
@@ -68,15 +68,15 @@ export function LanguageSwitcher({ label, tone }: { label: string; tone: 'light'
                 tabIndex={open ? 0 : -1}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  'flex items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold text-navy-900 hover:bg-surface',
-                  l === current && 'bg-teal-50/70 text-teal-800',
+                  'flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-fg/80 hover:bg-card-hover hover:text-fg',
+                  l === current && 'bg-card-hover text-accent',
                 )}
               >
                 <span>{localeMeta[l].name}</span>
                 {l === current ? (
                   <CheckIcon weight="bold" className="size-4" aria-hidden />
                 ) : (
-                  <span className="text-xs text-subtle">{localeMeta[l].short}</span>
+                  <span className="text-xs text-fg/35">{localeMeta[l].short}</span>
                 )}
               </Link>
             </li>
@@ -84,5 +84,40 @@ export function LanguageSwitcher({ label, tone }: { label: string; tone: 'light'
         })}
       </ul>
     </div>
+  );
+}
+
+/** Inline language pills (mobile menu): same targets as the dropdown, no popup to clip. */
+export function LanguageList({ label, className }: { label: string; className?: string }) {
+  const current = useLocale() as Locale;
+  const pathname = usePathname();
+  const { locales: available, fallbackPath } = useAlternates();
+  return (
+    <nav aria-label={label} className={className}>
+      <ul className="flex flex-wrap gap-2">
+        {locales.map((l) => {
+          const target = available && !available.includes(l) && fallbackPath ? fallbackPath : pathname;
+          const active = l === current;
+          return (
+            <li key={l}>
+              <Link
+                href={target}
+                locale={l}
+                lang={localeMeta[l].hreflang}
+                hrefLang={localeMeta[l].hreflang}
+                dir={localeMeta[l].dir}
+                aria-current={active ? 'true' : undefined}
+                className={cn(
+                  'inline-flex h-10 items-center rounded-full px-4 text-sm font-bold transition-colors',
+                  active ? 'bg-fg text-canvas' : 'border border-edge bg-tint text-fg/85 hover:border-edge-strong',
+                )}
+              >
+                {localeMeta[l].name}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }

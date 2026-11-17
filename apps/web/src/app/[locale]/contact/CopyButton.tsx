@@ -15,7 +15,7 @@ export function CopyButton({ value }: { value: string }) {
         setDone(true);
         setTimeout(() => setDone(false), 1800);
       }}
-      className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-bold text-teal-700 transition-colors hover:bg-teal-50"
+      className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-bold text-accent transition-colors hover:bg-accent-soft"
     >
       {done ? <CheckIcon weight="bold" className="size-4" aria-hidden /> : <CopyIcon className="size-4" aria-hidden />}
       {done ? t('copied') : t('copy')}

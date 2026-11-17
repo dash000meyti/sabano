@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { LockKeyIcon } from '@/components/icons';
 import { PageHero } from '@/components/sections/PageHero';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Section } from '@/components/ui/Section';
@@ -24,15 +25,15 @@ export default async function PrivacyPage({ params }: LocaleParams) {
   return (
     <>
       <JsonLd data={webPageLd({ locale, path: '/privacy', name: t('meta.title'), description: t('meta.description') })} />
-      <PageHero locale={locale} crumbs={[{ label: tn('privacy'), href: '/privacy' }]} kicker={t('hero.kicker')} title={t('hero.title')} lead={t('hero.lead')} compact />
+      <PageHero locale={locale} crumbs={[{ label: tn('privacy'), href: '/privacy' }]} kicker={t('hero.kicker')} icon={LockKeyIcon} anim="pop" title={t('hero.title')} lead={t('hero.lead')} compact />
       <Section>
         <div className="mx-auto max-w-3xl space-y-10">
           {sections.map((s, i) => (
             <section key={s.title} aria-labelledby={`p-${i}`} data-reveal>
-              <h2 id={`p-${i}`} className="text-xl font-extrabold text-navy-900">
+              <h2 id={`p-${i}`} className="text-xl font-extrabold text-fg">
                 {s.title}
               </h2>
-              <p className="mt-3 text-[1.02rem] leading-9 text-muted">{s.text.replace('{email}', email)}</p>
+              <p className="mt-3 text-[1.02rem] leading-9 text-fg-muted">{s.text.replace('{email}', email)}</p>
             </section>
           ))}
         </div>

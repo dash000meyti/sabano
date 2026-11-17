@@ -34,7 +34,8 @@ test('cooperation form validates and submits', async ({ page }) => {
   await page.getByLabel(/privacy policy/i).first().check();
   await page.waitForTimeout(2600); // the form rejects suspiciously fast submissions
   await page.getByRole('button', { name: 'Submit request' }).click();
-  await expect(page.getByRole('status')).toContainText('SB-');
+  // The first submission on a cold server also warms the upload and database code paths.
+  await expect(page.getByRole('status')).toContainText('SB-', { timeout: 15_000 });
 });
 
 test.describe('admin panel', () => {
@@ -51,7 +52,8 @@ test.describe('admin panel', () => {
     await page.getByLabel('ایمیل').fill(email!);
     await page.getByLabel('رمز عبور').fill(password!);
     await page.getByRole('button', { name: 'ورود به پنل' }).click();
-    await expect(page).toHaveURL(/\/admin\/submissions/);
+    // Password hashing plus a cold server can take a few seconds on a fresh container.
+    await expect(page).toHaveURL(/\/admin\/submissions/, { timeout: 15_000 });
   });
 
   test.afterAll(async () => {
@@ -59,7 +61,8 @@ test.describe('admin panel', () => {
   });
 
   test('lists submissions after login redirect', async () => {
-    await expect(page.getByText('E2E Test').first()).toBeVisible();
+    // Phones get a card list, wider screens a table: check whichever is showing.
+    await expect(page.getByText('E2E Test').filter({ visible: true }).first()).toBeVisible();
   });
 
   test('edits reach the cached public site immediately', async ({ request }) => {
@@ -73,8 +76,9 @@ test.describe('admin panel', () => {
     await page.getByRole('button', { name: 'ذخیره', exact: true }).click();
     await expect(page.getByText('ذخیره شد')).toBeVisible();
     await expect.poll(async () => (await (await request.get('/faq')).text()).includes(marker), { timeout: 10_000 }).toBe(true);
+    // Restore the original text and wait until the public page no longer shows the marker.
     await page.locator('input[name="t.fa.question"]').fill(original);
     await page.getByRole('button', { name: 'ذخیره', exact: true }).click();
-    await expect(page.getByText('ذخیره شد')).toBeVisible();
+    await expect.poll(async () => (await (await request.get('/faq')).text()).includes(marker), { timeout: 10_000 }).toBe(false);
   });
 });

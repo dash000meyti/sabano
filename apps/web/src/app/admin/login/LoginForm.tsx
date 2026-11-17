@@ -10,7 +10,7 @@ export function LoginForm({ next }: { next?: string }) {
     <form action={action} className="space-y-5">
       <input type="hidden" name="next" value={next ?? ''} />
       <div>
-        <label htmlFor="email" className="text-sm font-bold text-navy-900">
+        <label htmlFor="email" className="text-sm font-bold text-fg">
           ایمیل
         </label>
         <input
@@ -21,11 +21,11 @@ export function LoginForm({ next }: { next?: string }) {
           autoComplete="username"
           required
           defaultValue={state.email}
-          className="mt-2 block h-12 w-full rounded-xl border border-line bg-white px-4 text-start text-navy-900 outline-none focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10"
+          className="mt-2 block h-12 w-full rounded-xl border border-edge bg-card px-4 text-start text-fg outline-none focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10"
         />
       </div>
       <div>
-        <label htmlFor="password" className="text-sm font-bold text-navy-900">
+        <label htmlFor="password" className="text-sm font-bold text-fg">
           رمز عبور
         </label>
         <input
@@ -35,11 +35,11 @@ export function LoginForm({ next }: { next?: string }) {
           dir="ltr"
           autoComplete="current-password"
           required
-          className="mt-2 block h-12 w-full rounded-xl border border-line bg-white px-4 text-start text-navy-900 outline-none focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10"
+          className="mt-2 block h-12 w-full rounded-xl border border-edge bg-card px-4 text-start text-fg outline-none focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10"
         />
       </div>
       {state.error && (
-        <p role="alert" className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm font-semibold text-red-700">
+        <p role="alert" className="rounded-xl border border-danger-edge bg-danger-soft p-3 text-sm font-semibold text-danger">
           {state.error}
         </p>
       )}

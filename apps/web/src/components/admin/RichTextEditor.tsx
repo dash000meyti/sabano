@@ -73,7 +73,7 @@ export function RichTextEditor({ name, defaultValue, dir }: { name: string; defa
       aria-label={label}
       aria-pressed={!!active}
       onClick={onClick}
-      className={cn('grid h-8 min-w-8 place-items-center rounded-lg px-1.5 text-sm font-bold transition-colors', active ? 'bg-navy-900 text-white' : 'text-navy-700 hover:bg-navy-50')}
+      className={cn('grid h-8 min-w-8 place-items-center rounded-lg px-1.5 text-sm font-bold transition-colors', active ? 'bg-fg text-canvas' : 'text-fg/80 hover:bg-tint')}
     >
       {IconC ? <IconC weight="bold" className="size-4" aria-hidden /> : text}
     </button>
@@ -101,16 +101,16 @@ export function RichTextEditor({ name, defaultValue, dir }: { name: string; defa
   };
 
   return (
-    <div className="overflow-hidden rounded-xl border border-line bg-white focus-within:border-teal-500 focus-within:ring-4 focus-within:ring-teal-500/10">
-      <div className="flex flex-wrap items-center gap-1 border-b border-line bg-surface/70 p-1.5" dir="rtl">
+    <div className="overflow-hidden rounded-xl border border-edge bg-card focus-within:border-teal-500 focus-within:ring-4 focus-within:ring-teal-500/10">
+      <div className="flex flex-wrap items-center gap-1 border-b border-edge bg-canvas-alt/70 p-1.5" dir="rtl">
         {btn('عنوان ۲', state?.h2, () => editor?.chain().focus().toggleHeading({ level: 2 }).run(), undefined, 'H2')}
         {btn('عنوان ۳', state?.h3, () => editor?.chain().focus().toggleHeading({ level: 3 }).run(), undefined, 'H3')}
-        <span className="mx-1 h-5 w-px bg-line" />
+        <span className="mx-1 h-5 w-px bg-edge" />
         {btn('پررنگ', state?.bold, () => editor?.chain().focus().toggleBold().run(), TextBIcon)}
         {btn('مورب', state?.italic, () => editor?.chain().focus().toggleItalic().run(), TextItalicIcon)}
         {btn('زیرخط', state?.underline, () => editor?.chain().focus().toggleUnderline().run(), TextUnderlineIcon)}
         {btn('لینک', state?.link, setLink, LinkIcon)}
-        <span className="mx-1 h-5 w-px bg-line" />
+        <span className="mx-1 h-5 w-px bg-edge" />
         {btn('فهرست', state?.bullet, () => editor?.chain().focus().toggleBulletList().run(), ListBulletsIcon)}
         {btn('فهرست شماره‌دار', state?.ordered, () => editor?.chain().focus().toggleOrderedList().run(), ListNumbersIcon)}
         {btn('نقل‌قول', state?.quote, () => editor?.chain().focus().toggleBlockquote().run(), QuotesIcon)}
@@ -119,11 +119,11 @@ export function RichTextEditor({ name, defaultValue, dir }: { name: string; defa
           htmlFor={fileId}
           title="تصویر"
           aria-label={uploading ? 'در حال بارگذاری…' : 'تصویر'}
-          className="grid h-8 min-w-8 cursor-pointer place-items-center rounded-lg px-1.5 text-navy-700 hover:bg-navy-50"
+          className="grid h-8 min-w-8 cursor-pointer place-items-center rounded-lg px-1.5 text-fg/80 hover:bg-tint"
         >
           {uploading ? <span className="size-3.5 animate-spin rounded-full border-2 border-current border-t-transparent" /> : <ImageIcon weight="bold" className="size-4" aria-hidden />}
         </label>
-        <span className="mx-1 h-5 w-px bg-line" />
+        <span className="mx-1 h-5 w-px bg-edge" />
         {btn('بازگردانی', false, () => editor?.chain().focus().undo().run(), ArrowArcRightIcon)}
         {btn('انجام دوباره', false, () => editor?.chain().focus().redo().run(), ArrowArcLeftIcon)}
         <input

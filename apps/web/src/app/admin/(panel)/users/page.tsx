@@ -16,23 +16,23 @@ export default async function UsersPage({ searchParams }: { searchParams: Promis
       <PageHeader title="کاربران پنل" description="مدیر کل به همهٔ بخش‌ها دسترسی دارد؛ ویرایشگر فقط محتوا و درخواست‌ها را مدیریت می‌کند." />
       <Flash message={saved ? 'تغییرات ذخیره شد.' : null} />
       <Flash message={error} tone="red" />
-      <div className="grid gap-6 xl:grid-cols-[1fr_22rem]">
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1fr_22rem]">
         <div className="space-y-4">
           {users.map((u) => (
             <Card key={u.id}>
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
-                  <p className="font-bold text-navy-900">
-                    {u.name} {u.id === me.id && <span className="text-xs text-muted">(شما)</span>}
+                  <p className="font-bold text-fg">
+                    {u.name} {u.id === me.id && <span className="text-xs text-fg-muted">(شما)</span>}
                   </p>
-                  <p className="text-sm text-muted" dir="ltr">
+                  <p className="text-sm text-fg-muted" dir="ltr">
                     {u.email}
                   </p>
-                  <p className="mt-1 text-xs text-subtle">آخرین ورود: {u.lastLoginAt ? formatDate(u.lastLoginAt, 'fa', 'short') : '—'}</p>
+                  <p className="mt-1 text-xs text-fg-subtle">آخرین ورود: {u.lastLoginAt ? formatDate(u.lastLoginAt, 'fa', 'short') : '—'}</p>
                 </div>
                 <Badge tone={u.role === 'admin' ? 'navy' : 'teal'}>{u.role === 'admin' ? 'مدیر کل' : 'ویرایشگر'}</Badge>
               </div>
-              <div className="mt-4 flex flex-wrap items-end gap-3 border-t border-line pt-4">
+              <div className="mt-4 flex flex-wrap items-end gap-3 border-t border-edge pt-4">
                 <form action={resetPasswordAction} className="flex flex-wrap items-end gap-2">
                   <input type="hidden" name="id" value={u.id} />
                   <input name="password" type="password" dir="ltr" minLength={10} placeholder="رمز عبور جدید" autoComplete="new-password" className={`${inputClass} w-52`} />
@@ -41,7 +41,7 @@ export default async function UsersPage({ searchParams }: { searchParams: Promis
                 {u.id !== me.id && (
                   <form action={deleteUserAction}>
                     <input type="hidden" name="id" value={u.id} />
-                    <SubmitButton variant="ghost" className="text-red-600 hover:bg-red-50" confirm={`حساب ${u.email} حذف شود؟`}>
+                    <SubmitButton variant="ghost" className="text-danger hover:bg-danger-soft" confirm={`حساب ${u.email} حذف شود؟`}>
                       حذف
                     </SubmitButton>
                   </form>
