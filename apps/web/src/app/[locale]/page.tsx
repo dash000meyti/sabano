@@ -209,7 +209,7 @@ export default async function HomePage({ params }: LocaleParams) {
             {/* Rail threading the three icons */}
             <span aria-hidden className="absolute inset-y-14 start-[3rem] w-px bg-gradient-to-b from-transparent via-accent/45 to-transparent sm:start-[3.25rem]" />
             {values.map((v, i) => (
-              <li key={v.title} className={cn('relative', i === 1 && 'lg:me-12', i === 2 && 'lg:me-6')} data-reveal style={{ '--reveal-delay': 150 + i * 120 } as React.CSSProperties}>
+              <li key={v.title} className="relative" data-reveal style={{ '--reveal-delay': 150 + i * 120 } as React.CSSProperties}>
                 <div className="group spotlight relative flex items-center gap-5 overflow-hidden rounded-[1.75rem] border border-edge bg-card p-5 shadow-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-lift sm:p-6">
                   <IconTile icon={valueIcons[i]} anim={valueAnims[i]} trigger="always" shape={(['blob', 'hex', 'circle'] as const)[i]} />
                   <div className="relative z-[1] min-w-0">

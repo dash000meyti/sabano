@@ -251,15 +251,17 @@ export function HeaderClient({ groups, labels }: { groups: NavGroup[]; labels: H
           </Link>
           <button
             type="button"
-            className="relative grid size-11 place-items-center rounded-full bg-tint lg:hidden"
+            className="group/menu relative grid size-11 place-items-center rounded-full bg-tint transition-colors hover:bg-card-hover lg:hidden"
             aria-label={labels.openMenu}
             aria-expanded={mobileOpen}
             aria-controls={drawerId}
             onClick={() => setMobileOpen(true)}
           >
-            <span aria-hidden className="flex w-5 flex-col gap-1.5">
-              <span className="h-0.5 w-full rounded bg-card" />
-              <span className="h-0.5 w-3/4 rounded bg-accent" />
+            {/* Three-line hamburger in theme colours (the old top line used bg-card: white on white in light mode) */}
+            <span aria-hidden className="flex w-5 flex-col items-start gap-[5px]">
+              <span className="h-0.5 w-full rounded-full bg-fg" />
+              <span className="h-0.5 w-3/4 rounded-full bg-accent transition-all duration-300 group-hover/menu:w-full" />
+              <span className="h-0.5 w-full rounded-full bg-fg" />
             </span>
           </button>
         </div>
