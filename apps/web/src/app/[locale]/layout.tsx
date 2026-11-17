@@ -10,7 +10,8 @@ import { ThemeSync } from '@/components/layout/ThemeSync';
 import { SearchPalette } from '@/components/layout/SearchPalette';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/site';
-import { THEME_COLORS, themeScript } from '@/lib/theme';
+import { THEME_COLORS } from '@/lib/theme';
+import { ThemeScript } from '@/components/layout/ThemeScript';
 import '../globals.css';
 
 // Pages are rendered on first request and cached (ISR); admin edits revalidate them.
@@ -76,9 +77,9 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={meta.hreflang} dir={meta.dir} suppressHydrationWarning>
+    <html lang={meta.hreflang} dir={meta.dir} data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <ThemeScript />
         {locale === 'fa' ? (
           <link rel="preload" href="/fonts/vazirmatn-nl-v33.woff2" as="font" type="font/woff2" crossOrigin="" />
         ) : (

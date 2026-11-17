@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { ThemeSync } from '@/components/layout/ThemeSync';
-import { THEME_COLORS, themeScript } from '@/lib/theme';
+import { THEME_COLORS } from '@/lib/theme';
+import { ThemeScript } from '@/components/layout/ThemeScript';
 import '../globals.css';
 
 export const metadata: Metadata = {
@@ -18,9 +19,9 @@ export const viewport: Viewport = {
 
 export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fa-IR" dir="rtl" suppressHydrationWarning>
+    <html lang="fa-IR" dir="rtl" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <ThemeScript />
         <link rel="preload" href="/fonts/vazirmatn-nl-v33.woff2" as="font" type="font/woff2" crossOrigin="" />
       </head>
       <body className="min-h-dvh bg-canvas-alt text-fg antialiased">

@@ -2,7 +2,6 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import type { Locale } from '@sabano/i18n';
 import { buttonClasses } from '@sabano/ui';
 import { ArrowUpRightIcon } from '@/components/icons';
 import { CtaBand } from '@/components/sections/CtaBand';
@@ -14,7 +13,7 @@ import { Link } from '@/i18n/navigation';
 import { getCompanyBySlug } from '@/lib/data';
 import { localizeDigits } from '@/lib/format';
 import { ORG_ID, webPageLd } from '@/lib/jsonld';
-import type { LocaleSlugParams } from '@/lib/params';
+import { toLocale, type LocaleSlugParams } from '@/lib/params';
 import { buildMetadata } from '@/lib/seo';
 
 export function generateStaticParams() {
@@ -23,7 +22,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: LocaleSlugParams): Promise<Metadata> {
   const { locale: l, slug } = await params;
-  const locale = l as Locale;
+  const locale = toLocale(l);
   const c = getCompanyBySlug(slug, locale);
   if (!c) return {};
   return buildMetadata({ locale, path: `/portfolio/${slug}`, title: c.name, description: c.summary, image: c.logo ?? undefined });
@@ -31,7 +30,7 @@ export async function generateMetadata({ params }: LocaleSlugParams): Promise<Me
 
 export default async function CompanyPage({ params }: LocaleSlugParams) {
   const { locale: l, slug } = await params;
-  const locale = l as Locale;
+  const locale = toLocale(l);
   setRequestLocale(locale);
   const c = getCompanyBySlug(slug, locale);
   if (!c) notFound();

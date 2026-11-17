@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import type { Locale } from '@sabano/i18n';
 import { MagnifyingGlassIcon } from '@/components/icons';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section } from '@/components/ui/Section';
@@ -8,6 +7,7 @@ import { Link } from '@/i18n/navigation';
 import { localizeDigits } from '@/lib/format';
 import { searchSite } from '@/lib/search';
 import { buildMetadata } from '@/lib/seo';
+import { toLocale } from '@/lib/params';
 
 // Reads searchParams (filters, pagination, query), so it is rendered per request.
 export const dynamic = 'force-dynamic';
@@ -15,13 +15,13 @@ export const dynamic = 'force-dynamic';
 type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ q?: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const locale = (await params).locale as Locale;
+  const locale = toLocale((await params).locale);
   const t = await getTranslations({ locale, namespace: 'search.meta' });
   return buildMetadata({ locale, path: '/search', title: t('title'), description: t('description'), noindex: true });
 }
 
 export default async function SearchPage({ params, searchParams }: Props) {
-  const locale = (await params).locale as Locale;
+  const locale = toLocale((await params).locale);
   setRequestLocale(locale);
   const q = ((await searchParams).q ?? '').slice(0, 100);
   const t = await getTranslations({ locale, namespace: 'search' });

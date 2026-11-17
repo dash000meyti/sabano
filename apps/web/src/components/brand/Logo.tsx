@@ -13,6 +13,8 @@ type Props = {
 
 /** Brand lock-up: mark + wordmark. Swap the mark for the official SVG when it arrives. */
 export function Logo({ name, sub, className, priority, compact }: Props) {
+  const mark = compact ? 28 : 34;
+  const markH = Math.round((mark * 495) / 640);
   return (
     <span className={cn('inline-flex items-center gap-3', className)}>
       <span
@@ -22,7 +24,8 @@ export function Logo({ name, sub, className, priority, compact }: Props) {
           'shadow-[0_6px_18px_-8px_rgb(6_33_64/0.4)] dark:shadow-[0_0_0_4px_rgb(255_255_255/0.06),0_8px_24px_-6px_rgb(47_227_210/0.45)]',
         )}
       >
-        <Image src="/images/brand/sabano-mark.png" alt="" width={34} height={26} priority={priority} style={{ width: compact ? 28 : 34, height: 'auto' }} />
+        {/* Fixed box on both sides (mark is 640×495): next/image never sees just one side "modified" */}
+        <Image src="/images/brand/sabano-mark.png" alt="" width={mark} height={markH} priority={priority} style={{ width: mark, height: markH }} />
       </span>
       <span className="flex flex-col leading-none">
         <span className={cn('font-black tracking-tight text-fg', compact ? 'text-[1.15rem]' : 'text-[1.4rem]')}>{name}</span>

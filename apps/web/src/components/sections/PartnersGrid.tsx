@@ -18,7 +18,7 @@ function PartnerCard({ p, newTab, className }: { p: PartnerView; newTab: string;
       <ArrowUpRightIcon className="absolute end-4 top-4 size-4 text-fg-subtle opacity-0 transition-opacity group-hover:opacity-100 rtl:-scale-x-100" aria-hidden />
       <span className="relative z-[1] grid h-20 w-full place-items-center">
         {p.logo && (
-          <Image src={p.logo} alt="" width={140} height={80} className="max-h-20 w-auto object-contain opacity-75 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0" />
+          <Image src={p.logo} alt="" width={160} height={100} className="h-20 w-auto max-w-full object-contain opacity-75 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0" />
         )}
       </span>
       <span className="relative z-[1] text-[0.88rem] font-bold leading-7 text-fg">{p.name}</span>

@@ -74,7 +74,7 @@ test.describe('admin panel', () => {
     const marker = `${original} [e2e-${Date.now()}]`;
     await field.fill(marker);
     await page.getByRole('button', { name: 'ذخیره', exact: true }).click();
-    await expect(page.getByText('ذخیره شد')).toBeVisible();
+    await expect(page.getByText('ذخیره شد')).toBeVisible({ timeout: 15_000 }); // save + cache revalidation can be slow under parallel load
     await expect.poll(async () => (await (await request.get('/faq')).text()).includes(marker), { timeout: 10_000 }).toBe(true);
     // Restore the original text and wait until the public page no longer shows the marker.
     await page.locator('input[name="t.fa.question"]').fill(original);

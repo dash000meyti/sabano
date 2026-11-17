@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { PostCategory } from '@sabano/db';
-import type { Locale } from '@sabano/i18n';
 import { cn } from '@sabano/ui';
 import { NewspaperIcon, PaperPlaneTiltIcon, RssIcon } from '@/components/icons';
 import { AnimatedIcon } from '@/components/ui/AnimatedIcon';
@@ -17,6 +16,7 @@ import { localizeDigits } from '@/lib/format';
 import { itemListLd, webPageLd } from '@/lib/jsonld';
 import { buildMetadata, localizedPath, ogImageFor } from '@/lib/seo';
 import { pageUrl } from '@/lib/site';
+import { toLocale } from '@/lib/params';
 
 // Reads searchParams (filters, pagination, query), so it is rendered per request.
 export const dynamic = 'force-dynamic';
@@ -36,7 +36,7 @@ function parse(sp: { category?: string; page?: string }) {
 }
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const locale = (await params).locale as Locale;
+  const locale = toLocale((await params).locale);
   const { category, page } = parse(await searchParams);
   const t = await getTranslations({ locale, namespace: 'news' });
   const meta = buildMetadata({ locale, path: '/news', title: t('meta.title'), description: t('meta.description'), image: ogImageFor(locale, 'news') });
@@ -46,7 +46,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 }
 
 export default async function NewsPage({ params, searchParams }: Props) {
-  const locale = (await params).locale as Locale;
+  const locale = toLocale((await params).locale);
   setRequestLocale(locale);
   const { category, page } = parse(await searchParams);
   const t = await getTranslations({ locale, namespace: 'news' });

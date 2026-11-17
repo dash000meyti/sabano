@@ -43,6 +43,7 @@ const widths = [320, 390, 768, 1024, 1280];
 
 for (const path of pages) {
   test(`nothing sticks out of the screen on ${path}`, async ({ page }) => {
+    test.setTimeout(120_000); // five page loads on a dev server that may still be compiling
     for (const width of widths) {
       await page.setViewportSize({ width, height: 900 });
       await page.goto(path);
@@ -55,6 +56,9 @@ for (const path of pages) {
 for (const locale of ['fa', 'en', 'ru', 'es', 'zh']) {
   const path = locale === 'fa' ? '/' : `/${locale}`;
   test(`header fits from 320px to desktop (${locale})`, async ({ page }) => {
+    test.setTimeout(120_000);
+    // Only the header is measured: skip images so seven page loads stay quick.
+    await page.route(/\.(png|jpe?g|webp|avif)(\?|$)|\/_next\/image/, (route) => route.abort());
     for (const width of [320, 360, 640, 768, 1024, 1280, 1440]) {
       await page.setViewportSize({ width, height: 800 });
       await page.goto(path);
@@ -78,8 +82,9 @@ test('mobile menu offers languages, theme and the proposal button', async ({ pag
   await expect(dialog.getByRole('link', { name: 'Русский' })).toBeVisible();
   await expect(dialog.getByRole('button', { name: /theme/i })).toBeVisible();
   await dialog.getByRole('link', { name: 'فارسی' }).click();
-  await expect(page).toHaveURL(/\/about$/);
-  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  // The Persian page may still be compiling on a cold dev server.
+  await expect(page).toHaveURL(/\/about$/, { timeout: 15_000 });
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl', { timeout: 15_000 });
 });
 
 test.describe('admin on a phone', () => {
@@ -88,19 +93,21 @@ test.describe('admin on a phone', () => {
   test.skip(!email || !password, 'Set E2E_ADMIN_EMAIL and E2E_ADMIN_PASSWORD');
 
   test('top bar, slide-out menu and pages fit the screen', async ({ page }) => {
+    test.setTimeout(120_000);
     await page.setViewportSize({ width: 375, height: 760 });
     await page.goto('/admin/login');
     await page.fill('input[name=email]', email!);
     await page.fill('input[name=password]', password!);
     await page.click('button[type=submit]');
-    await expect(page).toHaveURL(/\/admin(\/|$)/, { timeout: 15_000 });
+    // Password hashing plus a cold route can take a few seconds.
+    await expect(page).toHaveURL(/\/admin(?!\/login)/, { timeout: 20_000 });
 
     const sidebar = page.locator('#admin-sidebar');
     await expect(sidebar).toBeHidden();
     await page.getByRole('button', { name: 'باز کردن منوی پنل' }).click();
     await expect(sidebar).toBeVisible();
     await sidebar.getByRole('link', { name: 'درخواست‌ها' }).click();
-    await expect(page).toHaveURL(/\/admin\/submissions/);
+    await expect(page).toHaveURL(/\/admin\/submissions/, { timeout: 15_000 });
     await expect(sidebar).toBeHidden();
 
     for (const path of ['/admin', '/admin/submissions', '/admin/posts', '/admin/content/faqs', '/admin/system', '/admin/settings']) {

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import type { Locale } from '@sabano/i18n';
 import { buttonClasses, cn } from '@sabano/ui';
 import { CheckCircleIcon, ClipboardTextIcon, QuestionIcon, SignpostIcon, SparkleIcon, UsersThreeIcon } from '@/components/icons';
 import { CtaBand } from '@/components/sections/CtaBand';
@@ -17,7 +16,7 @@ import { serviceAnims, serviceIcons, stepIconsFor } from '@/components/visual-ma
 import { Link } from '@/i18n/navigation';
 import { localizeDigits } from '@/lib/format';
 import { faqLd, serviceLd, webPageLd } from '@/lib/jsonld';
-import type { LocaleSlugParams } from '@/lib/params';
+import { toLocale, type LocaleSlugParams } from '@/lib/params';
 import { buildMetadata, ogImageFor } from '@/lib/seo';
 import { serviceSlugs, type ServiceSlug } from '@/lib/site';
 
@@ -31,7 +30,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: LocaleSlugParams): Promise<Metadata> {
   const { locale: l, slug } = await params;
-  const locale = l as Locale;
+  const locale = toLocale(l);
   if (!isService(slug)) return {};
   const t = await getTranslations({ locale, namespace: `services.items.${slug}` });
   return buildMetadata({
@@ -46,7 +45,7 @@ export async function generateMetadata({ params }: LocaleSlugParams): Promise<Me
 
 export default async function ServicePage({ params }: LocaleSlugParams) {
   const { locale: l, slug } = await params;
-  const locale = l as Locale;
+  const locale = toLocale(l);
   if (!isService(slug)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'services' });

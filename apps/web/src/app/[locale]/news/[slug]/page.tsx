@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { listPosts } from '@sabano/db';
-import type { Locale } from '@sabano/i18n';
 import { buttonClasses, containerClasses } from '@sabano/ui';
 import { SetAlternates } from '@/components/layout/SetAlternates';
 import { CalendarIcon, ClockIcon } from '@/components/icons';
@@ -20,7 +19,7 @@ import { getPostBySlug } from '@/lib/data';
 import { formatDate, localizeDigits } from '@/lib/format';
 import { withHeadingIds } from '@/lib/html';
 import { articleLd, webPageLd } from '@/lib/jsonld';
-import type { LocaleSlugParams } from '@/lib/params';
+import { toLocale, type LocaleSlugParams } from '@/lib/params';
 import { buildMetadata } from '@/lib/seo';
 
 export function generateStaticParams() {
@@ -29,7 +28,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: LocaleSlugParams): Promise<Metadata> {
   const { locale: l, slug } = await params;
-  const locale = l as Locale;
+  const locale = toLocale(l);
   const post = getPostBySlug(slug, locale);
   if (!post) return {};
   return buildMetadata({
@@ -48,7 +47,7 @@ export async function generateMetadata({ params }: LocaleSlugParams): Promise<Me
 
 export default async function ArticlePage({ params }: LocaleSlugParams) {
   const { locale: l, slug } = await params;
-  const locale = l as Locale;
+  const locale = toLocale(l);
   setRequestLocale(locale);
   const post = getPostBySlug(slug, locale);
   if (!post) notFound();
