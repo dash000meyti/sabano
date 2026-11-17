@@ -2,6 +2,7 @@ import 'server-only';
 import { revalidatePath } from 'next/cache';
 import { locales } from '@sabano/i18n';
 import { pingIndexNow } from './indexnow';
+import { invalidateSearchIndex } from './search';
 import { pageUrl } from './site';
 
 /**
@@ -10,6 +11,7 @@ import { pageUrl } from './site';
  */
 export function revalidateSite(changedPaths: string[] = []) {
   revalidatePath('/', 'layout');
+  invalidateSearchIndex();
   if (changedPaths.length) {
     void pingIndexNow(changedPaths.flatMap((p) => locales.map((l) => pageUrl(l, p))));
   }

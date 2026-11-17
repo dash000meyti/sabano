@@ -48,36 +48,26 @@ pnpm dev
 | `pnpm lint` | ESLint |
 | `pnpm test` | تست‌های واحد (Vitest) + بررسی کامل‌بودن ترجمه‌ها |
 | `pnpm i18n:check` | همهٔ زبان‌ها کلیدها، آرایه‌ها و placeholderهای یکسان دارند |
-| `pnpm e2e` | تست‌های Playwright روی سرور در حال اجرا (`BASE_URL`؛ برای تست پنل `E2E_ADMIN_EMAIL` و `E2E_ADMIN_PASSWORD`) |
+| `pnpm e2e` | تست‌های Playwright روی سرور در حال اجرا (`BASE_URL`). برای تست‌های پنل، `E2E_ADMIN_EMAIL` و `E2E_ADMIN_PASSWORD` یک مدیر محلی را تنظیم کنید (مثلاً در `.env.local` که در git نمی‌رود). |
 
 ## استقرار با داکر (یک کانتینر)
+
+راهنمای کامل گام‌به‌گام (سرور، `.env`، nginx و HTTPS، به‌روزرسانی، پشتیبان‌گیری و عیب‌یابی) در **[DEPLOY.md](DEPLOY.md)** است. خلاصه:
 
 ```bash
 cp .env.example .env
 ```
 
-مقادیر `.env` را پر کنید (حداقل `SESSION_SECRET` و برای اولین اجرا `ADMIN_EMAIL` و `ADMIN_PASSWORD`). سپس:
+مقادیر `.env` را پر کنید: حداقل `SITE_URL`، یک `SESSION_SECRET` تصادفی (`openssl rand -hex 32`)، و برای اولین اجرا `ADMIN_EMAIL` و یک `ADMIN_PASSWORD` قوی. سپس:
 
 ```bash
 docker compose up -d --build
 ```
 
-- کانتینر روی `127.0.0.1:3000` گوش می‌دهد؛ nginx فعلی را به‌عنوان reverse proxy (با TLS) جلوی آن بگذارید.
+- کانتینر روی `127.0.0.1:3000` گوش می‌دهد. nginx را با TLS جلوی آن بگذارید و سرآیندهای `X-Real-IP` و `X-Forwarded-For` را بفرستید.
 - همهٔ داده‌های ماندگار در volume `/data` هستند: `sabano.db`، `uploads/` (پیوست‌های فرم)، `media/` (تصاویر پنل) و `backups/`.
-- در هر بار اجرا: migrationها اعمال می‌شوند، دیتابیس خالی با محتوای فعلی سایت seed می‌شود، اولین مدیر از env ساخته می‌شود و پشتیبان‌گیری روزانه (۱۴ نسخه) زمان‌بندی می‌شود.
+- در هر بار اجرا migrationها اعمال می‌شوند. دیتابیس خالی با محتوای فعلی سایت seed می‌شود، اولین مدیر از env ساخته می‌شود و پشتیبان‌گیری روزانه (۱۴ نسخه) زمان‌بندی می‌شود.
 - سلامت: `GET /api/health`
-
-نمونهٔ تنظیم nginx:
-
-```nginx
-location / {
-  proxy_pass http://127.0.0.1:3000;
-  proxy_set_header Host $host;
-  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-  proxy_set_header X-Forwarded-Proto $scheme;
-  client_max_body_size 10m;
-}
-```
 
 ## محتوا
 

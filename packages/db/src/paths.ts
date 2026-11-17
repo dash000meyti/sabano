@@ -18,10 +18,11 @@ const repoRoot = findRepoRoot(process.cwd());
 export const DATA_DIR = path.resolve(
   process.env.DATA_DIR ?? (repoRoot ? path.join(repoRoot, 'data') : path.join(process.cwd(), 'data')),
 );
-export const DATABASE_PATH = path.resolve(process.env.DATABASE_PATH ?? path.join(DATA_DIR, 'sabano.db'));
-export const UPLOADS_DIR = path.join(DATA_DIR, 'uploads');
-export const MEDIA_DIR = path.join(DATA_DIR, 'media');
-export const BACKUPS_DIR = path.join(DATA_DIR, 'backups');
+export const DATABASE_PATH = path.resolve(/*turbopackIgnore: true*/ process.env.DATABASE_PATH ?? path.join(DATA_DIR, 'sabano.db'));
+// Runtime-only locations: keep the bundler from tracing (and copying) the whole project.
+export const UPLOADS_DIR = path.join(/*turbopackIgnore: true*/ DATA_DIR, 'uploads');
+export const MEDIA_DIR = path.join(/*turbopackIgnore: true*/ DATA_DIR, 'media');
+export const BACKUPS_DIR = path.join(/*turbopackIgnore: true*/ DATA_DIR, 'backups');
 export const MIGRATIONS_DIR = path.resolve(
   process.env.MIGRATIONS_DIR ??
     (repoRoot ? path.join(repoRoot, 'packages/db/migrations') : path.join(process.cwd(), 'migrations')),

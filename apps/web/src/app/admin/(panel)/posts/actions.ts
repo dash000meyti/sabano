@@ -7,6 +7,9 @@ import { postCategories, type PostCategory } from '@sabano/db/schema';
 import { locales, type Locale } from '@sabano/i18n';
 import { requireUser } from '@/lib/auth';
 import { revalidateSite } from '@/lib/revalidate';
+
+/** Cover images must be local (/media/… or /images/…): next/image only serves those. */
+const localImage = (v: string) => (v && /^\/(media|images)\/[\w\-./]+$/.test(v) && !v.includes('..') ? v : null);
 import { sanitizeArticle } from '@/lib/sanitize';
 
 const str = (fd: FormData, k: string) => String(fd.get(k) ?? '').trim();
@@ -50,7 +53,7 @@ export async function savePostAction(formData: FormData) {
     {
       slug,
       category: postCategories.includes(category) ? category : 'news',
-      coverImage: str(formData, 'coverImage') || null,
+      coverImage: localImage(str(formData, 'coverImage')),
       status,
       featured: formData.get('featured') === 'on',
       publishedAt,

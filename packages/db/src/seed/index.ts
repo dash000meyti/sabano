@@ -1,4 +1,4 @@
-import { count } from 'drizzle-orm';
+import { count, eq } from 'drizzle-orm';
 import { locales, type Locale } from '@sabano/i18n';
 import { getDb } from '../client';
 import {
@@ -26,14 +26,26 @@ import zh from './content/zh.json';
 type SeedContent = typeof fa;
 const content: Record<Locale, SeedContent> = { fa, en, zh, ru, es };
 
+/** Settings row written once the database has been seeded (never shown in the panel). */
+export const SEED_MARKER = 'system.seededAt';
+
 /**
- * Fills an empty database with the fund's current public content.
- * Returns false (and does nothing) if content already exists, unless force is set.
+ * Fills a brand-new database with the fund's current public content, exactly once.
+ * A marker row (not "is a table empty?") decides, so deleting every person or post
+ * in the panel never triggers a re-seed (which would duplicate content or crash on
+ * unique slugs at startup). Returns true when it seeded.
  */
 export function seedDatabase({ force = false }: { force?: boolean } = {}): boolean {
   const db = getDb();
-  const existing = db.select({ n: count() }).from(people).get()?.n ?? 0;
-  if (existing > 0 && !force) return false;
+  if (!force) {
+    if (db.select({ k: settings.key }).from(settings).where(eq(settings.key, SEED_MARKER)).get()) return false;
+    // Databases seeded before the marker existed: any content means "already seeded".
+    const hasContent = [people, posts, faqs, partners, shareholders].some((t) => (db.select({ n: count() }).from(t).get()?.n ?? 0) > 0);
+    if (hasContent) {
+      db.insert(settings).values({ key: SEED_MARKER, value: JSON.stringify('pre-marker') }).onConflictDoNothing().run();
+      return false;
+    }
+  }
 
   db.transaction((tx) => {
     if (force) {
@@ -113,6 +125,10 @@ export function seedDatabase({ force = false }: { force?: boolean } = {}): boole
     for (const [key, value] of Object.entries(defaultSettings)) {
       tx.insert(settings).values({ key, value: JSON.stringify(value) }).onConflictDoNothing().run();
     }
+    tx.insert(settings)
+      .values({ key: SEED_MARKER, value: JSON.stringify(new Date().toISOString()) })
+      .onConflictDoUpdate({ target: settings.key, set: { value: JSON.stringify(new Date().toISOString()) } })
+      .run();
   });
   return true;
 }

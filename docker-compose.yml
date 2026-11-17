@@ -14,6 +14,11 @@ services:
     volumes:
       - sabano-data:/data
     stop_grace_period: 20s
+    logging:                     # keep container logs from filling the disk
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
 
 volumes:
   sabano-data:

@@ -22,7 +22,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ locale:
       <guid isPermaLink="true">${pageUrl(locale, `/news/${p.slug}`)}</guid>
       <pubDate>${p.publishedAt.toUTCString()}</pubDate>
       <category>${esc(t(`categories.${p.category}`))}</category>
-      <description>${esc(p.excerpt)}</description>${p.coverImage ? `\n      <enclosure url="${absoluteUrl(p.coverImage)}" type="image/jpeg" length="0" />` : ''}
+      <description>${esc(p.excerpt)}</description>${p.coverImage ? `\n      <enclosure url="${esc(absoluteUrl(p.coverImage))}" type="image/jpeg" length="0" />` : ''}
     </item>`,
     )
     .join('\n');

@@ -50,12 +50,37 @@ async function buildIndex(locale: Locale): Promise<Entry[]> {
   return entries;
 }
 
+// The index is rebuilt at most once a minute per language (and right after admin edits),
+// so a burst of search requests doesn't re-read every page, FAQ and post each time.
+const INDEX_TTL = 60_000;
+const indexCache = new Map<Locale, { at: number; entries: Promise<Entry[]> }>();
+let indexVersion = 0;
+let cachedVersion = 0;
+
+/** Called after content changes so the next search sees them. */
+export function invalidateSearchIndex() {
+  indexVersion++;
+}
+
+function getIndex(locale: Locale): Promise<Entry[]> {
+  if (cachedVersion !== indexVersion) {
+    indexCache.clear();
+    cachedVersion = indexVersion;
+  }
+  const hit = indexCache.get(locale);
+  if (hit && Date.now() - hit.at < INDEX_TTL) return hit.entries;
+  const entries = buildIndex(locale);
+  entries.catch(() => indexCache.delete(locale));
+  indexCache.set(locale, { at: Date.now(), entries });
+  return entries;
+}
+
 export async function searchSite(locale: Locale, query: string, limit = 8): Promise<SearchHit[]> {
   const q = normalize(query);
   if (q.length < 2) return [];
   const terms = q.split(' ').filter((w) => w.length > 1);
   if (!terms.length) return [];
-  const index = await buildIndex(locale);
+  const index = await getIndex(locale);
   const scored = index
     .map((e) => {
       let score = 0;

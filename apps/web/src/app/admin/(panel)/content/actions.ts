@@ -7,11 +7,21 @@ import { entities, isEntityKey, type FieldDef } from '@/lib/admin-entities';
 import { requireUser } from '@/lib/auth';
 import { revalidateSite } from '@/lib/revalidate';
 
+/** Images must be local (/media/… from the library or /images/…): next/image only serves those. */
+const LOCAL_IMAGE = /^\/(media|images)\/[\w\-./]+$/;
+
 function readField(f: FieldDef, raw: FormDataEntryValue | null): unknown {
   const v = typeof raw === 'string' ? raw.trim() : '';
   switch (f.type) {
     case 'checkbox':
       return raw === 'on';
+    case 'select':
+      return f.options?.some((o) => o.value === v) ? v : null;
+    case 'image':
+      return v && LOCAL_IMAGE.test(v) && !v.includes('..') ? v : null;
+    case 'url':
+      // Links are rendered as hrefs: only real web links (no javascript:, data:, …).
+      return /^https?:\/\/[^\s"<>]+$/i.test(v) ? v.slice(0, 500) : null;
     case 'number':
       return v ? Number.parseInt(v, 10) || null : null;
     case 'slug':

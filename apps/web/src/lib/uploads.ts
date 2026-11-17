@@ -41,9 +41,10 @@ export async function saveUpload(file: File): Promise<SavedFile | { error: 'file
   if (!kind) return { error: 'fileType' };
   const now = new Date();
   const dir = path.join(String(now.getUTCFullYear()), String(now.getUTCMonth() + 1).padStart(2, '0'));
-  const relPath = path.join(dir, `${randomBytes(16).toString('hex')}.${kind.ext}`);
-  await fs.mkdir(path.join(UPLOADS_DIR, dir), { recursive: true });
-  await fs.writeFile(path.join(UPLOADS_DIR, relPath), buf, { mode: 0o640 });
+  // Runtime paths under /data: tell the bundler not to trace them (it would copy the whole repo).
+  const relPath = path.join(/*turbopackIgnore: true*/ dir, `${randomBytes(16).toString('hex')}.${kind.ext}`);
+  await fs.mkdir(path.join(/*turbopackIgnore: true*/ UPLOADS_DIR, dir), { recursive: true });
+  await fs.writeFile(path.join(/*turbopackIgnore: true*/ UPLOADS_DIR, relPath), buf, { mode: 0o640 });
   const safeName = file.name.replace(/[\\/\0<>:"|?*]+/g, '_').slice(0, 160) || `attachment.${kind.ext}`;
   return { name: safeName, relPath, mime: kind.mime, size: buf.length };
 }

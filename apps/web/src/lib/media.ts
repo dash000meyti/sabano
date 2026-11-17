@@ -16,17 +16,28 @@ export async function storeImage(file: File, alt?: string) {
   const input = Buffer.from(await file.arrayBuffer());
   const meta = await sharp(input).metadata().catch(() => null);
   if (!meta?.format || !ALLOWED.has(meta.format)) throw new Error('فقط تصاویر JPG، PNG، WebP و GIF پذیرفته می‌شوند.');
-  const isPng = meta.format === 'png';
-  const pipeline = sharp(input, { animated: meta.format === 'gif' }).rotate().resize({ width: 2400, withoutEnlargement: true });
-  const out = isPng ? await pipeline.png({ compressionLevel: 9 }).toBuffer({ resolveWithObject: true }) : await pipeline.jpeg({ quality: 86, mozjpeg: true }).toBuffer({ resolveWithObject: true });
-  const ext = isPng ? 'png' : 'jpg';
+  // Keep what the format can carry: PNG stays PNG; WebP and GIF become WebP (keeps
+  // transparency and animation, which JPEG would flatten into black / a frame strip).
+  const animated = meta.format === 'gif' || meta.format === 'webp';
+  const pipeline = sharp(input, { animated }).rotate().resize({ width: 2400, withoutEnlargement: true });
+  const target = meta.format === 'png' ? 'png' : meta.format === 'jpeg' ? 'jpeg' : 'webp';
+  const out =
+    target === 'png'
+      ? await pipeline.png({ compressionLevel: 9 }).toBuffer({ resolveWithObject: true })
+      : target === 'webp'
+        ? await pipeline.webp({ quality: 86 }).toBuffer({ resolveWithObject: true })
+        : await pipeline.jpeg({ quality: 86, mozjpeg: true }).toBuffer({ resolveWithObject: true });
+  const ext = target === 'jpeg' ? 'jpg' : target;
+  const mime = `image/${target}`;
+  // For animations sharp reports the whole frame strip; store one frame's height.
+  const height = Math.round(out.info.height / Math.max(1, (animated && meta.pages) || 1));
   const now = new Date();
   const dir = `${now.getUTCFullYear()}/${String(now.getUTCMonth() + 1).padStart(2, '0')}`;
   const base = path.basename(file.name, path.extname(file.name)).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'image';
   const rel = `${dir}/${base}-${randomBytes(4).toString('hex')}.${ext}`;
   await fs.mkdir(path.join(MEDIA_DIR, dir), { recursive: true });
   await fs.writeFile(path.join(MEDIA_DIR, rel), out.data);
-  const row = insertMedia({ path: rel, originalName: file.name.slice(0, 200), mime: isPng ? 'image/png' : 'image/jpeg', size: out.data.length, width: out.info.width, height: out.info.height, alt: alt ?? null });
+  const row = insertMedia({ path: rel, originalName: file.name.slice(0, 200), mime, size: out.data.length, width: out.info.width, height, alt: alt ?? null });
   return { ...row, url: `/media/${rel}` };
 }
 
