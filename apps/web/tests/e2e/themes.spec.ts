@@ -5,7 +5,10 @@ const pages = ['/', '/about', '/services/guarantee', '/investment', '/process', 
 
 for (const theme of ['light', 'dark'] as const) {
   test.describe(`${theme} theme`, () => {
-    test.use({ colorScheme: theme });
+    // Dark is only ever the visitor's saved choice; the OS preference is ignored.
+    test.beforeEach(async ({ page }) => {
+      if (theme === 'dark') await page.addInitScript(() => localStorage.setItem('sabano-theme', 'dark'));
+    });
 
     for (const path of pages) {
       test(`${path} has no accessibility violations`, async ({ page }) => {
@@ -26,14 +29,24 @@ for (const theme of ['light', 'dark'] as const) {
   });
 }
 
+test('light is the default, even when the OS prefers dark', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  for (const path of ['/', '/en/about', '/no-such-page', '/admin/login']) {
+    await page.goto(path);
+    await expect(page.locator('html')).not.toHaveClass(/\bdark\b/);
+    await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#ffffff');
+  }
+});
+
 test('theme toggle switches and persists', async ({ page }) => {
-  await page.emulateMedia({ colorScheme: 'light' });
+  await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto('/');
   await expect(page.locator('html')).not.toHaveClass(/\bdark\b/);
   await page.getByRole('button', { name: 'تغییر تم روشن و تیره' }).first().click();
   await expect(page.locator('html')).toHaveClass(/\bdark\b/);
   await page.reload();
   await expect(page.locator('html')).toHaveClass(/\bdark\b/);
+  await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#020a18');
   await page.goto('/en/about');
   await expect(page.locator('html')).toHaveClass(/\bdark\b/);
   await page.getByRole('button', { name: 'Toggle light and dark theme' }).first().click();

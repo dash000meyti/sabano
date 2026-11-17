@@ -1,15 +1,14 @@
 'use client';
 
 import { MoonStarsIcon, SunIcon } from '@phosphor-icons/react';
-import { useEffect } from 'react';
 import { cn } from '@sabano/ui';
-import { THEME_COLORS, THEME_KEY } from '@/lib/theme';
+import { syncThemeColor, THEME_KEY } from '@/lib/theme';
 
 function apply(dark: boolean) {
   const root = document.documentElement;
   root.classList.add('theme-switching');
   root.classList.toggle('dark', dark);
-  document.querySelectorAll('meta[name="theme-color"]').forEach((m) => m.setAttribute('content', dark ? THEME_COLORS.dark : THEME_COLORS.light));
+  syncThemeColor(dark);
   window.dispatchEvent(new CustomEvent('sabano:theme', { detail: { dark } }));
   // Re-enable transitions after the swap so colours change instantly, not in a smear.
   requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('theme-switching')));
@@ -17,22 +16,10 @@ function apply(dark: boolean) {
 
 /**
  * Light/dark switch. Icons swap with CSS (no hydration mismatch); the initial
- * theme is set by the inline head script. Follows the OS until the user chooses.
+ * theme is set by the inline head script. Light is the default; the choice made
+ * here is saved and used on every later visit.
  */
 export function ThemeToggle({ label, className }: { label: string; className?: string }) {
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    const onChange = (e: MediaQueryListEvent) => {
-      try {
-        if (!localStorage.getItem(THEME_KEY)) apply(e.matches);
-      } catch {
-        apply(e.matches);
-      }
-    };
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  }, []);
-
   return (
     <button
       type="button"

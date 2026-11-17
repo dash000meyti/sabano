@@ -10,11 +10,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: THEME_COLORS.light },
-    { media: '(prefers-color-scheme: dark)', color: THEME_COLORS.dark },
-  ],
-  colorScheme: 'light dark',
+  // Light by default; ThemeSync/ThemeToggle switch these for visitors who chose dark.
+  themeColor: THEME_COLORS.light,
+  colorScheme: 'light',
 };
 
 export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
